@@ -28,12 +28,13 @@ Thumbs.db
 .settings
 .tmproj
 .esproj
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 
 # Folders to ignore
 bower_components/
-app/_bower_components
+app/_assets/_bower_components
+_bower_components
 build/development/
 build/assets/**
 node_modules/
