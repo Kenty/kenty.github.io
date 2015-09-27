@@ -1,0 +1,30 @@
+// WordPress Gallery
+
+.gallery {
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    &:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+    &-item {
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        width: 100%;
+    }
+    &-icon {
+        margin: 0;
+    }
+    &-caption {
+        display: block;
+    }
+}
+
+    @for $i from 1 through 8 {
+        $y: 100% / ($i + 1);
+        .gallery-columns-#{$i} .gallery-item {
+            max-width: #{$y};
+        }
+    }

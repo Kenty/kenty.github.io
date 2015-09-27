@@ -1,0 +1,34 @@
+$u-divider--top: 1px dashed scale-color($primary-color, $lightness: 30%);
+$u-divider--right: 1px dashed scale-color($primary-color, $lightness: -30%);
+$u-divider--bottom: 1px dashed scale-color($primary-color, $lightness: -30%);
+$u-divider--left: 1px dashed scale-color($primary-color, $lightness: 30%);
+
+// Top
+%u-divider--top,
+.u-divider--top {
+  border-top: $u-divider--top;
+}
+
+// Right
+%u-divider--right,
+.u-divider--right {
+  border-top: $u-divider--right;
+}
+
+// Bottom
+%u-divider--bottom,
+.u-divider--bottom {
+  border-bottom: $u-divider--bottom;
+}
+
+// Left
+%u-divider--left,
+.u-divider--left {
+  border-bottom: $u-divider--left;
+}
+
+// Border none
+%u-divider--none,
+.u-divider--none {
+  border: none;
+}

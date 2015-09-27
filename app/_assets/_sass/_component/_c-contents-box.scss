@@ -1,0 +1,30 @@
+.c-contents-box {
+  &__list {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+  .list__item {
+    display: inline-block;
+    list-style: none;
+    @include font-size(16);
+  }
+  &--divider {
+    margin-bottom: 1rem;
+    border-bottom: $u-divider--bottom;
+    &:nth-last-of-type(1) {
+      margin-bottom: 3.75rem;
+      border-bottom: none;
+    }
+    @media #{$large-up} {
+      margin-bottom: 0;
+      border-right: $u-divider--right;
+      border-bottom: none;
+      // @include article-box(0, $border-line);
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+        border-right: none;
+      }
+    }
+  }
+}

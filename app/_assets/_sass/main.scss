@@ -1,0 +1,74 @@
+// ---
+// # Only the main Sass file needs front matter (the dashes are enough)
+// ---
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-sizes:   16px;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+@import "_settings";
+@import "_utils";
+@import "_normalize";
+
+/////////////////////////
+///  Zurb-foundation  ///
+/////////////////////////
+@import 'foundation/components/grid';
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "base";
+@import "layout";
+@import "syntax-highlighting";
+
+@import "_utlilties/u-button";
+@import "_utlilties/u-card.scss";
+@import "_utlilties/u-divider";
+@import "_utlilties/u-heading";
+
+@import "_component/c-section";
+@import "_component/c-contents-box";
+@import "_component/c-meta";
+@import "_component/c-social";
+
+@import "_layout/page";
+
+@import "_module/articles";
+@import "_module/navigation";
+
+
