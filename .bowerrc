@@ -1,0 +1,8 @@
+{
+  "directory":"app/_assets/_bower_components",
+  "json":"bower.json",
+  "searchpath":[],
+  "scripts": {
+    "postinstall": ""
+  }
+}

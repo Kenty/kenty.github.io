@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+/*==========  VARIABLES  ==========*/
+
+$sass-version: '3.4.5';
+// Basic Color
+$primary-color: rgb(185, 182, 166) !default; // lighten brown
+//Base Font Color
+$base-font-color: rgb(25, 30, 36) !default; // darken blue
+//Base BG Color
+$bg-color: $primary-color;
+$content-shadow: rgba($primary-color, 0.6);
+//Base Link Color
+$link-color: rgb(106, 154, 187) !default; // lighten blue
+$sub-color: $link-color;
+//Accent Color
+$accent-color: rgb(244, 186, 103) !default;  // orange
+$sub2-color: rgba(28, 38, 46, 0.45);
+//orange
+// $accent-color: adjust-hue($sub-color,180dg);
+$mini-frame: 4px 3px;
+$main-padding: 35px .9375em;
+$main-contents-padding: 2em 1.5em;
+// Base Font
+$sec-font: 'NoticiaTextBold';
+//Web Font
+$t-kit: "kepler-std-semicondensed-cap",
+sans-serif;
+$topbar-link-font-family: $t-kit;
+// border-line
+$article-border-right: 1px dashed darken(rgba($primary-color, .35), 30%);
+$border-line: $article-border-right;
+// Layout setting
+$marginT: 1.25rem; // 16px*1.25 = 20px
+$marginB: 1.25rem;
+$marginSemitop: 0.625em; //16px*0.625 = 10px
+$icon-margin--right: 5px;
+
+// Set a rem font size with pixel fallback
+$base-font-size: 16 !default;
+$base-line-height: 24 !default;
+$rhythm-unit: $base-line-height / 2;
+
+/*==========  Functions  ==========*/
+@function lower-bound($range) {
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range, 1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16;
+  @return $remSize * 1;
+}
+
+
+/*==========  mix-in  ==========*/
+
+// @mixin font-size($size, $line-height: true) {
+//   font-size: $size + px;
+//   font-size: calculateRem($size) + rem;
+//   @if $line-height==true {
+//     line-height: ceil($size / $rhythm-unit) * ($rhythm-unit / $size);
+//     // line-height: 1.5;
+//   }
+// }
+@mixin font-size($font-size-value, $line-height-value: auto) {
+  font-size: $font-size-value * 1px;
+  font-size: ($font-size-value / $base-font-size) * 1rem;
+  @if $line-height-value == auto {
+    line-height: ceil($font-size-value / $base-line-height) * ($base-line-height / $font-size-value);
+  }
+  @else {
+    @if (type-of($line-height-value) == number or $line-height-value == inherit or $line-height-value == normal) {
+      line-height: $line-height-value;
+    }
+    @elseif ($line-height-value !=none and $line-height-value !=false) {
+      @warn "'#{$line-height-value}' is not a valid value for `line-heihgt`.";
+    }
+  }
+}
+
+@mixin background-image($args...) {
+  background-image: $args;
+}
+
+@mixin box-shadow($args...) {
+  -webkit-box-shadow: $args;
+  box-shadow: $args;
+}
+
+@mixin text-shadow($args...) {
+  text-shadow: $args;
+}
+
+@mixin border-radius($args...) {
+  -webkit-border-radius: $args;
+  border-radius: $args;
+}
+
+@mixin transition($args...) {
+  transition: $args;
+}
+
+@mixin appearance($args...) {
+  -webkit-appearance: $args;
+  -moz-appearance: $args;
+  appearance: $args;
+}
+
+@mixin font-smooting($value: on) {
+  @if $value==on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin clearfix($supportIE: true) {
+  @if $supportIE == true {
+    *zoom: 1;
+  }
+  // &:before,
+  // &:after {
+  //   display: block;
+  //   visibility: hidden;
+  //   height: 0;
+  //   content: "\0020";
+  // }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin my-photoframe {
+  padding: 4px;
+  border: 1px solid lighten($primary-color, 8%);
+  background-color: lighten($primary-color, 20%);
+}
+
+@mixin article-box($marginT: 1.25em, $border-line: $article-border-right) {
+  margin-bottom: $marginT;
+  border-right: $border-line;
+}
+
+@mixin gradient($color, $orientation) {
+  background: $color;
+  border: 2px solid scale-color(rgba($color, .85), $lightness: 10%);
+  @if $orientation==vertical {
+    @include background-image(linear-gradient(to bottom, $color 0%, scale-color($color, $lightness: -10%) 100%));
+  }
+  @if $orientation==horizontal {
+    @include background-image(linear-gradient(to right, $color 0%, scale-color($color, $lightness: -10%) 100%));
+  }
+  @else {
+    background-image: radial-gradient(center, circle cover, $color 0%, scale-color($color, $lightness: -10%) 100%);
+    background-image: -webkit-radial-gradient(center, circle cover, $color 0%, scale-color($color, $lightness: -10%) 100%);
+  }
+}
+
+@mixin button-gradient($color) {
+  background-color: $color;
+  border: 2px solid scale-color(rgba($color, .85), $lightness: 10%);
+  @include background-image(linear-gradient($color 0%, scale-color($color, $lightness: -10%) 100%));
+}
+
+// Typekit web-font
+@mixin web-font($t-kit, $style: italic, $weight: 900) {
+  font-family: $t-kit;
+  font-style: $style;
+  font-weight: $weight;
+  font-feature-settings: "liga" on;
+  -webkit-font-feature-settings: "liga" on;
+  font-kerning: none;
+}
+
+// Pagination
+@mixin pagination() {}
+
+// View more
+@mixin view-more() {
+  background: transparent;
+  border: 1px solid scale-color($base-font-color, $lightness: 20%);
+  border-radius: 3px;
+  box-shadow: 0 2px 9px 1px rgba(0, 0, 0, 0.1), inset 0 0 10px -1px rgba(0, 0, 0, 0.1);
+  color: scale-color($base-font-color, $lightness: 20%);
+  display: inline-block;
+  margin: 0 auto;
+  padding: .5em 1.5em;
+  text-decoration: none;
+  &:hover {
+    background: scale-color($base-font-color, $lightness: 20%);
+    // border: 1px solid scale-color($accent-color, $lightness: 10%);
+    box-shadow: none;
+    color: $primary-color;
+  }
+}
+
+//
+// @TODO: Add docs to mixin-name!
+//
+@mixin background-image-retina($filename, $type, $width, $height) {
+  background-image: url($filename + '.' + $type);
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    & {
+      background-image: url($filename + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+      -moz-background-size: $width $height;
+      -o-background-size: $width $height;
+      background-size: $width $height;
+    }
+  }
+}
+
+// BEM mixins
+@mixin new($block, $type: null) {
+  @at-root {
+    @if $type !=null {
+      .#{$block}-#{$type} {
+        @content;
+      }
+    }
+    @else {
+      .#{$block} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin has($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin when($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+@mixin if-its($state) {
+  & .is-#{$state} {
+    @content;
+  }
+}
+
+
+/*==========  %Placeholder  ==========*/
+
+%icon-modifier {
+  margin-right: $icon-margin--right;
+}
+
+%photo-shadow {
+  @include my-photoframe;
+  // @include box-shadow(inset 1px 0 0 4px rgba(255, 255, 255, 0.25), 0 1px 5px rgba(0, 0, 0, 0.4), inset 0 0 7px rgba(0, 0, 0, 0.35), inset 0 -2px 10px rgba(0, 0, 0, 0.15));
+}
+
+
+%link-anchor {
+  padding: 3.125em 0;
+  text-align: center;
+}
+
+%hr-sepalate {
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 1;
+  margin: 8em 0 5em;
+  border: 0;
+  padding: 0;
+  height: 0;
+  clear: both;
+  display: block;
+  text-align: center;
+  &:after {
+    content: "";
+    color: scale-color($primary-color, $lightness: 50%);
+    letter-spacing: 1em;
+    padding-left: 1em;
+    height: 0;
+  }
+}
+
+%widgets-title {
+  zoom: 1;
+  text-shadow: 0 1px 1px rgba(241, 241, 241, .3);
+  @include web-font($t-kit, normal, 700);
+  @include font-size(21, 1.5);
+  // IE
+  span {
+    padding-right: 5px;
+  }
+}
+
+%fontawesome {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+  @include font-smooting(on);
+}

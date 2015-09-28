@@ -1,0 +1,135 @@
+/****************************************
+     Basic Layout
+*****************************************/
+
+.load {
+  * {
+    // -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+.pageIntro {
+  font-family: $t-kit;
+  font-size: 500%;
+  display: block;
+  margin: 1.5em 1em;
+  text-align: center;
+  letter-spacing: .1em;
+}
+
+// pre
+.pre-box {
+  line-height: 1.3;
+  margin: 5px;
+  padding: 10px;
+  background-color: scale-color($primary-color, $lightness: 90%);
+  @include border-radius(3px);
+}
+
+.site-description {
+  position: absolute;
+  top: 50%;
+  margin-left: 30px;
+  color: $primary-color;
+  @include text-shadow(0 0 1px scale-color(rgba($primary-color, .5), $lightness: -30%));
+  @include web-font($t-kit, normal, 400);
+  @include font-size(18);
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    font-size: 4vw;
+  }
+}
+
+
+/****************************************
+    2.1  Top Page Contents
+*****************************************/
+
+.contents-none {
+  margin: 6.25em 0;
+  text-align: center;
+  &__header-title {
+    &.err404 {
+      display: inline-block;
+      height: auto;
+      margin: 30px auto 15px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: scale-color($link-color, $lightness: -17%);
+      text-shadow: -1px 2px 2px scale-color(rgba($link-color, .85), $lightness: -35%), -2px 3px 3px scale-color(rgba($link-color, .85), $lightness: -50%), -4px 6px 9px rgba(32, 41, 49, .45), -3px 10px 14px rgba(0, 0, 0, .2);
+      @include font-size(128);
+      @include web-font($t-kit, normal, 400);
+      @media #{$topbar-media-query} {
+        @include font-size(312);
+      }
+      span {
+        font-size: 16.25%;
+        display: block;
+        margin-top: -15px;
+        letter-spacing: .12em;
+      }
+    }
+  }
+  &__title {
+    display: inline-block;
+    @include font-size(40);
+    @media #{$topbar-media-query} {
+      @include font-size(72);
+    }
+  }
+  &__body {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  &__message {
+    margin-bottom: 15px;
+  }
+}
+
+.title--primary,
+.title-1 {
+  text-transform: capitalize;
+  @include web-font($t-kit, italic, 900);
+  @include font-smooting(on);
+}
+
+#portfolio,
+#about {
+  height: auto;
+  background: url(assets/img/src/top-page-blog_bg.jpg) repeat top left;
+}
+
+#blog,
+#contact {
+  background: url(assets/img/src/dm-contents-bg.jpg) repeat top left;
+}
+
+.hr-sepalate {
+  font-family: FontAwesome;
+  color: $primary-color;
+  @extend %hr-sepalate;
+  &:after {
+    content: '\f063 \f063 \f063';
+  }
+}
+
+
+/**
+ * Chartjs widgets area
+ */
+
+.canvas {
+  &-widget {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  &-container {
+    position: relative;
+    margin: 20px auto;
+    min-height: 400px;
+    max-height: 520px;
+    min-width: 450px;
+    max-width: 500px;
+  }
+}

@@ -1,0 +1,25 @@
+.c-related {
+  margin-top: 1.875rem;
+  @include clearfix();
+  &__list {
+
+  }
+  &__item {
+    display: inline-block;
+    list-style: none;
+  }
+  &__title {
+    @extend %widgets-title;
+    margin-bottom: 0.625rem;
+  }
+  .list__item {
+     > a {
+       text-decoration: underline;
+     }
+     img {
+       @extend %photo-shadow;
+       display: block;
+       margin: 0 0 .625rem;
+     }
+  }
+}

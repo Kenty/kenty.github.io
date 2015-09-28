@@ -1,0 +1,102 @@
+/****************************************
+6. Comments
+*****************************************/
+
+.comments-area {
+  margin-top: 6.25em;
+  padding: 10px 0;
+  p {
+    margin-bottom: 1em;
+  }
+}
+.comment-meta {
+  margin-bottom: 10px;
+  a {
+    color: $sub-color;
+    text-decoration: none;
+    font-size: 0.875em;
+    &:hover {
+      color: lighten($sub-color, 7%);
+    }
+  }
+  &-icon {
+    @extend %icon-modifier;
+  }
+}
+.comment-title {
+  @include font-size(24, auto);
+  @include web-font($t-kit, normal, 700);
+  border-bottom: 3px dashed scale-color(rgba($primary-color, .35), $lightness: -50%);
+  margin-bottom: 10px;
+  @include text-shadow(0 1px 1px rgba(241, 241, 241, 0.3));
+  &-icon {
+    @extend %icon-modifier;
+  }
+}
+.comment-reply {
+  font-size: 0.875em;
+  a {
+    color: $sub-color;
+    padding: 2px 10px;
+    text-decoration: none;
+    background: #ddd;
+    &:hover {
+      color: #999;
+    }
+  }
+  &-title {
+    padding: 10px 0 10px 10px;
+    border-top: $border-line;
+    border-bottom: $border-line;
+    margin-bottom: 1.25em;
+  }
+}
+
+.comment-notes {
+  margin-bottom: 1.25em;
+}
+.comment-list {
+  margin-bottom: 30px;
+  list-style-type: none;
+  .children {
+    margin-left: 2.625em;
+  }
+  li {
+    background-color: scale-color($primary-color, $lightness: 80%);
+    border-radius: 3px;
+    position: relative;
+    list-style: none;
+    padding: 1em;
+    margin-bottom: 20px;
+    @include box-shadow(0 3px 1px 3px rgba($primary-color, .35) );
+    max-width: 33.75em;
+  }
+  .avatar {
+    padding: 3px;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+}
+
+/*** Comment form ***/
+.comments-title, .comment-list, .comment-reply-title, .must-log-in, .comment-respond .comment-form, .comment-respond iframe {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 700px;
+}
+
+.comment-respond {
+  margin-top: 70px;
+}
+
+.form-fieldset {
+  .form-field {
+    border: 1px solid scale-color(rgba($bg-color, 1), $lightness: 50%);
+    background: scale-color(rgba($bg-color, 0.5), $lightness: -25%);
+    &:focus {
+      border: 1px solid scale-color(rgba($bg-color, 0.5), $lightness: -25%);
+      background: scale-color(rgba($bg-color, 1), $lightness: 80%);
+    }
+  }
+}
