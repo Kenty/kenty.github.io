@@ -1,8 +1,0 @@
-# Site settings
-
-# URLs/Paths
-url: "http://dominomatrix.com" # the base hostname & protocol for your site
-
-future: false
-show_drafts: false
-limit_posts: 0
