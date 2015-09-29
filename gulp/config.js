@@ -114,6 +114,11 @@ module.exports = {
     dest: paths.devAssets + '/img/'
   },
 
+  /**
+   *
+   *  Copy Svg
+   *
+   */
   copySvg: {
     src: paths.devAssets + '/img/**/*.svg',
     dest: paths.productionAssets + '/img/'
@@ -136,7 +141,7 @@ module.exports = {
 
   /**
    *
-   * main-bower-files
+   * Bower Set
    *
    */
   mainBowerFiles: {
@@ -146,10 +151,10 @@ module.exports = {
     dest: paths.srcAssets + '/lib'
   },
 
-
   /**
-   * [jshint description]
-   * @type {Object}
+   *
+   * Jshint
+   *
    */
   jshint: {
     src: [paths.srcAssets + '/js/**/*.js']
@@ -157,7 +162,7 @@ module.exports = {
 
   /**
    *
-   * watch
+   * Watch
    *
    */
   watch: {
@@ -178,12 +183,24 @@ module.exports = {
     images: paths.srcAssets + '/img/**/*',
     post_image: paths.src + '/images/**/*'
   },
+
   /**
    *
    * Optimize
    *
    */
   optimize: {
+    html: {
+      src: paths.production + '/**/*.html',
+      dest: paths.production,
+      options: {
+        collapseWhitespace: true,
+        conservativeComments: true,
+        removeComments: true,
+        minifyJS: true,
+        minifyCSS: true
+      }
+    },
     css: {
       src: paths.devAssets + '/css/*.css',
       dest: paths.productionAssets + '/css/',
@@ -212,7 +229,7 @@ module.exports = {
 
   /**
    *
-   * rsync
+   * Rsync
    *
    */
   rsync : {
@@ -235,7 +252,7 @@ module.exports = {
 
   /**
    *
-   * gh-pages
+   * Publish contents to Github pages
    *
    */
   ghPages: {
