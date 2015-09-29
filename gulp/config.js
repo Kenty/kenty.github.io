@@ -231,5 +231,18 @@ module.exports = {
       exclude: ['.DS_Store'],
       include: []
     }
+  },
+
+  /**
+   *
+   * gh-pages
+   *
+   */
+  ghPages: {
+    src: paths.production + '/**/*',
+    options: {
+      branch: 'master',
+      cacheDir: ''
+    }
   }
 };

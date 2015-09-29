@@ -38,5 +38,6 @@ _bower_components
 build
 node_modules/
 .sass-cache/
+.publish/
 
 _site/
