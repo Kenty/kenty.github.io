@@ -7,9 +7,9 @@ var cp = require('child_process');
 var browsersync = require('browser-sync');
 var config = require('../../config').jekyll.product;
 
-/*===============================
-=            Libsass            =
-===============================*/
+/*==============================================
+=    Compile Jekyll to Production directory    =
+==============================================*/
 
 gulp.task('jekyll:product', function(done) {
   browsersync.notify('Compiling Jekyll Production');

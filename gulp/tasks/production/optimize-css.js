@@ -8,7 +8,7 @@ var $ = require('gulp-load-plugins')();
 var config = require('../../config').optimize.css;
 
 /*=============================================
-=            Optimizing JavaScript            =
+=               Optimizing CSS                =
 =============================================*/
 
 gulp.task('optimize:css', function() {

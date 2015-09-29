@@ -8,7 +8,7 @@ var $ = require('gulp-load-plugins')();
 var config = require('../../config').copySvg;
 
 /*=============================================
-=            Optimizing JavaScript            =
+=      Copy svg to production directory       =
 =============================================*/
 
 gulp.task('copysvg', function() {

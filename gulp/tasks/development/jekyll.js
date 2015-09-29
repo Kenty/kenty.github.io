@@ -7,9 +7,9 @@ var cp = require('child_process');
 var browsersync = require('browser-sync');
 var config = require('../../config').jekyll.development;
 
-/*===============================
-=            Libsass            =
-===============================*/
+/*========================================
+=            Compiling Jekyll            =
+========================================*/
 
 gulp.task('jekyll', function(done) {
   browsersync.notify('Compiling Jekyll');

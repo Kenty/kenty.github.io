@@ -7,9 +7,9 @@ var $ = require('gulp-load-plugins')();
 // var minifyCss = require('gulp-load-plugins')();
 var config = require('../../config').optimize.images;
 
-/*=============================================
-=            Optimizing JavaScript            =
-=============================================*/
+/*=========================================
+=            Optimizing Images            =
+=========================================*/
 
 gulp.task('optimize:images', function() {
 
