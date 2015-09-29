@@ -7,6 +7,7 @@
   &-header {
     // border-top: 3px solid scale-color(rgba($base-font-color, .95), $lightness: 15%);
     border-bottom: 2px solid scale-color(rgba($primary-color, .65), $lightness: 50%);
+    border-top: 3px solid scale-color(rgba($base-font-color, .85), $lightness: 10%);
     background-color: scale-color(rgba($base-font-color, .25), $lightness: 5%);
     min-height: 60px;
     // Positioning context for the mobile navigation icon
@@ -62,5 +63,5 @@
 }
 
 .page-heading {
-  font-size: 20px;
+  @include font-size(20, 1.5);
 }

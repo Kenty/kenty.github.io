@@ -22,12 +22,12 @@
     font-weight: 500;
     color: $base-font-color;
     @include text-shadow(0 1px 1px rgba(62, 52, 26, .2), 0px 0px 2px rgba(20, 20, 20, .3));
+    margin-bottom: .875rem;
     @at-root .p-article--post & {
-      @include font-size(24);
-      // @media #{$topbar-media-query} {
-      //   margin-bottom: 0.5rem;
-      //   @include font-size(28, 1.5);
-      // }
+      @include font-size(21, 1.5);
+      @media #{$topbar-media-query} {
+        @include font-size(28, 1.5);
+      }
     }
     > a {
       font-weight: inherit;
@@ -44,7 +44,7 @@
   }
   &__thumbs {
     position: relative;
-    margin: 0 0 .5em;
+    margin: 0 0 .875rem;
     /* css spin loading */
     img {
       width: 100%;
@@ -60,14 +60,16 @@
   }
   &__links {
     .more-link {
+      font-weight: 500;
       padding: .65rem 1.5rem;
       text-decoration: none;
       @extend %u-btn;
       @extend %u-btn--ghost;
-      @include font-size(14, 1.5);
+      @include font-size(16, 1.2);
     }
   }
   &--date {
+    @include font-size(18);
     @include web-font($t-kit, normal, 400);
   }
   &--icon {

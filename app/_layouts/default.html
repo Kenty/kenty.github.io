@@ -14,7 +14,8 @@
     {% include footer.html %}
 
   </div>
-  <script src="{{ "/assets/js/app.js" | prepend: site.baseurl }}" async></script>
+  <script src="{{ "/assets/js/app.js" | prepend: site.baseurl | prepend: site.url }}" async></script>
+  {% include ga.html %}
 </body>
 
 </html>

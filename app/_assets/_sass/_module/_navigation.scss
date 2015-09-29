@@ -30,15 +30,15 @@
     }
   }
   ul {
-      margin: 0 auto;
-      width: 90%;
-      padding: 1rem 0 2rem;
-      display: block;
-      @media #{$topbar-media-query} {
-        width: auto;
-        margin: 0;
-        padding: 0;
-      }
+    margin: 0 auto;
+    width: 90%;
+    padding: 1rem 0 2rem;
+    display: block;
+    @media #{$topbar-media-query} {
+      width: auto;
+      margin: 0;
+      padding: 0;
+    }
   }
   .list__item {
     display: block;
@@ -54,14 +54,15 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     @media #{$topbar-media-query} {
-        padding: 1rem;
+      padding: 1rem;
     }
   }
   a {
-      color: $primary-color;
-      @media #{$topbar-media-query} {
-          color: $base-font-color;
-      }
+    color: scale-color($primary-color, $lightness: 40%);
+    &:hover {
+        text-decoration: underline;
+        color: scale-color($primary-color, $lightness: 50%);
+    }
   }
 }
 
