@@ -2,85 +2,16 @@
  * Reset some basic elements
  */
 
- html,
- body,
- div,
- span,
- object,
- iframe,
- h1,
- h2,
- h3,
- h4,
- h5,
- h6,
- p,
- blockquote,
- pre,
- abbr,
- address,
- cite,
- code,
- del,
- dfn,
- em,
- img,
- ins,
- kbd,
- q,
- samp,
- small,
- strong,
- sub,
- sup,
- var,
- b,
- i,
- dl,
- dt,
- dd,
- ol,
- ul,
- li,
- fieldset,
- form,
- label,
- legend,
- table,
- caption,
- tbody,
- tfoot,
- thead,
- tr,
- th,
- td,
- article,
- aside,
- canvas,
- details,
- figcaption,
- figure,
- footer,
- header,
- hgroup,
- menu,
- nav,
- section,
- main,
- summary,
- time,
- mark,
- audio,
- video {
-   font-size: 100%;
-   font-weight: normal;
-   margin: 0;
-   padding: 0;
-   list-style: none;
-   vertical-align: baseline;
-   border: 0;
-   outline: 0;
- }
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main, summary, time, mark, audio, video {
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+}
 
 
 /**
@@ -88,44 +19,28 @@
  */
 
 body {
-    font-family: $base-font-family;
-    font-size: $base-font-sizes;
-    font-weight: 300;
-    word-wrap: break-word;
-    color: $base-font-color;
-    background-color: $background-color;
-    @include font-size(16, 1.5);
-    text-rendering: optimizeLegibility;
-    @include font-smooting(off);
-    // @include font-smooting(on);
-    -webkit-text-size-adjust: 100%;
+  font-family: $base-font-family;
+  font-weight: 300;
+  word-wrap: break-word;
+  color: $base-font-color;
+  background-color: $background-color;
+  @include font-size(16, 1.5);
+  text-rendering: optimizeLegibility;
+  @include font-smooting(off);
+  // @include font-smooting(on);
+  -webkit-text-size-adjust: 100%;
 }
-
 
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-ul,
-ol,
-dl,
-figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
 }
 
-strong,
-em {
+strong, em {
   font-weight: bold;
 }
 
@@ -135,8 +50,8 @@ em {
  */
 
 img {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 
@@ -145,11 +60,11 @@ img {
  */
 
 figure > img {
-    display: block;
+  display: block;
 }
 
 figcaption {
-    @include font-size(14, false);
+  @include font-size(14, false);
 }
 
 
@@ -157,16 +72,23 @@ figcaption {
  * Lists
  */
 
-ul,
-ol {
-    margin: 1em 0 1em 1.4em;
+ul, ol {
+  margin: 1em 0 1em 1.4em;
 }
 
 li {
-    > ul,
-    > ol {
-        margin-bottom: 0;
-    }
+  > ul, > ol {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+ol li {
+  list-style: decimal outside none;
+}
+
+ul li {
+  list-style: circle outside none;
 }
 
 
@@ -174,13 +96,8 @@ li {
  * Headings
  */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 300;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
 }
 
 
@@ -189,18 +106,17 @@ h6 {
  */
 
 a {
-    text-decoration: none;
-    color: scale-color($link-color, $lightness: 0);
-    @include transition(all 300ms linear);
-    &:visited {
-      color: scale-color($link-color, $lightness: -10%);
-    }
-    &:hover {
-        // text-decoration: underline;
-        color: scale-color($link-color, $lightness: -30%);
-    }
+  text-decoration: none;
+  color: scale-color($link-color, $lightness: 0);
+  @include transition(all 300ms linear);
+  &:visited {
+    color: scale-color($link-color, $lightness: -10%);
+  }
+  &:hover {
+    // text-decoration: underline;
+    color: scale-color($link-color, $lightness: -30%);
+  }
 }
-
 
 
 /**
@@ -208,15 +124,15 @@ a {
  */
 
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-    >:last-child {
-        margin-bottom: 0;
-    }
+  color: $grey-color;
+  border-left: 4px solid $grey-color-light;
+  padding-left: $spacing-unit / 2;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+  >:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -224,26 +140,34 @@ blockquote {
  * Code formatting
  */
 
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+pre, code {
+  font-size: 1rem;
+  color: scale-color($primary-color, $lightness: 70%);
+  white-space: pre;
 }
 
 code {
-    padding: 1px 5px;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0 .5rem;
+  background-color: scale-color($base-font-color, $lightness: 0%);
+  @include border-radius(3px);
+  display: inline-block;
+}
+
+code {
+  // padding: 1px 5px;
 }
 
 pre {
-    padding: 8px 12px;
-    overflow-x: scroll;
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
+  padding: 8px 12px;
+  overflow-x: scroll;
+  background-color: scale-color($base-font-color, $lightness: 0%);
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+    background-color: transparent;
+  }
 }
 
 
@@ -267,17 +191,16 @@ pre {
 //     }
 // }
 
-
 /**
  * Clearfix
  */
 
 %clearfix {
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 
@@ -286,13 +209,13 @@ pre {
  */
 
 .icon {
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-        path {
-            fill: $grey-color;
-        }
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    path {
+      fill: $grey-color;
     }
+  }
 }

@@ -1,14 +1,21 @@
-.u-heading {
-  & {
-
+.u-heading,
+%u-heading {
+  text-transform: capitalize;
+  color: scale-color($base-font-color, $lightness: 20%);
+  @include web-font($t-kit, normal, 400);
+  @include font-smooting(on);
+  &--title {
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: .2rem;
   }
   &--label {
-    color: scale-color($base-font-color, $lightness: 35%);
-    text-align: left;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: .1rem;
   }
-  &-- {
-    @include text-shadow(0 1px 1px rgba(62, 52, 26, .2), 0px 0px 2px rgba(20, 20, 20, .3));
-
+  &--labels {
+    font-weight: 700;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
   }
 }

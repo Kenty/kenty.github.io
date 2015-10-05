@@ -7,8 +7,8 @@ permalink: /blog/
 <div class="blog-post">
 
   <section id="main" class="page-main" role="main">
-    <div class="c-section">
-      <h3 class="c-section__title page-heading">{{ page.title }}Posts</h3>
+    <div class="">
+      <h3 class="page-heading page-heading--label c-section__title">{{ page.title }} Posts</h3>
 
     {% for post in paginator.posts %}
       <article class="article-post p-article p-article--post" itemscope itemprop="http://schema.org/BlogPosting">
@@ -19,16 +19,17 @@ permalink: /blog/
 
         <h2 class="p-article__title" itemprop="headline"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h2>
 
-        <p class="p-article__meta c-meta">
-          <span class="meta__item meta__item--date"><i class="p-article--icon fa fa-clock-o" aria-label="投稿した日時"></i><time class="p-article--date" content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
-        </p>
+        <div class="p-article__meta c-box">
+          <span class="list__item c-box--date"><time class="p-article--date" content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+          {% if post.author %}<span class="list__item c-box--author">Posted by {{ post.author }}</span>{% endif %}
+        </div>
 
         <section class="p-article__content">
           {{ post.excerpt }}
         </section>
 
         <div class="p-article__links">
-          <a class="more-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">More link...</a>
+          <a class="more-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">More...</a>
         </div>
 
       </article>
@@ -38,6 +39,6 @@ permalink: /blog/
     </div>
   </section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p>
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p> -->
 </div>
 

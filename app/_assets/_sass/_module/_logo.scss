@@ -1,31 +1,23 @@
 .site-logo {
-  &-title {
-    position: fixed;
-    z-index: 105;
-    top: 0;
-    left: 50%;
-    display: block;
-    width: 244px;
-    margin-left: -122px;
-    -webkit-transform: translate3d(0, 0px, 0);
-    transform: translate3d(0, 0px, 0);
-    @include transition(all .35s ease-out);
-    @media #{$topbar-media-query} {
-      &.js-logo-active {
-        -webkit-transform: translate3d(0, -110px, 0);
-        transform: translate3d(0, -110px, 0);
-        @include transition(all .35s ease-out);
-      }
-    }
+  &--footer {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
-  &-link {
-    position: relative;
-    top: -5px;
-    display: block;
-    // width: 80%;
-    margin: 0 auto;
-    @media #{$topbar-media-query} {
-      width: 90%;
-    }
+}
+
+.site-title {
+  @include font-size(40, 1.7);
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  float: left;
+  &, &:visited {
+    color: $grey-color-dark;
+  }
+  img {
+    width: 220px;
+    vertical-align: baseline;
   }
 }

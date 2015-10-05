@@ -13,7 +13,7 @@ require('./accessbility');
 
   var nav = responsiveNav('#navigation', {
     customToggle: '#nav-toggle',
-    // openPos: 'absolute',
+    openPos: 'absolute',
     transition: 300
       // navClass: 'nav-collapse'
   });

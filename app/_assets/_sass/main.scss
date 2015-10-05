@@ -6,9 +6,9 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-sizes:   16px;
-$base-line-height: 1.5;
+// $base-font-family: $body-font-family;
+// $base-font-sizes:   16px;
+// $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
@@ -62,13 +62,14 @@ $on-laptop:        800px;
 @import "_utlilties/u-heading";
 
 @import "_component/c-section";
-@import "_component/c-contents-box";
-@import "_component/c-meta";
+@import "_component/c-box";
 
 @import "_layout/page";
 
 @import "_module/articles";
 @import "_module/social";
 @import "_module/navigation";
+@import "_module/logo";
+// @import "_module/highlighter-monokai";
 
 

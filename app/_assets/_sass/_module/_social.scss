@@ -6,7 +6,6 @@ $pinterest-color: rgb(219, 51, 25) !default;
 $facebook-color: rgb(75, 110, 169) !default;
 $google-plus-color: rgb(230, 98, 73) !default;
 
-
 // Social icons menu setting
 .social-section {
   padding: 3.125em 0 0;
@@ -21,27 +20,32 @@ $google-plus-color: rgb(230, 98, 73) !default;
   }
 }
 
-
 .social-menu {
+  & {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
   &__list {
-    text-align: center;
     font-size: 0;
+    text-align: center;
   }
   .list__item {
     display: inline-block;
+    padding: 3px;
     @include font-size(16, 1);
-    margin: .5rem;
+    &:last-child {
+      padding-right: 0;
+    }
     & [class^='icon-'] {
       display: inline-block;
-      width: 5em;
-      height: 5em;
-      // text-align: center;
+      width: 3em;
+      height: 3em;
+      text-align: center;
       color: scale-color($base-font-color, $lightness: 20%);
       border: 3px solid scale-color($base-font-color, $lightness: 20%);
       border-radius: 50%;
-
       &:before {
-        @include font-size(50, 1.5);
+        @include font-size(28, 1.5);
         @extend %fontawesome;
       }
     }
@@ -52,16 +56,27 @@ $google-plus-color: rgb(230, 98, 73) !default;
       height: 0;
     }
   }
+  & &--labels {
+    display: block;
+    @include font-size(21, 1.5);
+    @extend %u-heading;
+    @extend %u-heading--labels;
+  }
 }
 
 .bookmarks {
   &__list {
-    margin-top: 1em;
+    display: table;
     position: relative;
+    width: 100%;
   }
   .list__item {
     display: inline-block;
-    vertical-align: middle;
+    padding-right: 5px;
+    &:nth-last-of-type(1){
+      padding-right: 0;
+    }
+
     & [class*='icon-'] {
       display: inline-block;
       width: 3rem;
@@ -81,15 +96,13 @@ $google-plus-color: rgb(230, 98, 73) !default;
       height: 0;
     }
   }
-  .list__label {
+
+  & &--labels {
     position: relative;
     top: 1px;
-  }
-  &--labels {
-    font-weight: 700;
-    color: scale-color($base-font-color, $lightness: 30%);
-    letter-spacing: .1rem;
-    text-transform: uppercase;
+    @include font-size(21, 1.5);
+    @extend %u-heading;
+    @extend %u-heading--labels;
   }
 }
 
@@ -123,6 +136,7 @@ $icon in $icons {
       color: map-get($icon, color);
       background: scale-color($base-font-color, $lightness: 20%);
       border-color: scale-color($base-font-color, $lightness: 20%);
+      text-decoration: none;
     }
   }
 }

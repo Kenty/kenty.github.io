@@ -19,7 +19,8 @@ gulp.task('build:production', function(callback) {
   [
     'optimize:js',
     'optimize:css',
-    'optimize:images'
+    'optimize:images',
+    'optimize:html'
   ],
   'copysvg',
   callback);

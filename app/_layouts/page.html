@@ -4,13 +4,17 @@ layout: default
 
 <div class="page-post">
 
-  <section id="main" class="page-main c-section" role="main">
+  <section id="main" class="page-main" role="main">
 
-      <h1 class="post-title c-section__title">{{ page.title }}</h1>
+      <div class="page-heading-wrap">
+        <h1 class="page-heading page-heading--title c-section__title">{{ page.title }}</h1>
+      </div>
 
-      <section class="post-content c-section__contents">
-        {{ content }}
-      </section>
+      <article class="p-article">
+        <section class="p-article__content page-content post-content">
+          {{ content }}
+        </section>
+      </article>
 
   </section>
 

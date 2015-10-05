@@ -2,13 +2,15 @@
   & {
     z-index: 100;
     width: 100%;
-    background-color: rgba($base-font-color, .85);
+    background-color: scale-color(rgba($base-font-color, .9), $lightness: 0%);
+    border-bottom: 3px solid;
     @media #{$topbar-media-query} {
       position: relative !important;
       float: right;
       width: auto;
       max-height: 0;
       background-color: transparent;
+      border-bottom: none;
     }
   }
   @at-root .js & {
@@ -30,10 +32,11 @@
     }
   }
   ul {
-    margin: 0 auto;
-    width: 90%;
-    padding: 1rem 0 2rem;
     display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
     @media #{$topbar-media-query} {
       width: auto;
       margin: 0;
@@ -43,7 +46,14 @@
   .list__item {
     display: block;
     width: 100%;
-    @include font-size(18, auto);
+    @include font-size(20, 1.5);
+    @include web-font($t-kit, normal, 500);
+    letter-spacing: .1rem;
+    text-transform: capitalize;
+    // @extend %u-divider--bottom;
+    &:nth-last-of-type(1) {
+      border: none;
+    }
     @media #{$topbar-media-query} {
       display: inline-block;
       width: auto;
@@ -54,35 +64,36 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     @media #{$topbar-media-query} {
-      padding: 1rem;
+      padding: 1.25rem 1rem;
     }
   }
   a {
-    color: scale-color($primary-color, $lightness: 40%);
+    @media #{$topbar-media-query} {
+      color: scale-color($base-font-color, $lightness: 0%);
+    }
     &:hover {
-        text-decoration: underline;
-        color: scale-color($primary-color, $lightness: 50%);
+      text-decoration: underline;
+      color: scale-color($link-color, $lightness: -30%);
     }
   }
 }
 
 .menu-icon {
-  line-height: 0;
   position: relative;
   z-index: 101;
   float: right;
   // box-sizing: content-box;
   margin-right: .5rem;
-  margin-top: .625rem;
   padding: .5rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   text-align: center;
+  @include font-size(40, 1.5);
   > svg {
-    width: 30px;
-    height: 25px;
+    width: 28px;
+    height: auto;
     path {
       fill: scale-color($primary-color, $lightness: 40%);
     }

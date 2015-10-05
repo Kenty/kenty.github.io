@@ -1,15 +1,14 @@
 .c-section {
   & {
-    padding: 0 .9375rem;
+    padding: 1.875rem .9375rem;
   }
   &__inner {
     @include grid-row();
   }
   &__title {
     position: relative;
-    margin: .5rem 0 0;
-    padding: 0 0 1rem;
-    letter-spacing: .05rem;
+    margin: 0;
+    padding: 1rem 0;
     > a {
       color: $base-font-color;
       &:hover {
