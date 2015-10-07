@@ -1,15 +1,16 @@
-<header id="header" class="page-header site-header" role="banner">
+<header id="header" class="page-header" role="banner">
 
-  <div class="page-header__inner wrapper">
+  <div class="page-header__inner">
 
     <nav id="navigation" class="global-nav c-box" itemscope itemtype="http://schema.org/SiteNavigationElement"  role="navigation">
 
-
         <ul class="c-box__list">
-          {% for page in site.pages %}
-            {% if page.title %}
-            <li class="list__item"><a class="list__link page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-            {% endif %}
+          {% for link in site.navi-links %}
+          {% assign current = nil %}
+          {% if page.url contains link.url %}
+              {% assign current = " is-current" %}
+          {% endif %}
+            <li class="list__item{{ current }}"><a class="list__link" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
     </nav>

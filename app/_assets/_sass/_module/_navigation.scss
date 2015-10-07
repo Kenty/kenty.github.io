@@ -49,7 +49,7 @@
     @include font-size(20, 1.5);
     @include web-font($t-kit, normal, 500);
     letter-spacing: .1rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     // @extend %u-divider--bottom;
     &:nth-last-of-type(1) {
       border: none;
@@ -58,6 +58,13 @@
       display: inline-block;
       width: auto;
     }
+    &.is-current {
+        >a {
+            color: scale-color($accent-color, $lightness: 0%);
+            text-decoration: underline;
+        }
+    }
+
   }
   .list__link {
     display: block;
@@ -68,12 +75,17 @@
     }
   }
   a {
+    color: scale-color($primary-color, $lightness: 40%);
+    &:hover {
+        text-decoration: underline;
+        // color: scale-color($primary-color, $lightness: -10%);
+    }
     @media #{$topbar-media-query} {
       color: scale-color($base-font-color, $lightness: 0%);
-    }
-    &:hover {
-      text-decoration: underline;
-      color: scale-color($link-color, $lightness: -30%);
+      &:hover {
+        text-decoration: underline;
+        // color: scale-color($base-font-color, $lightness: 20%);
+      }
     }
   }
 }
