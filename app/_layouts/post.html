@@ -8,7 +8,7 @@ layout: default
     <article class="p-article p-article--post">
 
       {% if page.image %}
-        <figure class="p-article__thumbs"><img src="{{"/images/" | append: page.image | prepend: site.baseurl | prepend: site.url }}" alt="{{ page.title }}" /></figure>
+        <figure class="p-article__thumbs"><img src="{{"/assets/img/" | append: page.image | prepend: site.baseurl | prepend: site.url }}" alt="{{ page.title }}" /></figure>
       {% endif %}
 
       <header class="post-header p-article__header">

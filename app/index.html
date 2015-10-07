@@ -8,13 +8,13 @@ layout: default
 
   <section id="main" class="page-main" role="main">
 
-      <h3 class="page-heading page-heading--label c-section__title">Latest Blog Posts</h3>
+      <h3 class="section-heading page-heading page-heading--label c-section__title">Latest Blog Posts</h3>
 
     {% for post in site.posts %}
       <article class="article-post p-article p-article--post" itemscope itemprop="http://schema.org/BlogPosting">
 
       {% if post.image %}
-        <figure class="p-article__thumbs"><a class="post-thmbnail" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title }}"><img src="{{"/images/" | append: post.image | prepend: site.baseurl }}" alt="{{ post.title }}" /></a></figure>
+        <figure class="p-article__thumbs"><a class="post-thmbnail" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title }}"><img src="{{"/assets/img/" | append: post.image | prepend: site.baseurl }}" alt="{{ post.title }}" /></a></figure>
       {% endif %}
 
         <h2 class="p-article__title" itemprop="headline"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
@@ -28,7 +28,7 @@ layout: default
           {{ post.excerpt }}
         </section>
         <div class="p-article__links">
-          <a class="more-link" href="{{ post.url | prepend: site.baseurl }}">More link...</a>
+          <a class="more-link" href="{{ post.url | prepend: site.baseurl }}">More...</a>
         </div>
 
       </article>
