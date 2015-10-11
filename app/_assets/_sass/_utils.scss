@@ -4,28 +4,35 @@
 
 $sass-version: '3.4.5';
 
-$base-font-family: $body-font-family;
+$base-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial;
 
 // Basic Color
 $primary-color: rgb(185, 182, 166) !default; // lighten brown
 //Base Font Color
 $base-font-color: rgb(25, 30, 36) !default; // darken blue
 //Base BG Color
-$bg-color: $primary-color;
 $content-shadow: rgba($primary-color, 0.6);
 //Base Link Color
 $link-color: rgb(106, 154, 187) !default; // lighten blue
-$sub-color: $link-color;
 //Accent Color
 $accent-color: rgb(244, 186, 103) !default;  // orange
 $sub2-color: rgba(28, 38, 46, 0.45);
 //orange
 // $accent-color: adjust-hue($sub-color,180dg);
-$mini-frame: 4px 3px;
-$main-padding: 35px .9375em;
-$main-contents-padding: 2em 1.5em;
-// Base Font
-$sec-font: 'NoticiaTextBold';
+
+// Set a rem font size with pixel fallback
+$base-font-size: 16 !default;
+$base-line-height: 24 !default;
+$rhythm-unit: $base-line-height / 2;
+
+$base-spacing-unit: 15 / $base-font-size + rem;
+$base-spacing-unit--tiny: 4 / $base-font-size + rem;
+$base-spacing-unit--small: 8 / $base-font-size + rem;
+$base-spacing-unit--large: 30 / $base-font-size + rem;
+$base-spacing-unit--huge: 60 / $base-font-size + rem;
+$mini-frame: $base-spacing-unit--tiny;
+
+
 //Web Font
 $t-kit: "kepler-std-semicondensed-cap",
 sans-serif;
@@ -39,25 +46,8 @@ $marginB: 1.25rem;
 $marginSemitop: 0.625em; //16px*0.625 = 10px
 $icon-margin--right: 5px;
 
-// Set a rem font size with pixel fallback
-$base-font-size: 16 !default;
-$base-line-height: 24 !default;
-$rhythm-unit: $base-line-height / 2;
 
 /*==========  Functions  ==========*/
-@function lower-bound($range) {
-  @if length($range) <= 0 {
-    @return 0;
-  }
-  @return nth($range, 1);
-}
-
-@function upper-bound($range) {
-  @if length($range) < 2 {
-    @return 999999999999;
-  }
-  @return nth($range, 2);
-}
 
 @function calculateRem($size) {
   $remSize: $size / 16;
@@ -130,7 +120,7 @@ $rhythm-unit: $base-line-height / 2;
   }
 }
 
-@mixin clearfix($supportIE: true) {
+@mixin _clearfix($supportIE: true) {
   @if $supportIE == true {
     *zoom: 1;
   }
@@ -200,10 +190,13 @@ $rhythm-unit: $base-line-height / 2;
   font-feature-settings: "liga" on;
   -webkit-font-feature-settings: "liga" on;
   font-kerning: none;
-}
 
-// Pagination
-@mixin pagination() {}
+  @at-root .wf-loading & {
+    font-family: $base-font-family;
+    font-weight: 300;
+    font-style: normal;
+  }
+}
 
 // View more
 @mixin view-more() {
@@ -309,17 +302,6 @@ $rhythm-unit: $base-line-height / 2;
     letter-spacing: 1em;
     padding-left: 1em;
     height: 0;
-  }
-}
-
-%widgets-title {
-  zoom: 1;
-  text-shadow: 0 1px 1px rgba(241, 241, 241, .3);
-  @include web-font($t-kit, normal, 700);
-  @include font-size(21, 1.5);
-  // IE
-  span {
-    padding-right: 5px;
   }
 }
 

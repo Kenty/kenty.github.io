@@ -5,20 +5,10 @@ $instagram-color: rgb(80, 130, 166) !default;
 $pinterest-color: rgb(219, 51, 25) !default;
 $facebook-color: rgb(75, 110, 169) !default;
 $google-plus-color: rgb(230, 98, 73) !default;
+$send-mail-color: rgb(222, 75, 62) !default;
+$rss-color: rgb(244, 111, 38) !default;
 
 // Social icons menu setting
-.social-section {
-  padding: 3.125em 0 0;
-  text-align: center;
-  &__title {
-    margin-bottom: 1rem;
-    padding-top: 1.875rem;
-    color: scale-color($base-font-color, $lightness: 30%);
-    border-top: $u-divider--top;
-    @include font-size(21);
-    @include web-font($t-kit, normal, 100);
-  }
-}
 
 .social-menu {
   & {
@@ -31,21 +21,21 @@ $google-plus-color: rgb(230, 98, 73) !default;
   }
   .list__item {
     display: inline-block;
-    padding: 3px;
+    padding: $base-spacing-unit--tiny;
     @include font-size(16, 1);
     &:last-child {
       padding-right: 0;
     }
     & [class^='icon-'] {
       display: inline-block;
-      width: 3em;
-      height: 3em;
+      width: 3.75rem;
+      height: 3.75rem;
       text-align: center;
       color: scale-color($base-font-color, $lightness: 20%);
       border: 3px solid scale-color($base-font-color, $lightness: 20%);
       border-radius: 50%;
       &:before {
-        @include font-size(28, 1.5);
+        @include font-size(34, 1.6);
         @extend %fontawesome;
       }
     }
@@ -72,7 +62,7 @@ $google-plus-color: rgb(230, 98, 73) !default;
   }
   .list__item {
     display: inline-block;
-    padding-right: 5px;
+    padding-right: $base-spacing-unit--small;
     &:nth-last-of-type(1){
       padding-right: 0;
     }
@@ -114,6 +104,8 @@ $icons: (
   pinterest: (char: '\f0d2', color: $pinterest-color),
   facebook: (char: '\f09a', color: $facebook-color),
   google-plus: (char: '\f0d5', color: $google-plus-color),
+  send-mail: (char: '\f0e0', color: $send-mail-color),
+  rss: (char: '\f09e', color: $rss-color)
 );
 @each $social,
 $icon in $icons {
@@ -121,10 +113,11 @@ $icon in $icons {
     &:before {
       content: map-get($icon, char);
     }
-    &:hover {
+    &:hover, &:active, &:focus {
       color: scale-color($primary-color, $lightness: 50%);
       background: map-get($icon, color);
       border-color: map-get($icon, color);
+      text-decoration: none;
     }
   }
   .social-menu [class*=icon-#{$social}] {
@@ -132,7 +125,7 @@ $icon in $icons {
     &:before {
       content: map-get($icon, char);
     }
-    &:hover {
+    &:hover, &:active, &:focus {
       color: map-get($icon, color);
       background: scale-color($base-font-color, $lightness: 20%);
       border-color: scale-color($base-font-color, $lightness: 20%);

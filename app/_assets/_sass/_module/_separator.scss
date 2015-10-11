@@ -1,0 +1,38 @@
+.separator {
+  &.separator-page {
+    @extend %u-divider--bottom-rev;
+    @extend %u-divider--top-rev;
+
+    margin: $base-spacing-unit--huge 0;
+    &--small {
+      margin-right: $base-spacing-unit--small;
+      margin-left: $base-spacing-unit--small;
+    }
+    &--large {
+      margin-right: $base-spacing-unit--large;
+      margin-left: $base-spacing-unit--large;
+    }
+    &--huge {
+      margin-right: $base-spacing-unit--huge;
+      margin-left: $base-spacing-unit--huge;
+    }
+  }
+  &.separator-post {
+    @extend %u-divider--bottom-rev;
+    @extend %u-divider--top-rev;
+
+    margin: $base-spacing-unit--large 0;
+    &--small {
+      margin-right: $base-spacing-unit--small;
+      margin-left: $base-spacing-unit--small;
+    }
+    &--large {
+      margin-right: $base-spacing-unit--large;
+      margin-left: $base-spacing-unit--large;
+    }
+    &--huge {
+      margin-right: $base-spacing-unit--huge;
+      margin-left: $base-spacing-unit--huge;
+    }
+  }
+}

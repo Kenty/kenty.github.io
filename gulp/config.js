@@ -25,7 +25,7 @@ module.exports = {
         baseDir: [paths.development, paths.build, paths.src]
       },
       // xip: true,
-      port: 9988,
+      port: 9989,
       files: [
         paths.devAssets + '/css/*.css',
         paths.devAssets + '/js/*.js',
@@ -37,7 +37,7 @@ module.exports = {
       server: {
         baseDir: [paths.production]
       },
-      port: 9989
+      port: 9988
     }
   },
 
@@ -110,7 +110,7 @@ module.exports = {
    *
    */
   images: {
-    src: paths.srcAssets + '/img/**/*',
+    src: [paths.srcAssets + '/img/**/*', paths.src + '/images/**/*'],
     dest: paths.devAssets + '/img/'
   },
 
@@ -220,7 +220,7 @@ module.exports = {
       src: paths.devAssets + '/img/**/*.{jpg,jpeg,png,gif}',
       dest: paths.productionAssets + '/img/',
       options: {
-        optimizationLevel: 3,
+        optimizationLevel: 5,
         progressive: true,
         interlaced: true
       }

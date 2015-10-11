@@ -12,7 +12,6 @@
 
     @media #{$topbar-media-query} {
       display: inline-block;
-      margin-right: 5px;
 
       &:nth-last-of-type(1) {
         margin-right: 0;

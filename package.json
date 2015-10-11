@@ -8,14 +8,16 @@
     "modernizr": "./app/_assets/_bower_components/modernizr/modernizr.js",
     "foundation": "./node_modules/foundation-sites/js/foundation.js",
     "Chart": "./app/_assets/lib/Chart.js",
-    "responsive-nav": "./app/_assets/lib/responsive-nav.js"
+    "responsive-nav": "./app/_assets/lib/responsive-nav.js",
+    "fastClick": "./app/_assets/lib/fastclick.js"
   },
   "browserify-shim": {
     "modernizr": "Modernizr",
     "jquery": "global:$",
     "foundation": "foundation",
     "chart": "Chart",
-    "responsive-nav": "responsiveNav"
+    "responsive-nav": "responsiveNav",
+    "fastClick": "fastClick"
   },
   "browserify": {
     "transform": [
@@ -67,7 +69,7 @@
   "scripts": {
     "postinstall": "bower install;",
     "start": "gulp",
-    "sever": "gulp serve",
+    "deploy": "gulp deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

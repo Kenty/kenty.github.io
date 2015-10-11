@@ -18,6 +18,7 @@
     color: scale-color($primary-color, $lightness: 20%);
     background-color: scale-color($link-color, $lightness: 10%);
     background-image: none;
+    text-decoration: none;
   }
   &:active {
     color: scale-color($primary-color, $lightness: 20%);
@@ -30,18 +31,12 @@
 
 .u-btn--ghost,
 %u-btn--ghost {
-  color: scale-color($base-font-color, $lightness: 0%);
+  color: scale-color($base-font-color, $lightness: 20%);
   border: 2px solid scale-color($base-font-color, $lightness: 20%);
   background: transparent;
-  font-weight: 500;
-  letter-spacing: .05em;
-  &:focus,
-  &:hover {
+  &:hover, &:active, &:focus {
     color: $primary-color;
     background: scale-color($base-font-color, $lightness: 20%);
-  }
-  &:active {
-    color: $primary-color;
-    background-color: scale-color($base-font-color, $lightness: 5%);
+    text-decoration: none;
   }
 }

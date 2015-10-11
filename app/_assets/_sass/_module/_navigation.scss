@@ -59,26 +59,23 @@
       width: auto;
     }
     &.is-current {
-        >a {
-            color: scale-color($accent-color, $lightness: 0%);
-            text-decoration: underline;
-        }
+      >a {
+        color: scale-color($accent-color, $lightness: 0%);
+      }
     }
-
   }
   .list__link {
     display: block;
     padding-top: 1rem;
     padding-bottom: 1rem;
     @media #{$topbar-media-query} {
-      padding: 1.25rem 1rem;
+      padding: 1.5rem 1rem;
     }
   }
   a {
     color: scale-color($primary-color, $lightness: 40%);
     &:hover {
-        text-decoration: underline;
-        // color: scale-color($primary-color, $lightness: -10%);
+      text-decoration: underline;
     }
     @media #{$topbar-media-query} {
       color: scale-color($base-font-color, $lightness: 0%);
@@ -94,9 +91,10 @@
   position: relative;
   z-index: 101;
   float: right;
-  // box-sizing: content-box;
   margin-right: .5rem;
   padding: .5rem;
+  // When a target is touched and held on iPhone OS, Safari displays a callout information about the link. This property allows disabling that behavior.
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -112,5 +110,28 @@
   }
   @media #{$topbar-media-query} {
     display: none;
+  }
+}
+
+// Post navigation
+.post-navi {
+  padding-top : $base-spacing-unit--huge;
+  @include _clearfix();
+
+  & .navi__link {
+    padding: $base-spacing-unit;
+    @include font-size(16);
+  }
+  @media #{$topbar-media-query} {
+    & &--prev {
+      float: left;
+      text-align: left;
+      width: 50%;
+    }
+    & &--next {
+      float: right;
+      text-align: right;
+      width: 50%;
+    }
   }
 }

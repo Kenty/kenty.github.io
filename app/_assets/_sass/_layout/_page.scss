@@ -14,11 +14,9 @@
       @include grid-row();
     }
   }
-  &-container {
-    margin: 50px auto;
-  }
+
   &-main {
-    overflow: hidden;
+    // overflow: hidden;
     max-width: 900px;
     @media #{$topbar-media-query} {
       margin: 0 auto;
@@ -50,11 +48,6 @@
         }
       }
     }
-  }
-  &-separator {
-    margin: $base-spacing-unit--large;
-    @extend %u-divider--bottom-rev;
-    @extend %u-divider--top-rev;
   }
 }
 

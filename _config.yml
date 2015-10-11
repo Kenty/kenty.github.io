@@ -3,7 +3,7 @@ title: DOMINOMATRIX
 description: "星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録などを綴っています。現在はDeveloperを目指し目下勉強中です。最近の興味はアクセシビリティ。"
 baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://dominomatrix.com" # the base hostname & protocol for your site
-url: "http://localhost:9988" # the base hostname & protocol for your site
+url: "http://localhost:9989" # the base hostname & protocol for your site
 
 
 # Author

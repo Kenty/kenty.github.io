@@ -1,7 +1,5 @@
 <div class="bookmarks bookmarks__list">
-{% capture share_url %}
-  {{ page.url | prepend: site.url | append: '/' | encode_url }}
-{% endcapture %}
+{% capture share_url %}{{ page.url | prepend: site.url | append: '/' | encode_url }}{% endcapture %}
   <div class="bookmarks--labels list__item">Share</div>
   <div class="list__item">
     <a href="https://twitter.com/intent/tweet/?url={{ share_url }}&text={{ page.title | encode_url }}&via={{ site.twitter_username }}" class="list__link icon-twitter js-social-share" title="Share on twitter"><span>Share on Twitter</span></a>

@@ -1,17 +1,14 @@
 .site-logo {
   &--footer {
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: $base-spacing-unit 0 $base-spacing-unit--large;
   }
 }
 
 .site-title {
   @include font-size(40, 1.7);
   letter-spacing: -1px;
-  margin-bottom: 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0 $base-spacing-unit;
   float: left;
   &, &:visited {
     color: $grey-color-dark;

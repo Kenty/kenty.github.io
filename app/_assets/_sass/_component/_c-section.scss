@@ -1,6 +1,6 @@
 .c-section {
   & {
-    padding: 1.875rem .9375rem;
+    padding: $base-spacing-unit--large $base-spacing-unit;
   }
   &__inner {
     @include grid-row();

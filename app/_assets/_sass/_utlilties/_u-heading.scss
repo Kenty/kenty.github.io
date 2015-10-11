@@ -1,7 +1,7 @@
 .u-heading,
 %u-heading {
-  text-transform: capitalize;
-  color: scale-color($base-font-color, $lightness: 20%);
+  text-transform: uppercase;
+  color: scale-color($base-font-color, $lightness: 28%);
   @include web-font($t-kit, normal, 400);
   @include font-smooting(on);
   &--title {
@@ -14,7 +14,7 @@
     letter-spacing: .1rem;
   }
   &--labels {
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: .1rem;
     text-transform: uppercase;
   }

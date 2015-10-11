@@ -11,7 +11,7 @@ layout: default
         <figure class="p-article__thumbs"><img src="{{"/assets/img/" | append: page.image | prepend: site.baseurl | prepend: site.url }}" alt="{{ page.title }}" /></figure>
       {% endif %}
 
-      <header class="post-header p-article__header">
+      <header class="p-article__header post-header">
         <h1 class="p-article__title">{{ page.title }}</h1>
 
         <div class="p-article__meta c-box">
@@ -25,15 +25,24 @@ layout: default
         {{ content }}
       </section>
 
-      <hr class="page-separator">
+      <hr class="separator separator-post separator-post--large">
 
       <div class="p-article__meta c-box">
-        <div class="list__item p-article__share">{% include bookmark.html %}</div>
-        <div class="list__item p-article__media">
+        <div class="p-article__share list__item">{% include bookmark.html %}</div>
+        <div class="p-article__media list__item">
           <div class="page-thumbs c-box--image">
             <img src="/assets/img/{{ site.author.image }}" alt="{{ site.author.name }}">
           </div>
           <p class="c-box--author"><span>Posted by </span>{{ page.author }}</p></div>
+      </div>
+
+      <div id="post-navigation" class="p-article__navi post-navi" role="navigation">
+        {% if page.previous.url %}
+            <a href="{{ page.previous.url | append: "/" }}" class="post-navi--prev navi__link" title="{{ page.previous.title }}"><span class="link__arrow link--left">&larr;</span> Previous Post</a>
+        {% endif %}
+        {% if page.next.url %}
+            <a href="{{ page.next.url | "/" }}" class="post-navi--next navi__link" title="{{ page.next.title }}">Next Post <span class="link__arrow link--right">&rarr;</span></a>
+        {% endif %}
       </div>
 
     </article>

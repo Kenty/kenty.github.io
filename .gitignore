@@ -30,6 +30,8 @@ Thumbs.db
 .esproj
 *.sublime-project
 *.sublime-workspace
+*.map
+**/*.log.*
 
 # Folders to ignore
 bower_components/
@@ -41,3 +43,4 @@ node_modules/
 .publish/
 
 _site/
+_drafts/
