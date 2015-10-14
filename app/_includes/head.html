@@ -11,7 +11,7 @@
   <meta property="og:url" content="{{ page.url | prepend: site.url | replace: '/index.html', '/' }}" />
   <meta property="og:image" content="{{"/assets/img" | append: "/dm-share.jpg" | prepend: site.baseurl | prepend: site.url }}" />
   {% if page.date %}<meta property="og:article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}" />{% endif %}
-  <meta property="fb:app_id" content="264826913608312" />
+  <meta property="fb:app_id" content="{{ site.social.app_id }}" />
 
 
   <meta name="twitter:card" content="summary" />

@@ -18,6 +18,7 @@ email: kent6223@gmail.com
 social:
   twitter: "https://twitter.com/kenty236"
   facebook: "https://www.facebook.com/kenty236"
+  app_id: "264826913608312"
   instagram: "https://instagram.com/kenty236"
   github: "https://github.com/Kenty"
   pinterest: "https://jp.pinterest.com/kenty236"
@@ -36,8 +37,8 @@ source: ./app
 destination: ./build
 
 permalink: /blog/:title
-paginate: 5
-paginate_path: "blog/page/:num"
+paginate: 3
+paginate_path: "/blog/page:num"
 
 safe: true
 server: true
