@@ -3,9 +3,10 @@ layout: post
 title:  "Jekyll始めました。2015 秋"
 author: Kenta Hoshino
 date:   2015-10-3 12:08:02
-categories: jekyll update
-tags: [jekyll]
+categories: [jekyll]
+tags: ['design', 'jekyll', 'github']
 image: jekyll-logo.jpg
+
 ---
 
 とある事情でAmazon EC2のWordPressから[Github Pages][github pages]の[Jekyll][jekyll]に乗り換えました。
