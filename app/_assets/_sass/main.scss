@@ -48,8 +48,10 @@ $grey-color-dark:  darken($grey-color, 25%);
 @import "_layout/page";
 
 @import "_module/articles";
+@import "_module/media";
 @import "_module/social";
 @import "_module/navigation";
+@import "_module/pagination";
 @import "_module/logo";
 @import "_module/separator";
 @import "_module/highlighter-monokai";

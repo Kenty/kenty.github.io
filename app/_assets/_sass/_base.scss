@@ -18,7 +18,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
  * Basic styling
  */
 html, body {
-  background-color: scale-color($base-font-color, $lightness: 0%);
+  background-color: scale-color($primary-color, $lightness: 0%);
 }
 
 body {
@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   color: scale-color($link-color, $lightness: -20%);
-  @include transition(all 300ms linear);
+  @include transition(all, 300ms, linear);
   &:hover, &:focus, &:active {
     text-decoration: underline;
     color: scale-color($link-color, $lightness: 0);

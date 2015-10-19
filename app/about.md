@@ -8,25 +8,30 @@ permalink: /about/
 	<p>{{ site.title }}は、{{ site.description }}</p>
 </div>
 <div class="large-5 medium-4 columns">
-	<figure class="page-thumbs author-image">
-		<img src="/assets/img/{{ site.author.image }}" alt="Kenta Hoshino">
-		<figcaption>煙草は...やめました。</figcaption>
+	<figure class="p-media page-thumbs">
+		<img src="/assets/img/{{ site.author.image }}" class="p-media__image" alt="Kenta Hoshino">
+		<figcaption class="p-media__text">煙草は...やめました。</figcaption>
 	</figure>
-</div></div>
-<h3>できること（？）</h3>
-<p>HTML, CSS, jQuery（多少）, JavaScript（勉強中）, PHP（ちょっと）</p>
-<h3>制作環境</h3>
-<ul>
-	<li>Sass</li>
-	<li>Gulp</li>
-	<li>Jekyll</li>
-	<li>WordPress</li>
-	<li>Sublime Text</li>
-	<li>Photoshop</li>
-	<li>Illustrator</li>
-	<li>Sketch 2</li>
-	<li>MacOS X</li>
-	<li>vccw</li>
-</ul>
-<p>このサイトDOMINOMATRIXは、Static Site Generator <a href="http://jekyllrb.com/">Jekyll</a>を使い<a href="https://pages.github.com/">GitHub Pages</a>でホスティングしています。</p>
+	</div></div>
 
+### できること（？）
+
+HTML, CSS, jQuery（多少）, JavaScript（勉強中）, PHP（ちょっと）
+
+### 制作環境
+
+ - Sass
+ - Gulp
+ - Jekyll
+ - WordPress
+ - Sublime Text
+ - Photoshop
+ - Illustrator
+ - Sketch 2
+ - MacOS X
+ - vccw
+
+このサイトDOMINOMATRIXは、Static Site Generator [Jekyyll][jekyll]を使い[GitHub Pages][github pages]でホスティングしています。
+
+[jekyll]:          http://jekyllrb.com/
+[github pages]:    https://pages.github.com/

@@ -42,7 +42,7 @@
       @include font-size(16, false);
       a {
         color: $primary-color;
-        @include transition(all .35s ease-out);
+        @include transition(all, 300ms, ease-out);
         &:hover {
           color: $accent-color;
         }
@@ -107,25 +107,24 @@
 
 .page-thumbs {
   padding: $base-spacing-unit;
-  img {
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 50%;
-    @extend %photo-shadow;
-    @media #{$topbar-media-query} {
-      width: 80%;
-    }
-  }
-  @at-root .post & {
-    padding: 0;
-    img {
-      width: 80px;
-      margin: 5px;
-    }
-  }
+
+
   figcaption {
     padding-top: $base-spacing-unit--small;
     text-align: center;
+  }
+}
+
+.page-links {
+
+  &.page-links--centered {
+    @extend %u-align--center;
+  }
+  .more-link {
+    font-weight: 600;
+    padding: $base-spacing-unit $base-spacing-unit--large;
+    @extend %u-btn;
+    @extend %u-btn--ghost;
+    @include font-size(16, 1.5);
   }
 }

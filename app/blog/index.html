@@ -4,10 +4,10 @@ title: blog
 <!-- permalink: /blog/ -->
 ---
 
-<div class="blog-post">
+<div id="blogs-page" class="blogs-post">
 
   <section id="main" class="page-main" role="main">
-    <div class="">
+
       <div class="page-heading-wrap">
         <h1 class="page-heading page-heading--title c-section__title">{{ page.title }} Posts</h1>
       </div>
@@ -15,15 +15,15 @@ title: blog
     {% for post in paginator.posts %}
       <article class="article-post p-article p-article--post" itemscope itemprop="http://schema.org/BlogPosting">
 
-      {% if post.image %}
+      <!-- {% if post.image %}
         <figure class="p-article__thumbs"><a class="post-thmbnail" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title }}"><img src="{{"/assets/img/" | append: post.image | prepend: site.baseurl }}" alt="{{ post.title }}" /></a></figure>
-      {% endif %}
+      {% endif %} -->
 
-        <h2 class="p-article__title" itemprop="headline"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h2>
+        <h2 class="p-article__title" itemprop="name"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h2>
 
         <div class="p-article__meta c-box">
-          <span class="list__item c-box--date"><time class="p-article--date" content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
-          {% if post.author %}<span class="list__item c-box--author">Posted by {{ post.author }}</span>{% endif %}
+          <span class="p-article--date list__item"><time content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+          {% if post.author %}<span class="list__item">Posted by {{ post.author }}</span>{% endif %}
         </div>
 
         <section class="p-article__content">
@@ -38,7 +38,7 @@ title: blog
     {% endfor %}
 
       {% include pagination.html %}
-    </div>
+
   </section>
 
   <!-- <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p> -->

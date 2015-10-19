@@ -5,17 +5,13 @@
     font-size: 0;
   }
   .list__item {
-    display: block;
+    display: inline-block;
     list-style: none;
     vertical-align: middle;
     @include font-size(16, 1.5);
 
     @media #{$topbar-media-query} {
-      display: inline-block;
 
-      &:nth-last-of-type(1) {
-        margin-right: 0;
-      }
     }
   }
   & &--fill {
@@ -27,25 +23,7 @@
       display: table-cell;
     }
   }
-  &--date {
-    display: block;
-  }
-  & &--image {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  & &--author {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0;
-    @include font-size(18, 1.2);
-    span {
-      display: block;
-      @extend %u-heading;
-      font-weight: 600;
-    }
-  }
-  & &--tag {
+  & &--date {
     display: block;
   }
 }

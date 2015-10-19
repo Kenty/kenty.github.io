@@ -4,24 +4,22 @@ layout: default
 
 <div class="home">
 
-  <!-- {% include image.html img="images/gulp.png" title="It' my gulp" caption="It's my gulp!?" %} -->
-
   <section id="main" class="page-main" role="main">
 
-      <h3 class="section-heading page-heading page-heading--label c-section__title">Latest Blog Posts</h3>
+      <h3 class="section-heading page-heading page-heading--label c-section__title" itemprop="headline">Latest Blog Posts</h3>
 
-    {% for post in site.posts %}
+    {% for post in site.posts limit:3 %}
       <article class="article-post p-article p-article--post" itemscope itemprop="http://schema.org/BlogPosting">
 
       {% if post.image %}
         <figure class="p-article__thumbs"><a class="post-thmbnail" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title }}"><img src="{{"/assets/img/" | append: post.image | prepend: site.baseurl }}" alt="{{ post.title }}" /></a></figure>
       {% endif %}
 
-        <h2 class="p-article__title" itemprop="headline"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        <h2 class="p-article__title" itemprop="name"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 
         <div class="p-article__meta c-box">
-          <span class="list__item c-box--date"><time class="p-article--date" content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
-          {% if post.author %}<span class="list__item c-box--author">Posted by {{ post.author }}</span>{% endif %}
+          <span class="p-article--date list__item"><time content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+          {% if post.author %}<span class="list__item">Posted by {{ post.author }}</span>{% endif %}
         </div>
 
         <section class="p-article__content">
@@ -33,6 +31,12 @@ layout: default
 
       </article>
     {% endfor %}
+
+    <hr class="separator separator-page separator-page--small">
+
+    <p class="page-links page-links--centered">
+      <a href="/blog/" class="more-link">More blog posts</a>
+    </p>
 
   </section>
 

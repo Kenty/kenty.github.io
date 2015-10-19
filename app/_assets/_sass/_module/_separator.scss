@@ -3,7 +3,7 @@
     @extend %u-divider--bottom-rev;
     @extend %u-divider--top-rev;
 
-    margin: $base-spacing-unit--huge 0;
+    margin: $base-spacing-unit--large 0;
     &--small {
       margin-right: $base-spacing-unit--small;
       margin-left: $base-spacing-unit--small;
@@ -21,7 +21,7 @@
     @extend %u-divider--bottom-rev;
     @extend %u-divider--top-rev;
 
-    margin: $base-spacing-unit--large 0;
+    margin: $base-spacing-unit 0;
     &--small {
       margin-right: $base-spacing-unit--small;
       margin-left: $base-spacing-unit--small;
@@ -33,6 +33,16 @@
     &--huge {
       margin-right: $base-spacing-unit--huge;
       margin-left: $base-spacing-unit--huge;
+    }
+  }
+  &.separator-meta {
+    border-top: 1px solid scale-color(rgba($base-font-color, .5), $lightness: 20%);
+    border-bottom: 1px solid scale-color(rgba($base-font-color, .5), $lightness: 20%);
+    margin: $base-spacing-unit auto;
+    &--short {
+      width: calc(100% / 8);
+      // margin-right: $base-spacing-unit;
+      // margin-left: $base-spacing-unit;
     }
   }
 }

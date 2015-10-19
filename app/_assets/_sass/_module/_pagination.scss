@@ -1,36 +1,33 @@
 // Paging-navigation
 .pagination {
   margin: 0;
-  padding: 3.125em 0;
-  &__list {
-    font-size: 0;
-    overflow: hidden;
-    list-style: none;
-    margin: 0;
+  padding: $base-spacing-unit--large 0;
 
+  &#{&}--centered {
+    text-align: center;
+  }
+  &__list {
+    overflow: hidden;
+    text-align: left;
+    display: inline-block;
   }
   .list__item {
     @include font-size(14, 1);
     font-weight: 600;
-    display: inline-block;
-    margin-right: 5px;
-    &.is-current {
-      // display: inline-block;
-      padding: 1rem 1rem;
-      color: $primary-color;
-      background-color: scale-color($link-color, $lightness: -20%);
-      border: 2px solid scale-color($link-color, $lightness: -20%);
-      @include border-radius(3px);
-    }
+    padding: $base-spacing-unit--tiny;
 
   }
   .list__link {
-    // display: inline-block;
     padding: 1rem 1rem;
     @extend %u-btn;
     @extend %u-btn--ghost;
   }
-  &--centered {
-    text-align: center;
-  }
+  .is-current em {
+    display: inline-block;
+    padding: 1rem 1rem;
+        color: $primary-color;
+        background-color: scale-color($link-color, $lightness: -20%);
+        border: 2px solid scale-color($link-color, $lightness: -20%);
+        @include border-radius(3px);
+      }
 }

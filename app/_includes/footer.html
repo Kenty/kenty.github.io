@@ -6,19 +6,16 @@
 
     <div class="footer-col-wrapper">
 
-      <div class="c-box">
-        <div class="social-menu">
-          <ul class="social-menu__list">
-            <li class="social-menu--labels list__item">links</li>
-            <li class="list__item"><a class="icon-send-mail" href="mailto:{{ site.email }}"  title="Send to {{ site.email }}" aria-label="send to mail"><span>Send to {{ site.email }}</span></a></li>
-            <li class="list__item"><a class="icon-twitter" href="{{ site.social.twitter }}" title="Follow on twitter" aria-label="twitter"><span>Follow on twitter</span></a></li>
-            <li class="list__item"><a class="icon-github" href="{{ site.social.github }}" title="Follow on Github" aria-label="github"><span>Follow on Github</span></a></li>
-            <li class="list__item"><a class="icon-instagram" href="{{ site.social.instagram }}" title="Follow on Instagram" aria-label="instagram"><span>Follow on Instagram</span></a></li>
-            <li class="list__item"><a class="icon-pinterest" href="{{ site.social.pinterest }}" title="Follow on Pinterest" aria-label="pinterest"><span>Follow on Pinterest</span></a></li>
-            <li class="list__item"><a class="icon-rss" href="{{ " /feed.xml " | prepend: site.baseurl }}" title="Rss feed" aria-label="rss feed"><span>Rss feed</span></a></li>
-            <a >via RSS</a>
-          </ul>
-        </div>
+      <div class="social-menu c-box">
+        <ul class="social-menu__list c-box__list">
+          <li class="social-menu--labels menu__item list__item">links</li>
+          <li class="menu__item list__item"><a class="icon-send-mail" href="mailto:{{ site.email }}"  title="Send to {{ site.email }}" aria-label="send to mail"><span>Send to {{ site.email }}</span></a></li>
+          <li class="menu__item list__item"><a class="icon-twitter" href="{{ site.social.twitter }}" title="Follow on twitter" aria-label="twitter"><span>Follow on twitter</span></a></li>
+          <li class="menu__item list__item"><a class="icon-github" href="{{ site.social.github }}" title="Follow on Github" aria-label="github"><span>Follow on Github</span></a></li>
+          <li class="menu__item list__item"><a class="icon-instagram" href="{{ site.social.instagram }}" title="Follow on Instagram" aria-label="instagram"><span>Follow on Instagram</span></a></li>
+          <li class="menu__item list__item"><a class="icon-pinterest" href="{{ site.social.pinterest }}" title="Follow on Pinterest" aria-label="pinterest"><span>Follow on Pinterest</span></a></li>
+          <li class="menu__item list__item"><a class="icon-rss" href="{{ " /feed.xml " | prepend: site.baseurl }}" title="Rss feed" aria-label="rss feed"><span>Rss feed</span></a></li>
+        </ul>
       </div>
 
     </div>

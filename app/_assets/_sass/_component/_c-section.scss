@@ -1,9 +1,10 @@
 .c-section {
   & {
-    padding: $base-spacing-unit--large $base-spacing-unit;
+
   }
   &__inner {
     @include grid-row();
+    padding: $base-spacing-unit--large $base-spacing-unit;
   }
   &__title {
     position: relative;

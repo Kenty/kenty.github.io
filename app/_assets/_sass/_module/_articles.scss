@@ -18,6 +18,9 @@
     // padding-bottom: $base-spacing-unit--large;
     @include clearfix();
   }
+  &__header--centered {
+    @extend %u-align--center;
+  }
   &__title {
     // text-align: center;
     font-weight: 500;
@@ -40,11 +43,12 @@
     }
   }
   &__meta {
-    // margin-bottom: .875rem;
     color: scale-color($base-font-color, $lightness: 20%);
   }
   &__thumbs {
     position: relative;
+    margin-left: $base-spacing-unit--large;
+    margin-right: $base-spacing-unit--large;
     margin-bottom: $base-spacing-unit;
     /* css spin loading */
     img {
@@ -72,12 +76,15 @@
     padding-top: $base-spacing-unit;
     padding-bottom: $base-spacing-unit;
   }
-  &--date {
+  & &--date {
     @include font-size(18);
     @include web-font($t-kit, normal, 400);
   }
-  &--icon {
+  & &--icon {
     @extend %icon-modifier;
+  }
+  & &--tag {
+    display: block;
   }
   &__content {
     padding-top: $base-spacing-unit--large;

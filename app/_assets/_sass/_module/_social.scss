@@ -16,13 +16,11 @@ $rss-color: rgb(244, 111, 38) !default;
     padding-bottom: 1rem;
   }
   &__list {
-    font-size: 0;
+    margin: 0;
     text-align: center;
   }
-  .list__item {
-    display: inline-block;
+  .menu__item {
     padding: $base-spacing-unit--tiny;
-    @include font-size(16, 1);
     &:last-child {
       padding-right: 0;
     }

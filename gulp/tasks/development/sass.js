@@ -26,7 +26,7 @@ gulp.task('styles', function() {
     // .pipe(filter)
     .pipe($.sourcemaps.write('./', {
       includeContent: false,
-      sourceRoot: config.sass.sourceRoot
+      sourceRoot: config.sass.root
     }))
     .pipe(gulp.dest(config.sass.dest))
     .pipe($.notify({

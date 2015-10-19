@@ -1,6 +1,6 @@
 {% if paginator.total_pages > 1 %}
-    <div class="pagination">
-      <ul class="pagination__list">
+    <div class="pagination pagination--centered c-box">
+      <ul class="pagination__list c-box__list">
 
       {% if paginator.previous_page %}
           <li class="list__item"><a href="{{ paginator.previous_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}" class="list__link"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>

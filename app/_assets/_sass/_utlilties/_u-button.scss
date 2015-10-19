@@ -2,7 +2,7 @@
 %u-btn {
   display: inline-block;
   cursor: pointer;
-  @include transition(all .35s ease-out);
+  @include transition(all, 300ms, ease-out);
   @include border-radius(3px);
 }
 
@@ -31,12 +31,12 @@
 
 .u-btn--ghost,
 %u-btn--ghost {
-  color: scale-color($base-font-color, $lightness: 20%);
-  border: 2px solid scale-color($base-font-color, $lightness: 20%);
+  color: scale-color($link-color, $lightness: -20%);
+  border: 2px solid scale-color($link-color, $lightness: -20%);
   background: transparent;
   &:hover, &:active, &:focus {
-    color: $primary-color;
-    background: scale-color($base-font-color, $lightness: 20%);
+    color: scale-color($primary-color, $lightness: 10%);
+    background: scale-color($link-color, $lightness: -20%);
     text-decoration: none;
   }
 }

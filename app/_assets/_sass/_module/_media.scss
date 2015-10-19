@@ -1,0 +1,30 @@
+.p-media {
+  & {}
+  &__image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 50%;
+    @extend %photo-shadow;
+    @media #{$topbar-media-query} {
+      width: 80%;
+    }
+    @at-root .p-media--post & {
+      // padding: 0;
+      width: 80px;
+    }
+  }
+  &__author {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    @include font-size(18, 1);
+    span {
+      display: block;
+      @extend %u-heading;
+      font-weight: 300;
+    }
+  }
+}
