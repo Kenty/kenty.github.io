@@ -261,5 +261,9 @@ module.exports = {
       branch: 'master',
       cacheDir: ''
     }
+  },
+
+  aws: {
+    src: paths.production + '/assets/**/*'
   }
 };

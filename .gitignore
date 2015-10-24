@@ -44,3 +44,6 @@ node_modules/
 
 _site/
 # _drafts/
+
+# Files to ignore
+aws.json

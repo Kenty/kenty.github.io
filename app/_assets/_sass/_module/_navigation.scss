@@ -121,6 +121,8 @@
   @include _clearfix();
 
   & .navi__link {
+    display: block;
+    text-align: center;
     padding: $base-spacing-unit;
     @include font-size(16);
   }

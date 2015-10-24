@@ -23,5 +23,6 @@ gulp.task('build:production', function(callback) {
     'optimize:html'
   ],
   'copysvg',
+  'deploy:s3',
   callback);
 });

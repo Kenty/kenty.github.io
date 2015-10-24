@@ -8,15 +8,15 @@ layout: default
     <article class="p-article p-article--post" itemscope itemtype="http://schema.org/Article">
 
       {% if page.image %}
-        <figure class="p-article__thumbs"><img src="{{"/assets/img/" | append: page.image | prepend: site.baseurl | prepend: site.url }}" alt="{{ page.title }}" /></figure>
+        <figure class="p-article__thumbs"><img src="{{"/assets/img/" | append: page.image | prepend: site.baseurl | prepend: site.cdn_url }}" alt="{{ page.title }}" /></figure>
       {% endif %}
 
       <header class="p-article__header p-article__header--centered post-header">
         <h1 class="p-article__title" itemprop="name">{{ page.title }}</h1>
 
         <div class="p-article__meta c-box">
-          <span class="p-article--date list__item"><time content="{{ page.date | date: "%Y-%m-%d" }}" datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ page.date | date_to_string }}</time></span>
-          {% if page.author %}<span class="list__item">Posted by {{ page.author }}</span>{% endif %}
+          <span class="p-article--date list__item"><time content="{{ page.date | date: "%Y-%m-%d" }}" datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time></span>
+          {% if page.author %}<span class="p-article__author list__item">Posted by {{ page.author }}</span>{% endif %}
 
           {% if page.tags %}<span class="p-article--tag list__item"><i class="p-article--icon fa fa-tag" aria-label="tag"></i>{% for tag in page.tags %}<a href="{{ "/tags/#" | append: tag | prepend: site.baseurl | prepend: site.url }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %} &bull; {% endunless %}{% endfor %}</span>{% endif %}
         </div>
@@ -31,7 +31,7 @@ layout: default
       <div class="p-article__meta c-box">
         <div class="p-article__share list__item">{% include bookmark.html %}</div>
         <div class="p-media p-media--post list__item">
-          <img src="/assets/img/{{ site.author.image }}" class="p-media__image" alt="{{ site.author.name }}">
+          <img src="{{ "/assets/img/" | append: site.author.image | prepend: site.baseurl | prepend: site.cdn_url }}" class="p-media__image" alt="{{ site.author.name }}">
           <p class="p-media__author"><span>Posted by </span>{{ page.author }}</p></div>
       </div>
 

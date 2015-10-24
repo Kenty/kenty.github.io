@@ -94,17 +94,6 @@
   @include font-smooting(on);
 }
 
-#portfolio,
-#about {
-  height: auto;
-  background: url(assets/img/src/top-page-blog_bg.jpg) repeat top left;
-}
-
-#blog,
-#contact {
-  background: url(assets/img/src/dm-contents-bg.jpg) repeat top left;
-}
-
 .hr-sepalate {
   font-family: FontAwesome;
   color: $primary-color;

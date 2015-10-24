@@ -2,7 +2,11 @@
   &-wrapp {
     position: relative;
     overflow: hidden;
-    background: url(/assets/img/dominomatrix-bg.jpg) repeat;
+    background: url(../img/dominomatrix-bg.jpg) repeat;
+
+    &.page-404 {
+      background-image: url(../img/top-page-blog_bg.jpg);
+    }
   }
   &-header {
     // Positioning context for the mobile navigation icon
@@ -33,7 +37,7 @@
   &-footer {
     color: scale-color($primary-color, $lightness: -20%);
     border-top: 2px solid scale-color(rgba($primary-color, .65), $lightness: 50%);
-    background: url(/assets/img/dm-footer_bg.png) repeat bottom center;
+    background: url(../img/dm-footer_bg.png) repeat bottom center;
     &__copy {
       margin-bottom: 0;
       padding-top: $base-spacing-unit--large;

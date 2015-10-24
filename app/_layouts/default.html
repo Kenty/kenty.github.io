@@ -3,7 +3,7 @@
 {% include head.html %}
 
 <body>
-  <div id="page" class="page page-wrapp">
+  <div id="page" class="page page-wrapp page-{{ page.title }}">
 
     {% include header.html %}
 
@@ -14,7 +14,7 @@
     {% include footer.html %}
 
   </div>
-  <script src="{{ "/assets/js/app.js" | prepend: site.baseurl }}" async></script>
+  <script src="{{ "/assets/js/app.js" | prepend: site.baseurl | prepend: site.cdn_url }}" async></script>
   {% include ga.html %}
 </body>
 

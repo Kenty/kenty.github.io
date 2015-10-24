@@ -64,5 +64,6 @@ exclude: [
   '.gitignore',
   '.bundle',
   '.git',
-  'LICENSE'
+  'LICENSE',
+  'aws.json'
 ]

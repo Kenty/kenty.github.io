@@ -9,7 +9,7 @@ permalink: /about/
 </div>
 <div class="large-5 medium-4 columns">
 	<figure class="p-media page-thumbs">
-		<img src="/assets/img/{{ site.author.image }}" class="p-media__image" alt="Kenta Hoshino">
+		<img src="{{ "/assets/img/" | append: site.author.image | prepend: site.baseurl | prepend: site.cdn_url }}" class="p-media__image" alt="Kenta Hoshino">
 		<figcaption class="p-media__text">煙草は...やめました。</figcaption>
 	</figure>
 	</div></div>

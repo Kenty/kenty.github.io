@@ -1,37 +1,41 @@
 .p-article & {
-  padding-top: $base-spacing-unit;
-  padding-bottom: $base-spacing-unit--large;
+  padding: $base-spacing-unit--large 0;
   border-bottom: $border-line;
   @include clearfix();
-  &:nth-last-of-type(1) {
-    border-bottom: none;
-  }
   &:nth-of-type(1) {
     padding-top: 0;
   }
+  &:nth-last-of-type(1) {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
   @at-root .post & {
-    padding-top: 0;
+    padding-top: $base-spacing-unit--large;
     padding-bottom: 0;
     border-bottom: none;
   }
   &__header {
-    // padding-bottom: $base-spacing-unit--large;
+    // padding-bottom: $base-spacing-unit--tiny;
     @include clearfix();
+
+    &#{&}--centered {
+      @extend %u-align--center;
+    }
   }
-  &__header--centered {
-    @extend %u-align--center;
-  }
+
   &__title {
-    // text-align: center;
-    font-weight: 500;
+    font-weight: 300;
     color: $base-font-color;
     @include text-shadow(0 1px 1px rgba(62, 52, 26, .2), 0px 0px 2px rgba(20, 20, 20, .3));
-    margin-bottom: $base-spacing-unit;
+    @include font-size(24, 1.5);
+    margin-bottom: $base-spacing-unit--small;
+    @media #{$topbar-media-query} {
+      // @include font-size(28, 1.5);
+    }
     @at-root .p-article--post & {
-      @include font-size(21, 1.5);
+      margin-bottom: $base-spacing-unit--large;
       @media #{$topbar-media-query} {
-        margin-bottom: $base-spacing-unit--small;
-        @include font-size(28, 1.5);
+        @include font-size(30, 1.5);
       }
     }
     > a {
@@ -49,7 +53,7 @@
     position: relative;
     margin-left: $base-spacing-unit--large;
     margin-right: $base-spacing-unit--large;
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit--large;
     /* css spin loading */
     img {
       width: 100%;
@@ -76,48 +80,58 @@
     padding-top: $base-spacing-unit;
     padding-bottom: $base-spacing-unit;
   }
+  & &--icon {
+    @extend %icon-modifier;
+  }
   & &--date {
+    display: block;
     @include font-size(18);
     @include web-font($t-kit, normal, 400);
   }
-  & &--icon {
-    @extend %icon-modifier;
+  & &--author {
+    display: block;
   }
   & &--tag {
     display: block;
   }
   &__content {
-    padding-top: $base-spacing-unit--large;
+    padding-top: $base-spacing-unit;
     @include clearfix();
+
+    @at-root .p-article--post & {
+      padding-top: $base-spacing-unit--huge;
+    }
+
     h1 {
       margin-top: $base-spacing-unit--large;
       margin-bottom: $base-spacing-unit;
-      @include font-size(28);
+      @include font-size(28, 2);
     }
     h2 {
       margin-top: $base-spacing-unit--large;
       margin-bottom: $base-spacing-unit;
-      @include font-size(24);
+      @include font-size(24, 2);
+      font-weight: 500;
     }
     h3 {
       margin-top: $base-spacing-unit--large;
       margin-bottom: $base-spacing-unit;
-      @include font-size(21);
+      @include font-size(21, 1.5);
     }
     h4 {
       margin-top: $base-spacing-unit--large;
       margin-bottom: $base-spacing-unit;
-      @include font-size(20);
+      @include font-size(20, 1.5);
     }
     h5 {
       margin-top: $base-spacing-unit--large;
       margin-bottom: $base-spacing-unit;
-      @include font-size(18);
+      @include font-size(18, 1.5);
     }
     h6 {
       margin-top: $base-spacing-unit--large;
       margin-bottom: $base-spacing-unit;
-      @include font-size(16);
+      @include font-size(16, 1.5);
     }
     em {
       font-style: italic;
@@ -130,6 +144,11 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+    img {
+      width: 100%;
+      height: auto;
+      @extend %photo-shadow;
     }
   }
 }
