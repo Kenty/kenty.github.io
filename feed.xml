@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DOMINOMATRIX</title>
+    <description>星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録などを綴っています。現在はDeveloperを目指し目下勉強中です。最近の興味はアクセシビリティ。</description>
+    <link>http://dominomatrix.com/</link>
+    <atom:link href="http://dominomatrix.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 24 Oct 2015 13:43:01 +0900</pubDate>
+    <lastBuildDate>Sat, 24 Oct 2015 13:43:01 +0900</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Jekyll始めました。2015 秋</title>
+        <description>&lt;p&gt;とある事情でAmazon EC2のWordPressから&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;の&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;に乗り換えました。&lt;/p&gt;
+
+&lt;p&gt;とある事情といってもAWSの無料枠の期間が終了したこと、終了した次の月の料金が想像してた以上に掛かっていたこと（自分で設定を見直さなかったのが原因）。&lt;br /&gt;
+とりあえず移行した経緯、やったことを簡単に書いてみようかと思います。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;きっかけ&lt;/h2&gt;
+&lt;p&gt;なんといっても乗り換えようと決断させたのはAWSのサービス料金が跳ね上がっていたこと。&lt;/p&gt;
+
+&lt;p&gt;無料枠が終了した月はTotalで$18ぐらい（あとで気づいたんだけどありがたいことにクレジットで値引きされてた）。サイト自体もデフォルト・テーマ、設置はしたけど大して更新なんかしてなっかったしアクセスなんかほぼないからこんなものかぁなんてあぐらかいてたんだけど、次の月が$42になっていました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//s3-ap-northeast-1.amazonaws.com/static.dominomatrix.com/assets/img/2015-10-03_22_26_17.jpg&quot; alt=&quot;Payment Elastic Load Balancing&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;結論から言えば無料枠で入れてたElastic Load Balancingを外さなかったこと。アクセスあれば入れていても良いものなんだろうけど、更新してない自分にとっては無用の長物だしこれだけでやく半分をしめていて掛かり過ぎだろ？ と。&lt;br /&gt;
+むしろ毎月何もしてないところに５千円ちかくをpayするなんて…（そんな余裕はまったくありません）恐ろしい。&lt;/p&gt;
+
+&lt;p&gt;いい機会だし勉強も兼ねてGithub Pages + Static Site Generatorでホスティングすることにしました。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;やったこと&lt;/h2&gt;
+&lt;p&gt;Static Site Generatorといってもいろいろあるみたいで、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://middlemanapp.com/&quot;&gt;Middleman&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://roots.cx/&quot;&gt;Roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://gohugo.io/&quot;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.staticgen.com/&quot;&gt;とかとかetc…&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最近だと&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://t32k.me/mol/log/hugo/&quot;&gt;Jekyllが許されるのは小学生までだよね&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://deeeet.com/writing/2014/12/25/hugo/&quot;&gt;OctopressからHugoへ移行した&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://re-dzine.net/2015/01/hugo/&quot;&gt;MiddlemanからHugoへ移行した&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://creative-tweet.net/blog/2015/10/good-bye-wordpress.html&quot;&gt;WordPressからHugoへ移行して、ビルドとデプロイを自動化した話&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;と、こぞってHugoおしみたいですけど、小学生以下の技術力なので情報がたくさんあったJeykllを選んでみました。&lt;/p&gt;
+
+&lt;p&gt;前提としてはGitHubのアカウントをもっている、RubyとRubyGemが使っているPCに入っていることが最低必要条件だと思います。&lt;br /&gt;
+基本的には&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;と&lt;a href=&quot;http://jekyllrb-ja.github.io/&quot;&gt;Jekyll(日本語)&lt;/a&gt;のページを見てもらえれば問題はないかなと。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Githubでリポジトリの作成&lt;/li&gt;
+  &lt;li&gt;Jekyllのインストール&lt;/li&gt;
+  &lt;li&gt;ルートディレクトリーにリポジトリを&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Gulpでビルドするので&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に&lt;code class=&quot;highlighter-rouge&quot;&gt;source: ./app&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;destination: ./build&lt;/code&gt;へ変更&lt;/li&gt;
+  &lt;li&gt;パーマリンクを&lt;code class=&quot;highlighter-rouge&quot;&gt;date&lt;/code&gt;から&lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/:title&lt;/code&gt;へ変更&lt;/li&gt;
+  &lt;li&gt;デプロイもdefaultは&lt;code class=&quot;highlighter-rouge&quot;&gt;origin master&lt;/code&gt;でそこでビルドしてくれるみたいだけど実はここで嵌った&lt;/li&gt;
+  &lt;li&gt;Jekyllプラグインを使いたかったので&lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;ブランチを作成した（ここ&lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt;とかでもいいみたい）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt;でCustom domainを使う&lt;/li&gt;
+  &lt;li&gt;テーマも勉強がてら自分で作成（継続中…）&lt;/li&gt;
+  &lt;li&gt;極力、アクセシビリティを意識したマークアップを心掛ける。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;となどなど他にもありますが、次回にもうちょっと詳しく書いてみたいと思います。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 03 Oct 2015 21:08:02 +0900</pubDate>
+        <link>http://dominomatrix.com/blog/welcome-to-jekyll</link>
+        <guid isPermaLink="true">http://dominomatrix.com/blog/welcome-to-jekyll</guid>
+        
+        <category>design</category>
+        
+        <category>jekyll</category>
+        
+        <category>github</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+  </channel>
+</rss>
