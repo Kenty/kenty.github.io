@@ -14,6 +14,7 @@ var bowerFiles = require('main-bower-files');
 
 gulp.task('bower-files', function() {
   var filterJs = $.filter('**/*.js');
+  // var filterFoundation = $.filter('**/*.scss');
   return gulp.src(bowerFiles({
     paths: {
       bowerDirectory: config.bowerPath
@@ -24,5 +25,7 @@ gulp.task('bower-files', function() {
       preserveComments: 'some'
     }))
     // .pipe(filterJs.restore())
-    .pipe(gulp.dest(config.dest));
+    .pipe(gulp.dest(config.dest.js));
+    // .pipe(filterFoundation)
+    // .pipe(gulp.dest(config.dest.css));
 });

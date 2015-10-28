@@ -19,10 +19,9 @@ title: blog
 
         <div class="p-article__meta c-box">
           <span class="p-article--date list__item"><time content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span>
-          {% if post.author %}<span class="list__item">Posted by {{ post.author }}</span>{% endif %}
         </div>
 
-        <section class="p-article__content">
+        <section class="p-article__content" itemprop="articleBody">
           {{ post.excerpt }}
         </section>
 

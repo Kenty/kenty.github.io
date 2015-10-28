@@ -6,7 +6,7 @@ layout: default
 
   <section id="main" class="page-main" role="main">
 
-      <h3 class="section-heading page-heading page-heading--label c-section__title" itemprop="headline">Latest Blog Posts</h3>
+      <h3 class="section-heading page-heading page-heading--label c-section__title">Latest Blog Posts</h3>
 
     {% for post in site.posts limit:3 %}
       <article class="article-post p-article p-article--posts" itemscope itemprop="http://schema.org/BlogPosting">
@@ -15,14 +15,13 @@ layout: default
 
         <div class="p-article__meta c-box">
           <span class="p-article--date list__item"><time content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span>
-          {% if post.author %}<span class="list__item">Posted by {{ post.author }}</span>{% endif %}
         </div>
 
         <section class="p-article__content">
           {{ post.excerpt }}
         </section>
         <div class="p-article__links">
-          <a class="more-link" href="{{ post.url | prepend: site.baseurl }}" tabindex="2" accesskey="2">More...</a>
+          <a class="more-link" href="{{ post.url | prepend: site.baseurl }}">More...</a>
         </div>
 
       </article>

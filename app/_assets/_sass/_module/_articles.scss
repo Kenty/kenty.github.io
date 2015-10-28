@@ -56,8 +56,8 @@
     margin-bottom: $base-spacing-unit--large;
     /* css spin loading */
     img {
-      width: 100%;
-      height: auto;
+      // width: 100%;
+      // height: auto;
       @extend %photo-shadow;
     }
   }
@@ -102,35 +102,28 @@
       padding-top: $base-spacing-unit--huge;
     }
 
-    h1 {
+    h1, h2, h3, h4, h5, h6 {
       margin-top: $base-spacing-unit--large;
-      margin-bottom: $base-spacing-unit;
+      margin-bottom: $base-spacing-unit--small;
+      font-weight: 500;
+    }
+
+    h1 {
       @include font-size(28, 2);
     }
     h2 {
-      margin-top: $base-spacing-unit--large;
-      margin-bottom: $base-spacing-unit;
-      @include font-size(24, 2);
-      font-weight: 500;
+      @include font-size(24, 1.5);
     }
     h3 {
-      margin-top: $base-spacing-unit--large;
-      margin-bottom: $base-spacing-unit;
       @include font-size(21, 1.5);
     }
     h4 {
-      margin-top: $base-spacing-unit--large;
-      margin-bottom: $base-spacing-unit;
       @include font-size(20, 1.5);
     }
     h5 {
-      margin-top: $base-spacing-unit--large;
-      margin-bottom: $base-spacing-unit;
       @include font-size(18, 1.5);
     }
     h6 {
-      margin-top: $base-spacing-unit--large;
-      margin-bottom: $base-spacing-unit;
       @include font-size(16, 1.5);
     }
     em {
@@ -146,8 +139,8 @@
       }
     }
     img {
-      width: 100%;
-      height: auto;
+      // width: 100%;
+      // height: auto;
       @extend %photo-shadow;
     }
   }

@@ -28,10 +28,10 @@ permalink: /tags/
     <div class=" ">
       {% for item in (1..site.tags.size) %}{% unless forloop.last %}
       {% capture this_word %}{{ tag_words[item] | strip_newlins }}{% endcapture %}
-      <div class="c-box c-box__list">
+      <section class="c-box c-box__list">
 
         <h2 id="{{ this_word }}" class="list__item"><span class="list__item c-box--tag"><i class="fa fa-tag" aria-label="tag"></i>{{ this_word }}</h2>
-        <a href="#{{ this_word }}-tags" data-scroll class="list__item" title="Back to tag cloud"><i class="icon-rotate fa fa-repeat"></i></a>
+        <!-- <a href="#tag-cloud" data-scroll class="list__item" title="Back to tag cloud"><i class="icon-rotate fa fa-repeat"></i></a> -->
         {% for post in site.tags[this_word] %}{% if post.title != nil %}
             <article class="p-article p-article--posts">
               <h2 class="p-article__title" itemprop="name"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h2>
@@ -39,7 +39,7 @@ permalink: /tags/
             </article>
         {% endif %}{% endfor %}
 
-      </div>
+      </section>
       {% endunless %}{% endfor %}
 
     </div>

@@ -4,7 +4,7 @@ title:  "Jekyll始めました。2015 秋"
 author: Kenta Hoshino
 date:   2015-10-3 12:08:02
 categories: [jekyll]
-tags: ['design', 'jekyll', 'github']
+tags: ['jekyll', 'github']
 image: jekyll-logo.jpg
 
 ---

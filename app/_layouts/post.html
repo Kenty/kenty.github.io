@@ -16,7 +16,6 @@ layout: default
 
         <div class="p-article__meta c-box">
           <span class="p-article--date list__item"><time content="{{ page.date | date: "%Y-%m-%d" }}" datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time></span>
-          {% if page.author %}<span class="p-article__author list__item">Posted by {{ page.author }}</span>{% endif %}
 
           {% if page.tags %}<span class="p-article--tag list__item"><i class="p-article--icon fa fa-tag" aria-label="tag"></i>{% for tag in page.tags %}<a href="{{ "/tags/#" | append: tag | prepend: site.baseurl | prepend: site.url }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %} &bull; {% endunless %}{% endfor %}</span>{% endif %}
         </div>
@@ -30,9 +29,9 @@ layout: default
 
       <div class="p-article__meta c-box">
         <div class="p-article__share list__item">{% include bookmark.html %}</div>
-        <div class="p-media p-media--post list__item">
-          <img src="{{ "/assets/img/" | append: site.author.image | prepend: site.baseurl | prepend: site.cdn_url }}" class="p-media__image" alt="{{ site.author.name }}">
-          <p class="p-media__author"><span>Posted by </span>{{ page.author }}</p></div>
+        <div class="p-media p-media--post list__item" itemscope itemtype="http://schema.org/Person">
+          <img src="{{ "/assets/img/" | append: site.author.image | prepend: site.baseurl | prepend: site.cdn_url }}" class="p-media__image" itemprop="image" alt="{{ site.author.name }}">
+          <p class="p-media__author" itemprop="author">Posted by <span itemprop="name">{{ page.author }}</span></p></div>
       </div>
 
       <div id="post-navigation" class="p-article__navi post-navi" role="navigation">

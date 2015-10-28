@@ -9,21 +9,21 @@ published: True
 
 ---
 
-前回の記事でGithub PagesのJekyllに移行したきっかけをほんとうに簡単に書いたのですがが具体的に何をやったのかをもうちょっと詳しく書いていこうと思います。（※ ちなみに制作環境はMacOS X、RubyGems、jekyllが入っていることが前提。）
+前回の記事でGithub PagesのJekyllに移行したきっかけをほんとうに簡単に書いたのですがが具体的に何をやったのかをもうちょっと詳しく書いていこうと思います。（※ ちなみに制作環境はMacOS X、RubyGems、あとはGulpを使っているのでNodeが入っていることが前提になります。）
 
 <!--more-->
 
 ## 導入
-基本的にはGitHub Pagesは２種類あって`username.github.io`の組織用、個人用 `http://username.github.io`でアクセスでき、デプロイは`master`ブランチにされる。
-もう一つはプロジェクト用 `http://username.github.io/project`でアクセスでき、デプロイは`gh-pages`ブランチにされる。（最初この違いを把握できていなくて色々と躓いたけどおいおい。）
+基本的にはGitHub Pagesは２種類あって`username.github.io`のグループ用、個人用 `http://username.github.io`でアクセスでき、デプロイは`master`ブランチにされます。
+もう一つはプロジェクト用 `http://username.github.io/project`でアクセスでき、デプロイは`gh-pages`ブランチにされます。（最初この違いを理解できていなくて色々と躓いた...けどおいおい。）
 
-先ずは`username.github.io`でリポジトリを作成する。リポジトリは空にしとく。次にこのリポジトリをローカルに持ってきたいので`git clone`する。
+とりあえず前者で話を進めます。先ずは`username.github.io`でリポジトリを作成して、リポジトリは空にしときます。次にこのリポジトリをローカルに持ってきたいので`git clone`します。
 
 ```bash
 ~ $ git clone git@github.com:username/username.github.io
 ```
 
-もってきたら`jekyll new`でこのプロジェクトディレクトリにひな形を作ってあげる。
+もってきたら`jekyll new`でこのプロジェクトディレクトリにひな形を作ってあげます。
 
 ```bash
 ~ $ jekyll new username.github.io/
@@ -60,9 +60,15 @@ username.github.io/
 5 directories, 15 files
 ```
 
-の内容でひな形が作成される。ちなみにリポジトリが空じゃないと、
+の内容でひな形が作成されます。ちなみにリポジトリが空じゃないと、
 
 ```bash
 Conflict: /Users/kent6223/test_jekyll.github.io exists and is not empty.
 ```
-で作成してくれない。
+で作成してくれません。
+
+https://console.aws.amazon.com/s3/home?region=ap-northeast-1&bucket=static.dominomatrix.com&prefix=assets/css/
+
+おっと、**[Jekyll3.0](http://jekyllrb.com/news/2015/10/26/jekyll-3-0-released/)**が来たようだ！
+
+[jekyll3.0]:       http://jekyllrb.com/news/2015/10/26/jekyll-3-0-released/

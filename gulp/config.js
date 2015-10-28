@@ -101,7 +101,7 @@ module.exports = {
       'android >= 4.4',
       'bb >= 10'
     ],
-    cascade: true
+    cascade: false
   },
 
   /**

@@ -1,0 +1,4 @@
+{% assign url = page.url | remove : '/index.html' | append : '/' | replace: '//', '/' %}  {% assign type = 'page' %}
+{% if url contains '/blog/' and url != '/blog/' %}
+  {% assign type = 'post' %}
+{% endif %}

@@ -1,30 +1,56 @@
 .p-media {
   & {}
+  &#{&}--post {
+    margin-left: 10px;
+    @extend %u-heading;
+  }
   &__image {
     display: inline-block;
     vertical-align: middle;
-    width: 60%;
-    height: auto;
+    // width: 60%;
     margin: 0 auto;
     border-radius: 50%;
     @extend %photo-shadow;
-    @media #{$topbar-media-query} {
-      width: 80%;
-    }
+
     @at-root .p-media--post & {
       // padding: 0;
       width: 80px;
+    }
+    @at-root .p-media--page & {
+      display: block;
+      width: 40%;
+      margin: 0 auto;
+      @media #{$topbar-media-query} {
+        display: inline-block;
+        width: 30%;
+      }
     }
   }
   &__author {
     display: inline-block;
     vertical-align: middle;
     margin: 0;
-    @include font-size(18, 1);
+    @include font-size(18, 1.2);
+    font-weight: 500;
     span {
       display: block;
-      @extend %u-heading;
-      font-weight: 300;
+      font-weight: 600;
+      font-family: $base-font-family;
+      color: scale-color($base-font-color, $lightness: 20%);
+    }
+    @at-root .p-media--page & {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      @media #{$topbar-media-query} {
+        display: inline-block;
+        width: 65%;
+        padding-left: 1rem;
+      }
     }
   }
+  & #{&}__name {
+    display: inline-block;
+  }
+
 }

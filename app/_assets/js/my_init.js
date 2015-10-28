@@ -37,10 +37,10 @@
       FastClick.attach(doc.body);
     }, false);
 
-    doc.querySelector('#page').addEventListener('touchend', function(event) {
-      event.preventDefault();
-      // event.stopPropagation();
-    }, false);
+    // doc.querySelector('#page').addEventListener('touchend', function(event) {
+    //   event.preventDefault();
+    //   // event.stopPropagation();
+    // }, false);
 
   }
 
