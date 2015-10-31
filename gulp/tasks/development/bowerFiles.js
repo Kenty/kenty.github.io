@@ -25,7 +25,5 @@ gulp.task('bower-files', function() {
       preserveComments: 'some'
     }))
     // .pipe(filterJs.restore())
-    .pipe(gulp.dest(config.dest.js));
-    // .pipe(filterFoundation)
-    // .pipe(gulp.dest(config.dest.css));
+    .pipe(gulp.dest(config.dest));
 });
