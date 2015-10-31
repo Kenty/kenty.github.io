@@ -121,9 +121,7 @@
 
 .page-links {
 
-  &.page-links--centered {
-    @extend %u-align--center;
-  }
+
   .more-link {
     font-weight: 600;
     padding: $base-spacing-unit $base-spacing-unit--large;
@@ -131,4 +129,7 @@
     @extend %u-btn--ghost;
     @include font-size(16, 1.5);
   }
+}
+.page-links--centered {
+  @extend %u-align--center;
 }
