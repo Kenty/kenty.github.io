@@ -1,0 +1,11 @@
+<nav id="navigation" class="global-nav c-box" itemscope itemtype="http://schema.org/SiteNavigationElement"  role="navigation">
+  <ul class="global-nav__list c-box__list">
+  {% for link in site.data.navi %}
+  {% assign current = nil %}
+  {% if page.url contains link.url %}
+    {% assign current = "is-current" %}
+  {% endif %}
+    <li class="nav__item list__item {{ current }}"><a class="nav__link" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>

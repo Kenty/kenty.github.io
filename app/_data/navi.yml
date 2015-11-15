@@ -1,0 +1,8 @@
+# navigation bar options
+# navi-links:
+- title: Blog
+  url: "/blog/"
+- title: Tags
+  url: "/tags/"
+- title: About
+  url: "/about/"
