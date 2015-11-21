@@ -1,8 +1,8 @@
 # Site settings
 title: DOMINOMATRIX
-description: "星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録などを綴っています。現在はDeveloperを目指し目下勉強中です。最近の興味はアクセシビリティ。"
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://localhost:9989" # the base hostname & protocol for your site
+description: "星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録、また興味のあることを綴っていこうと思っています。現在はWeb制作の仕事に就けるように勉強中です。最近の興味はアクセシビリティ。"
+baseurl: ""
+url: "http://localhost:9989"
 
 
 # Author
@@ -25,15 +25,6 @@ social:
 twitter_username: kenty236
 github_username:  kenty
 
-# navigation bar options
-navi-links:
- - title: Blog
-   url: "/blog/"
- - title: Tags
-   url: "/tags/"
- - title: About
-   url: "/about/"
-
 # Build settings
 source: ./app
 destination: ./build
@@ -42,14 +33,13 @@ permalink: /blog/:title
 paginate: 3
 paginate_path: "/blog/page:num"
 
-safe: true
-server: true
+safe: false
 lsi: false
+incremental: true
 
 markdown: kramdown
 highlighter: rouge
 excerpt_separator: <!--more-->
-auto: true
 
 kramdown:
   input: GFM
@@ -67,3 +57,5 @@ exclude: [
   'LICENSE',
   'aws.json'
 ]
+
+gems: [jekyll-paginate]
