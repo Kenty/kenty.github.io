@@ -5,8 +5,8 @@
     <description>星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録、また興味のあることを綴っていこうと思っています。現在はWeb制作の仕事に就けるように勉強中です。最近の興味はアクセシビリティ。</description>
     <link>http://dominomatrix.com/</link>
     <atom:link href="http://dominomatrix.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Dec 2015 18:25:01 +0900</pubDate>
-    <lastBuildDate>Sun, 20 Dec 2015 18:25:01 +0900</lastBuildDate>
+    <pubDate>Sun, 20 Dec 2015 18:32:54 +0900</pubDate>
+    <lastBuildDate>Sun, 20 Dec 2015 18:32:54 +0900</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -17,6 +17,15 @@
 とりあえず移行した経緯、やったことを簡単に書いてみようかと思います。&lt;/p&gt;
 
 &lt;!--more--&gt;
+
+&lt;aside class=&quot;ads-section&quot;&gt;
+    &lt;script async=&quot;&quot; src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- first ads --&gt;
+    &lt;ins class=&quot;adsbygoogle ads__item&quot; style=&quot;display:block&quot; data-ad-client=&quot;ca-pub-6285359111807316&quot; data-ad-slot=&quot;5139471582&quot; data-ad-format=&quot;auto&quot;&gt;&lt;/ins&gt;
+    &lt;script&gt;
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    &lt;/script&gt;
+&lt;/aside&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;きっかけ&lt;/h2&gt;
 &lt;p&gt;なんといっても乗り換えようと決断させたのはAWSのサービス料金が跳ね上がっていたこと。&lt;/p&gt;
