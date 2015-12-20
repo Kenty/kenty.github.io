@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DOMINOMATRIX</title>
-    <description>星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録などを綴っています。現在はDeveloperを目指し目下勉強中です。最近の興味はアクセシビリティ。</description>
+    <description>星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録、また興味のあることを綴っていこうと思っています。現在はWeb制作の仕事に就けるように勉強中です。最近の興味はアクセシビリティ。</description>
     <link>http://dominomatrix.com/</link>
     <atom:link href="http://dominomatrix.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Oct 2015 23:51:55 +0900</pubDate>
-    <lastBuildDate>Mon, 26 Oct 2015 23:51:55 +0900</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Sun, 20 Dec 2015 18:08:39 +0900</pubDate>
+    <lastBuildDate>Sun, 20 Dec 2015 18:08:39 +0900</lastBuildDate>
+    <generator>Jekyll v2.5.2</generator>
     
       <item>
         <title>Jekyll始めました。2015 秋</title>
