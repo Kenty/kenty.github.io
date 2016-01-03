@@ -1,7 +1,7 @@
 # Site settings
 
 # URLs/Paths
-url: "http://dominomatrix.com"
+url: "//dominomatrix.com"
 url_protocol: "https:"
 cdn_url: "//s3-ap-northeast-1.amazonaws.com/static.dominomatrix.com"
 

@@ -2,19 +2,21 @@
 title: DOMINOMATRIX
 description: "星野謙太の個人サイトです。Web制作に関して勉強したことや備忘録、また興味のあることを綴っていこうと思っています。現在はWeb制作の仕事に就けるように勉強中です。最近の興味はアクセシビリティ。"
 baseurl: ""
-url: "http://localhost:9989"
+url: "//localhost:9989"
+url_protocol: "http:"
 
 
 # Author
-name: Dominomatrix
+name: DOMINOMATRIX
 author:
-  name: Kenta Hoshino
+  name: "Kenta Hoshino"
   firstname: Kenta
   lastname: Hoshino
-  handlename: kenty
-  image: FB-Itsme.jpg
+  handlename: "kenty"
+  avatar: FB-Itsme.jpg
+  share_image: "/assets/img/dm-share.jpg"
 
-email: kent6223@gmail.com
+email: "kent6223@gmail.com"
 social:
   twitter: "https://twitter.com/kenty236"
   facebook: "https://www.facebook.com/kenty236"
@@ -22,8 +24,10 @@ social:
   instagram: "https://instagram.com/kenty236"
   github: "https://github.com/Kenty"
   pinterest: "https://jp.pinterest.com/kenty236"
-twitter_username: kenty236
-github_username:  kenty
+twitter_username: "kenty236"
+github_username: "kenty"
+disqus_shortname:
+
 
 # Build settings
 source: ./app
@@ -32,19 +36,26 @@ destination: ./build
 permalink: /blog/:title
 paginate: 3
 paginate_path: "/blog/page:num"
+excerpt_separator: <!--more-->
 
 safe: false
 lsi: false
 incremental: true
 
 markdown: kramdown
-highlighter: rouge
-excerpt_separator: <!--more-->
-
 kramdown:
   input: GFM
   syntax_highlighter: rouge
   auto_ids: auto
+highlighter: rouge
+
+collections:
+  components:
+    output: false
+  colors:
+    output: false
+
+gems: [jekyll-paginate]
 
 exclude: [
   'vendor',
@@ -57,5 +68,3 @@ exclude: [
   'LICENSE',
   'aws.json'
 ]
-
-gems: [jekyll-paginate]
