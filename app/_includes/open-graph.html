@@ -1,0 +1,21 @@
+<!-- OpenGraph -->
+<meta property="og:site_name" content="{{ site.name }}" />
+
+<meta property="og:type" content="{% if type == 'post' %}article{% else %}website{% endif %}" />
+
+<meta property="og:title" content="{% if url == '/' %}{{ site.title }}{% else %}{{ page.title | capitalize }}{% endif %}" />
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 80 }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:url" content="{{ page.url | prepend: site.url | prepend: site.url_protocol | replace: '/index.html', '' | append: '/' }}" />
+<meta property="og:image" content="{{ site.author.share_image | prepend: site.baseurl | prepend: site.url | prepend: site.url_protocol }}" />
+{% if page.date %}
+<meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}" />
+{% endif %}
+<meta property="fb:app_id" content="{{ site.social.app_id }}" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@{{ site.twitter_username }}" />
+<meta name="twitter:creator" content="@{{ site.twitter_username }}">
+<meta name="twitter:url" content="{{ page.url | prepend: site.url | prepend: site.url_protocol | replace: '/index.html', '' | append: '/' }}">
+<meta name="twitter:title" content="{% if url == '/' %}{{ site.title }}{% else %}{{ page.title | capitalize }}{% endif %}">
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 80 }}{% else %}{{ site.description }}{% endif %}">

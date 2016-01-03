@@ -5,30 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{ site.author.name }}">
 
-  <!-- OpenGraph -->
-  <meta property="og:site_name" content="{{ site.name }}" />
-  {% if type == 'post' %}
-    <meta property="og:type" content="article" />
-  {% else %}
-    <meta property="og:type" content="website" />
-  {% endif %}
-
-  <meta property="og:title" content="{% if url == '/' %}{{ site.title }}{% else %}{{ page.title | capitalize }}{% endif %}" />
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 80 }}{% else %}{{ site.description }}{% endif %}" />
-  <meta property="og:url" content="{{ page.url | prepend: site.url | replace: '/index.html', '/' }}" />
-  <meta property="og:image" content="{{"/assets/img" | append: "/dm-share.jpg" | prepend: site.baseurl | prepend: site.cdn_url }}" />
-  {% if page.date %}<meta property="og:article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}" />{% endif %}
-  <meta property="fb:app_id" content="{{ site.social.app_id }}" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@{{ site.twitter_username }}" />
-  <meta name="twitter:creator" content="@{{ site.twitter_username }}">
-  <meta name="twitter:url" content="{{ page.url | prepend: site.url | replace: '/index.html', '/' }}">
-  <meta name="twitter:title" content="{% if url == '/' %}{{ site.title }}{% else %}{{ page.title | capitalize }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 80 }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="twitter:image:src" content="{{"/assets/img" | append: "/dm-share.jpg" | prepend: site.baseurl | prepend: site.url }}" />
-
+  {% include open-graph.html %}
 
   <title>{% if page.title %} {{ page.title | capitalize }}{% if url != '/' %} | {% endif %}{{ site.title }} {% else %} {{ site.title }} {% endif %}</title>
 
