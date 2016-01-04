@@ -59,11 +59,13 @@ module.exports = {
     development: {
       src: paths.src,
       dest: paths.development,
+      plugins: paths.src + '/_plugins',
       config: '_config.yml'
     },
     product: {
       src: paths.src,
       dest: paths.production,
+      plugins: paths.src + '/_plugins',
       config: '_config.yml,_config.build.yml'
     }
   },

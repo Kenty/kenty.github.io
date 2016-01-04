@@ -14,7 +14,7 @@ var config = require('../../config').jekyll.product;
 gulp.task('jekyll:product', function(done) {
   browsersync.notify('Compiling Jekyll Production');
 
-  return cp.spawn('jekyll', ['build', '-q', '--plugins=' + '/_plugins', '--source=' + config.src, '--destination=' + config.dest, '--config=' + config.config], {
+  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '-q', '--plugins=' + config.plugins, '--source=' + config.src, '--destination=' + config.dest, '--config=' + config.config], {
       stdio: 'inherit'
     })
     .on('close', done);
