@@ -10,7 +10,7 @@ var runSequence = require('run-sequence');
 ====================================*/
 
 gulp.task('build', function(callback) {
-  runSequence('clean', 'bower-files', [
+  runSequence('delete', 'bower-files', [
               'jekyll',
               'styles',
               'images',

@@ -2,12 +2,16 @@
 =            Load modules            =
 ====================================*/
 
-var config = require('../../config.js').delete;
 var gulp = require('gulp');
 var del = require('del');
+var config = require('../../config.js').delete;
 
 /*==============================
 =            Delete            =
 ==============================*/
 
-gulp.task('clean', del.bind(null, config.src));
+gulp.task('delete', function () {
+  del(config.src).then(function (paths) {
+    console.log('Deleted files and folders:\n', paths.join('\n'));
+  });
+});

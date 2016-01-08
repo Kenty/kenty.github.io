@@ -10,7 +10,7 @@ var runSequence = require('run-sequence');
 ====================================*/
 
 gulp.task('build:production', function(callback) {
-  runSequence('clean', 'jekyll:product',
+  runSequence('delete', 'jekyll:product',
   [
     'styles',
     'images',
