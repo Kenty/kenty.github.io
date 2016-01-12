@@ -10,7 +10,9 @@ paths = {
   srcAssets: 'app/_assets',
   devAssets: 'build/assets',
   productionAssets: 'build/production/assets',
-  bowerSrc: 'app/_assets/_bower_components'
+  bowerSrc: 'app/_assets/_bower_components',
+  bourbon: require('node-bourbon'),
+  neat: require('node-neat')
 };
 
 module.exports = {
@@ -86,7 +88,9 @@ module.exports = {
       errLogToConsole: true,
       outputStyle: 'compressed',
       includePaths: [
-        paths.bowerSrc + '/foundation/scss/'
+        paths.bowerSrc + '/foundation/scss/',
+        paths.bourbon.includePaths,
+        paths.neat.includePaths[1]
       ]
     }
   },

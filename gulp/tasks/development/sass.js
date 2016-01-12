@@ -18,16 +18,16 @@ gulp.task('styles', function() {
 
   return gulp.src([config.sass.src])
     .pipe($.plumber())
-    .pipe($.sourcemaps.init())
+    // .pipe($.sourcemaps.init())
     .pipe(bulkSass())
     .pipe($.sass(config.sass.options)).on('error', displayErrors)
     .pipe($.autoprefixer(config.autoprefixer))
     .pipe($.if('*.css', $.csso()))
     // .pipe(filter)
-    .pipe($.sourcemaps.write('./', {
-      includeContent: false,
-      sourceRoot: config.sass.root
-    }))
+    // .pipe($.sourcemaps.write('./', {
+    //   includeContent: false,
+    //   sourceRoot: config.sass.root
+    // }))
     .pipe(gulp.dest(config.sass.dest))
     .pipe($.notify({
       title: 'COMPILE',
