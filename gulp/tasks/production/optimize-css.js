@@ -18,7 +18,8 @@ gulp.task('optimize:css', function() {
 
   return gulp.src(config.src)
     .pipe(jsFilter)
-    .pipe($.minifyCss(config.options))
+    // .pipe($.minifyCss(config.options))
+    .pipe($.cssnano(config.options))
     .pipe(jsFilter.restore)
     .pipe(gulp.dest(config.dest))
     .pipe($.size({
