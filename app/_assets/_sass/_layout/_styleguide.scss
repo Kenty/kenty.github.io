@@ -1,0 +1,108 @@
+/*========================================
+=            SITE STYLE GUIDE            =
+========================================*/
+.guide {
+  & {
+
+  }
+  &#{&}--colors {
+    // background-color: #FFF;
+  }
+  &__heading {
+    @extend %u-heading;
+    @include font-size(32);
+  }
+  >h2 {
+    margin-bottom: $base-spacing-unit--small;
+  }
+}
+
+
+.component {
+  & {
+    margin-bottom: $base-spacing-unit--large;
+  }
+  &__header {
+
+  }
+  &__heading {
+
+  }
+  &__content {
+
+  }
+}
+
+.content {
+  & {
+
+  }
+  &--output {
+
+  }
+  &+.content {
+    margin-top: 1rem;
+  }
+}
+
+.color {
+  & {
+
+  }
+  &__list {
+    display: flex;
+    // -webkit-flex-wrap: wrap;
+    //     -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+
+    @media #{$topbar-media-query} {
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+    }
+  }
+  .list__item {
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-align-items: center;
+            align-items: center;
+    // padding: $base-spacing-unit;
+    margin: 0;
+    margin-right: .25rem;
+    width: 100%;
+    height: 100px;
+  }
+  &__name {
+    margin: 0 .15rem;
+    padding: 0;
+  }
+}
+
+// color maps
+$color:
+(default, $default-color),
+(primary, $primary-color),
+(base-text, $base-text-color),
+(sub-text, $sub-text-color),
+(link, $link-color),
+(accent, $accent-color),
+(logo-left, $logo-text-left-color),
+(logo-right, $logo-text-right-color),
+
+(twitter, $twitter-color),
+(github, $github-color),
+(instagram, $instagram-color),
+(pinterest, $pinterest-color),
+(facebook, $facebook-color),
+(google-plus, $google-plus-color),
+(rss, $rss-color);
+
+@each $name, $colors in $color {
+  .list__item--#{$name} {
+    border: 1px solid scale-color($colors, $lightness: -20%);
+    background-color: $colors;
+  }
+}

@@ -1,5 +1,5 @@
 $primary-color: rgb(185, 182, 166) !default;
-$base-font-color: rgb(25, 30, 36) !default;
+$base-text-color: rgb(25, 30, 36) !default;
 $link-color: rgb(106, 154, 187) !default;
 $accent-color: rgb(244, 186, 103) !default;
 
@@ -15,9 +15,9 @@ $colours: (
            primary-light20: scale-color($primary-color, $lightness: 20%),
            primary-light70: scale-color($primary-color, $lightness: 70%),
 
-           base-font-light0: scale-color($base-font-color, $lightness: 0%),
-           base-font-light10: scale-color($base-font-color, $lightness: 10%),
-           base-font-light20: scale-color($base-font-color, $lightness: 20%),
+           base-font-light0: scale-color($base-text-color, $lightness: 0%),
+           base-font-light10: scale-color($base-text-color, $lightness: 10%),
+           base-font-light20: scale-color($base-text-color, $lightness: 20%),
 
            link-light0: scale-color($link-color, $lightness: 0%),
            link-light10: scale-color($link-color, $lightness: 10%),

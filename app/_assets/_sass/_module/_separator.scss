@@ -36,8 +36,8 @@
     }
   }
   &.separator-meta {
-    border-top: 1px solid scale-color(rgba($base-font-color, .5), $lightness: 20%);
-    border-bottom: 1px solid scale-color(rgba($base-font-color, .5), $lightness: 20%);
+    border-top: 1px solid scale-color(rgba($default-color, .5), $lightness: 20%);
+    border-bottom: 1px solid scale-color(rgba($default-color, .5), $lightness: 20%);
     margin: $base-spacing-unit auto;
     &--short {
       width: calc(100% / 8);

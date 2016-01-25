@@ -3,52 +3,39 @@
 // ---
 @charset "utf-8";
 
-
-
-// Our variables
-// $base-font-family: $body-font-family;
-// $base-font-sizes:   16px;
-// $base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-
-
 @import "_settings";
-@import "_utils";
-@import "_normalize";
 
+
+@import "bourbon";
+@import "neat";
 /////////////////////////
 ///  Zurb-foundation  ///
 /////////////////////////
-@import 'foundation/components/grid';
+// @import "foundation/components/grid";
+@import "_utils";
+@import "_normalize";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "base";
 @import "layout";
 // @import "syntax-highlighting";
 
-@import "_utlilties/u-button";
-@import "_utlilties/u-card.scss";
-@import "_utlilties/u-divider";
-@import "_utlilties/u-heading";
-@import "_utlilties/u-align";
+@import "_utililties/u-button";
+@import "_utililties/u-card.scss";
+@import "_utililties/u-divider";
+@import "_utililties/u-heading";
+@import "_utililties/u-align";
 
 @import "_component/c-section";
 @import "_component/c-box";
+@import "_component/c-post-navi";
 
-@import "_layout/page";
+@import "_layout/pages";
+@import "_layout/styleguide";
 
 @import "_module/articles";
 @import "_module/media";
+@import "_module/bookmark";
 @import "_module/social";
 @import "_module/navigation";
 @import "_module/pagination";
@@ -56,5 +43,6 @@ $grey-color-dark:  darken($grey-color, 25%);
 @import "_module/separator";
 @import "_module/highlighter-monokai";
 @import "_module/accessibility";
+@import "_module/tags";
 
 

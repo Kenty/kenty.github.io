@@ -1,12 +1,5 @@
 //social
-$twitter-color: rgb(101, 187, 242) !default;
-$github-color: rgb(254, 254, 242) !default;
-$instagram-color: rgb(80, 130, 166) !default;
-$pinterest-color: rgb(219, 51, 25) !default;
-$facebook-color: rgb(75, 110, 169) !default;
-$google-plus-color: rgb(230, 98, 73) !default;
-$send-mail-color: rgb(222, 75, 62) !default;
-$rss-color: rgb(244, 111, 38) !default;
+
 
 // Social icons menu setting
 
@@ -29,8 +22,8 @@ $rss-color: rgb(244, 111, 38) !default;
       width: 3.75rem;
       height: 3.75rem;
       text-align: center;
-      color: scale-color($base-font-color, $lightness: 20%);
-      border: 3px solid scale-color($base-font-color, $lightness: 20%);
+      color: $footer-logo-color;
+      border: 3px solid $footer-logo-color;
       border-radius: 50%;
       &:before {
         @include font-size(34, 1.6);
@@ -70,8 +63,8 @@ $rss-color: rgb(244, 111, 38) !default;
       width: 3rem;
       padding: .3em .5em;
       text-align: center;
-      color: scale-color($base-font-color, $lightness: 20%);
-      border: 3px solid scale-color($base-font-color, $lightness: 20%);
+      color: $sub-text-color;
+      border: 3px solid $sub-text-color;
       &:before {
         @include font-size(21, false);
         @extend %fontawesome;
@@ -125,8 +118,8 @@ $icon in $icons {
     }
     &:hover, &:active, &:focus {
       color: map-get($icon, color);
-      background: scale-color($base-font-color, $lightness: 20%);
-      border-color: scale-color($base-font-color, $lightness: 20%);
+      background: $footer-logo-color;
+      border-color: $footer-logo-color;
       text-decoration: none;
     }
   }

@@ -7,13 +7,11 @@
   &__image {
     display: inline-block;
     vertical-align: middle;
-    // width: 60%;
     margin: 0 auto;
     border-radius: 50%;
     @extend %photo-shadow;
 
     @at-root .p-media--post & {
-      // padding: 0;
       width: 80px;
     }
     @at-root .p-media--page & {
@@ -36,7 +34,7 @@
       display: block;
       font-weight: 600;
       font-family: $base-font-family;
-      color: scale-color($base-font-color, $lightness: 20%);
+      color: $sub-text-color;
     }
     @at-root .p-media--page & {
       display: block;
@@ -48,8 +46,16 @@
         padding-left: 1rem;
       }
     }
+    h1 {
+      @include font-size(24, 1);
+      @media #{$topbar-media-query} {
+        @include font-size(40, 1);
+      }
+    }
   }
   & #{&}__name {
+    // @include web-font($t-kit, normal, 500);
+    color: $footer-logo-color;
     display: inline-block;
   }
 

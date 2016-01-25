@@ -1,7 +1,9 @@
-.p-article & {
+.p-article {
+  & {
   padding: $base-spacing-unit--large 0;
   border-bottom: $border-line;
   @include clearfix();
+  }
   &:nth-of-type(1) {
     padding-top: 0;
   }
@@ -15,44 +17,44 @@
     border-bottom: none;
   }
   &__header {
-    // padding-bottom: $base-spacing-unit--tiny;
+    padding-bottom: $base-spacing-unit--tiny;
     @include clearfix();
-
-    &#{&}--centered {
-      @extend %u-align--center;
-    }
+  }
+  &--centered {
+    @extend %u-align--center;
   }
 
   &__title {
-    font-weight: 300;
-    color: $base-font-color;
+    font-weight: 500;
+    color: $base-text-color;
     @include text-shadow(0 1px 1px rgba(62, 52, 26, .2), 0px 0px 2px rgba(20, 20, 20, .3));
-    @include font-size(24, 1.5);
+    @include font-size(22, 1.5);
     margin-bottom: $base-spacing-unit--small;
-    @media #{$topbar-media-query} {
-      // @include font-size(28, 1.5);
+    @include media($tablet) {
+      @include font-size(28, 1.5);
     }
     @at-root .p-article--post & {
       margin-bottom: $base-spacing-unit--large;
-      @media #{$topbar-media-query} {
-        @include font-size(30, 1.5);
+      @include font-size(26, 1.5);
+      @include media($tablet) {
+        @include font-size(32, 1.5);
       }
     }
     > a {
       font-weight: inherit;
-      color: $base-font-color;
+      color: $base-text-color;
       &:hover {
         text-decoration: underline;
       }
     }
   }
   &__meta {
-    color: scale-color($base-font-color, $lightness: 20%);
+    color: $sub-text-color;
   }
   &__thumbs {
     position: relative;
-    margin-left: $base-spacing-unit--large;
-    margin-right: $base-spacing-unit--large;
+    margin-left: -$base-spacing-unit--large;
+    margin-right: -$base-spacing-unit--large;
     margin-bottom: $base-spacing-unit--large;
     /* css spin loading */
     img {
@@ -76,10 +78,7 @@
       @include font-size(16, 1.5);
     }
   }
-  &__share {
-    padding-top: $base-spacing-unit;
-    padding-bottom: $base-spacing-unit;
-  }
+
   & &--icon {
     @extend %icon-modifier;
   }
@@ -103,19 +102,34 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-      margin-top: $base-spacing-unit--large;
+      margin-top: $base-spacing-unit;
       margin-bottom: $base-spacing-unit--small;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     h1 {
-      @include font-size(28, 2);
+      @include font-size(30, 1.5);
     }
     h2 {
-      @include font-size(24, 1.5);
+      margin-top: $base-spacing-unit--huge;
+      @include font-size(26, 1.5);
+
+      counter-increment: first;
+      counter-reset: second;
+      &:before {
+        content: counter(first) ". ";
+        font-size: 120%;
+      }
+
+      &+h3 {
+        margin-top: $base-spacing-unit;
+      }
     }
     h3 {
-      @include font-size(21, 1.5);
+      margin-top: ($base-spacing-unit--large +1);
+      margin-bottom: ($base-spacing-unit +1);
+      @extend %u-divider--bottom;
+      @include font-size(24, 1.5);
     }
     h4 {
       @include font-size(20, 1.5);
@@ -130,8 +144,8 @@
       font-style: italic;
     }
     p {
-      margin-bottom: $base-spacing-unit;
-      @include font-size(18, 1.5);
+      margin-bottom: $base-spacing-unit--large;
+      @include font-size(16, 1.5);
     }
     a {
       &:hover {
@@ -139,9 +153,44 @@
       }
     }
     img {
-      // width: 100%;
-      // height: auto;
+      margin: 0 auto;
+      display: block;
       @extend %photo-shadow;
     }
+    hr {
+      margin: $base-spacing-unit--large;
+      @extend %u-divider--bottom-rev;
+      @extend %u-divider--top-rev;
+    }
+    dd, li {
+      margin-bottom: $base-spacing-unit--small;
+      margin-left: $base-spacing-unit;
+    }
   }
+}
+
+.p-article {
+  &--tags {
+    @at-root &#{&} {
+      padding: $base-spacing-unit--tiny;
+      border: none;
+    }
+
+    .p-article__title {
+      @include font-size(20, 1.5);
+      font-weight: 400;
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .p-article__meta {
+
+      @include media($tablet) {
+        float: right;
+        display: inline-block;
+      }
+
+    }
+  }
+
 }

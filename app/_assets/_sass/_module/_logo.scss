@@ -1,20 +1,31 @@
 .site-logo {
+  width: 12rem;
+  vertical-align: middle;
+  z-index: 10;
+
+  @include media($tablet) {
+    width: 16rem;
+  }
+
+
   &--footer {
-    text-align: center;
+    @extend %u-align--center;
     padding: $base-spacing-unit 0 $base-spacing-unit--large;
+
+    .st2 {
+      fill: $footer-logo-color;
+      stroke: $default-color;
+    }
   }
 }
 
 .site-title {
-  @include font-size(40, 1.7);
-  letter-spacing: -1px;
-  margin: 0 $base-spacing-unit;
+  line-height: 1;
+  margin-left: $base-spacing-unit;
+  margin-bottom: 0;
+  padding: 1.625rem 0;
   float: left;
-  &, &:visited {
-    color: $grey-color-dark;
-  }
-  img {
-    width: 220px;
-    vertical-align: baseline;
-  }
+  // &, &:visited {
+  //   color: $grey-color-dark;
+  // }
 }

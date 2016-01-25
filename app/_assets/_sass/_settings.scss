@@ -62,15 +62,15 @@ $default-float: left;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
-$primary-color: rgb(185, 182, 166); // lighten brown
-$link-color: #5888ad; // lighten blue
-$accent-color: #FFB541; // orange
+// $primary-color: rgb(185, 182, 166); // lighten brown
+// $link-color: #5888ad; // lighten blue
+// $accent-color: #FFB541; // orange
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
-$base-font-color: rgb(25, 30, 36) !default; // darken blue
+// $base-font-color: rgb(25, 30, 36) !default; // darken blue
 
 // $white       : #FFFFFF;
 // $ghost       : #FAFAFA;
@@ -211,7 +211,7 @@ $large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-w
 // $anchor-text-decoration-hover: none;
 // $anchor-font-color: $primary-color;
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
-
+//
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
 // $hr-border-style: solid;
@@ -305,7 +305,7 @@ $large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-w
 // $alert-border-width: 1px;
 // $alert-border-color: darken($primary-color, $alert-function-factor);
 // $alert-bottom-margin: rem-calc(20);
-
+//
 // We use these to style the close buttons
 // $alert-close-color: #333;
 // $alert-close-top: 50%;
@@ -360,10 +360,10 @@ $crumb-border-color: transparent;
 // We use these to set various text styles for breadcrumbs.
 // $crumb-font-size: rem-calc(12);
 // $crumb-font-color: $primary-color;
-$crumb-font-color-current: $primary-color;
+// $crumb-font-color-current: $primary-color;
 // $crumb-font-color-unavailable: #999;
-// $crumb-font-transform: uppercase;
-// $crumb-link-decor: underline;
+$crumb-font-transform: uppercase;
+$crumb-link-decor: underline;
 $crumb-link-decor: none;
 
 // We use these to control the slash between breadcrumbs
@@ -405,7 +405,7 @@ $crumb-link-decor: none;
 // $button-border-style: solid;
 // $bg: $primary-color;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
-
+//
 // We use this to set the default radius used throughout the core.
 // $button-radius: $global-radius;
 // $button-round: $global-rounded;
@@ -623,12 +623,12 @@ $input-border-color: scale-color(#E6E5DF, $lightness: 5%);
 // $icon-bar-hover-color: $primary-color;
 // $icon-bar-icon-color: $white;
 // $icon-bar-icon-size: 1.875rem;
-// $icon-bar-image-width: 1.875rem;
+$icon-bar-image-width: 1.875rem;
 // $icon-bar-image-height: 1.875rem;
 // $icon-bar-active-color: $primary-color;
 // $icon-bar-item-padding: 1.25rem;
 
-
+//
 // Inline Lists
 
 // $include-html-inline-list-classes: $include-html-classes;
@@ -854,7 +854,7 @@ $input-border-color: scale-color(#E6E5DF, $lightness: 5%);
 // $pagination-link-pad: rem-calc(1 10 1);
 // $pagination-link-font-color: #999;
 // $pagination-link-active-bg: scale-color(#fff, $lightness: -10%);
-$pagination-link-active-bg: scale-color($link-color, $lightness: 10%);
+// $pagination-link-active-bg: scale-color($link-color, $lightness: 10%);
 
 // We use these for disabled anchor links
 // $pagination-link-unavailable-cursor: default;
@@ -863,13 +863,13 @@ $pagination-link-active-bg: scale-color($link-color, $lightness: 10%);
 
 // We use these for currently selected anchor links
 // $pagination-link-current-background: $primary-color;
-$pagination-link-current-font-color: $base-font-color;
+// $pagination-link-current-font-color: $base-font-color;
 // $pagination-link-current-font-weight: bold;
-// $pagination-link-current-cursor: default;
+$pagination-link-current-cursor: default;
 // $pagination-link-current-active-bg: $primary-color;
 
 // Panels
-
+//
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
@@ -893,7 +893,7 @@ $pagination-link-current-font-color: $base-font-color;
 // $callout-panel-link-color: $primary-color;
 
 // Pricing Tables
-
+//
 // $include-html-pricing-classes: $include-html-classes;
 
 // We use this to control the border color
@@ -1217,7 +1217,7 @@ $pagination-link-current-font-color: $base-font-color;
 // $has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%);
 // $has-tip-font-color-hover: $primary-color;
 // $has-tip-cursor-type: help;
-
+//
 // $tooltip-padding: rem-calc(12);
 // $tooltip-bg: #333;
 // $tooltip-font-size: rem-calc(14);
@@ -1240,9 +1240,9 @@ $pagination-link-current-font-color: $base-font-color;
 
 // Background color for the top bar
 // $topbar-bg-color: #333;
-$topbar-bg-color: rgba(0, 0, 0, 0);
+// $topbar-bg-color: rgba(0, 0, 0, 0);
 // $topbar-bg: $topbar-bg-color;
-$topbar-bg: $topbar-bg-color;
+// $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1265,20 +1265,20 @@ $topbar-bg: $topbar-bg-color;
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: #fff;
 // $topbar-link-color-hover: #fff;
-$topbar-link-color-hover: $accent-color;
+// $topbar-link-color-hover: $accent-color;
 // $topbar-link-color-active: #fff;
 // $topbar-link-weight: normal;
-$topbar-link-font-size: rem-calc(14);
+// $topbar-link-font-size: rem-calc(14);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-hover: #272727  ;
-$topbar-link-bg-hover: $base-font-color; // darken blue
+// $topbar-link-bg-hover: $base-font-color; // darken blue
 // $topbar-link-bg-active: $primary-color;
-$topbar-link-bg-active: $link-color;
+// $topbar-link-bg-active: $link-color;
 // $topbar-link-bg-active-hover: darken($primary-color, 5%);
-$topbar-link-bg-active-hover: darken($link-color, 5%);
+// $topbar-link-bg-active-hover: darken($link-color, 5%);
 // $topbar-link-font-family: $body-font-family;
-$topbar-link-font-family: "kepler-std-semicondensed-cap", sans-serif;
+// $topbar-link-font-family: "kepler-std-semicondensed-cap", sans-serif;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: $topbar-height / 3;
 
@@ -1308,11 +1308,11 @@ $topbar-media-query: $medium-up;
 
 // Divider Styles
 // $topbar-divider-border-bottom: dotted 1px  scale-color($topbar-bg-color, $lightness: 13%);
-$topbar-divider-border-top: dashed 1px scale-color(rgba($accent-color, .35), $lightness: 15%);
+// $topbar-divider-border-top: dashed 1px scale-color(rgba($accent-color, .35), $lightness: 15%);
 
 // Sticky Class
-$topbar-sticky-class: ".sticky";
-$topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+// $topbar-sticky-class: ".sticky";
+// $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 //
 // VISIBILITY CLASSES
@@ -1355,3 +1355,4 @@ $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
+//

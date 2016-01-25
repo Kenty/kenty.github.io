@@ -19,14 +19,14 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
  */
 
 html, body {
-  background-color: scale-color($primary-color, $lightness: 0);
+  background-color: $primary-color;
 }
 
 body {
   font-family: $base-font-family;
   font-weight: 300;
   word-wrap: break-word;
-  color: $base-font-color;
+  color: $base-text-color;
   @include font-size(16, 1.5);
   text-rendering: optimizeLegibility;
   @include font-smooting(off);
@@ -40,11 +40,11 @@ body {
  */
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit--large;
 }
 
-strong, em {
-  font-weight: bold;
+a, b, dt, em, strong {
+  font-weight: 600;
 }
 
 
@@ -128,17 +128,17 @@ a {
  * Blockquotes
  */
 
-blockquote {
-  font-size: 18px;
-  font-style: italic;
-  padding-left: $spacing-unit / 2;
-  letter-spacing: -1px;
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
-  >:last-child {
-    margin-bottom: 0;
-  }
-}
+// blockquote {
+//   font-size: 18px;
+//   font-style: italic;
+//   padding-left: $spacing-unit / 2;
+//   letter-spacing: -1px;
+//   color: $grey-color;
+//   border-left: 4px solid $grey-color-light;
+//   >:last-child {
+//     margin-bottom: 0;
+//   }
+// }
 
 
 /**
@@ -146,30 +146,28 @@ blockquote {
  */
 
 pre, code {
-  font-family: monospace, monospace;
-  font-size: 1rem;
-  white-space: pre;
-  // color: scale-color($primary-color, $lightness: 70%);
+  font-family: Menlo,monospace,monospace;
+  @include font-size(14);
   @include border-radius(3px);
 }
 
 code {
-  padding: 0 $base-spacing-unit--tiny;
-  word-wrap: normal;
+  padding: .1rem $base-spacing-unit--tiny;
+  background-color: scale-color($primary-color, $lightness: 70%);
 }
 
 p, li {
   > code {
     margin: 0 $base-spacing-unit--tiny;
-    // color: scale-color($base-font-color, $lightness: 0);
-    background-color: scale-color($primary-color, $lightness: 70%);
+    // color: scale-color($base-text-color, $lightness: 0);
   }
 }
 
 pre {
   overflow-x: scroll;
-  padding: .75rem 1rem;
-  background-color: scale-color($base-font-color, $lightness: 10%);
+  padding: .75rem;
+  background-color: scale-color($base-text-color, $lightness: 10%);
+  white-space: pre;
   > code {
     padding-right: 0;
     padding-left: 0;
@@ -216,14 +214,14 @@ pre {
  * Icons
  */
 
-.icon {
-  > svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    path {
-      fill: $grey-color;
-    }
-  }
-}
+// .icon {
+//   > svg {
+//     display: inline-block;
+//     width: 16px;
+//     height: 16px;
+//     vertical-align: middle;
+//     path {
+//       fill: $grey-color;
+//     }
+//   }
+// }

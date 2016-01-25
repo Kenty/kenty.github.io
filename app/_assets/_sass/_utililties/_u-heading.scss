@@ -1,22 +1,30 @@
-.u-heading, %u-heading {
+.u-heading,
+%u-heading,
+.u-navs,
+%u-navs {
   text-transform: uppercase;
   color: $base-heading-color;
+  letter-spacing: .1rem;
   @include web-font($t-kit, normal, 400);
   @include font-smooting(on);
 }
 
-.u-heading--title, %u-heading--title {
+.u-heading--title,
+%u-heading--title {
   font-weight: 200;
   letter-spacing: .25rem;
 }
 
-.u-heading--label, %u-heading--label {
+.u-heading--label,
+%u-heading--label {
   font-weight: 700;
-  letter-spacing: .1rem;
 }
 
-.u-heading--labels, %u-heading--labels {
+.u-heading--labels,
+%u-heading--labels {
   font-weight: 600;
-  letter-spacing: .1rem;
-  // text-transform: uppercase;
+}
+.u-navs--labels,
+%u-navs--labels {
+  font-weight: 500;
 }

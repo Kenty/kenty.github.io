@@ -12,18 +12,20 @@
     // Positioning context for the mobile navigation icon
     position: relative;
     min-height: 80px;
-    border-bottom: 2px solid scale-color(rgba($primary-color, .65), $lightness: 50%);
-    background-color: scale-color(rgba($base-font-color, .25), $lightness: 5%);
+    border-bottom: 1px solid scale-color(rgba($primary-color, .65), $lightness: -40%);
+    background-color: scale-color(rgba($primary-color, .25), $lightness: -70%);
     &__inner {
-      @include grid-row();
+      @include outer-container($content-width);
     }
   }
 
   &-main {
     // overflow: hidden;
-    max-width: 900px;
-    @media #{$topbar-media-query} {
-      margin: 0 auto;
+    // max-width: 900px;
+    @include outer-container($main-content-width);
+
+    &#{&}--styleguide {
+      @include outer-container($content-width);
     }
   }
   &-sidebar {
@@ -36,7 +38,7 @@
   }
   &-footer {
     color: scale-color($primary-color, $lightness: -20%);
-    border-top: 2px solid scale-color(rgba($primary-color, .65), $lightness: 50%);
+    border-top: 1px solid scale-color(rgba($primary-color, .65), $lightness: -40%);
     background: url(../img/dm-footer_bg.png) repeat bottom center;
     &__copy {
       margin-bottom: 0;
@@ -56,7 +58,6 @@
 }
 
 .page-content {
-  @include grid-row();
 }
 
 .page-heading {
@@ -75,11 +76,11 @@
     }
   }
   &.page-heading--title {
-    @include font-size(20, 1);
+    @include font-size(18, 1);
     @extend %u-heading--title;
 
     @media #{$topbar-media-query} {
-      @include font-size(24, 1);
+      @include font-size(26, 1);
     }
   }
   &.page-heading--label {

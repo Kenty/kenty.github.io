@@ -3,5 +3,6 @@
   border: 2px solid scale-color(rgba($primary-color, .85), $lightness: 50%);
   border-radius: 3px;
   background-color: scale-color($primary-color, $lightness: 40%);
-  @include box-shadow(0 1px 3px scale-color(rgba($primary-color, .35), $lightness: -50%));
+  // @include box-shadow(0 1px 3px scale-color(rgba($primary-color, .35), $lightness: -50%));
+  @extend %u-shadow;
 }
