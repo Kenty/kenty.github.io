@@ -9,8 +9,8 @@
   @include font-smooting(on);
 }
 
-.u-heading--title,
-%u-heading--title {
+.u-heading--headline,
+%u-heading--headline {
   font-weight: 200;
   letter-spacing: .25rem;
 }
@@ -27,4 +27,5 @@
 .u-navs--labels,
 %u-navs--labels {
   font-weight: 500;
+  @include font-smooting(off);
 }

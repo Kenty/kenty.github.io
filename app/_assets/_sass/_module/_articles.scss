@@ -181,6 +181,9 @@
       font-weight: 400;
       display: inline-block;
       margin-bottom: 0;
+      >a {
+        color: $link-color;
+      }
     }
 
     .p-article__meta {

@@ -76,7 +76,7 @@
     }
   }
   &.page-heading--title {
-    @include font-size(18, 1);
+    @include font-size(20, 1);
     @extend %u-heading--title;
 
     @media #{$topbar-media-query} {
@@ -84,7 +84,7 @@
     }
   }
   &.page-heading--label {
-    @include font-size(18, 1);
+    @include font-size(20, 1);
     text-align: left;
     @extend %u-heading--label;
 

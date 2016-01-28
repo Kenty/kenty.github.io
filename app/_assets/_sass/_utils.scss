@@ -12,7 +12,8 @@ $default-color: rgb(25, 30, 36) !default;
 $primary-color: rgb(185, 182, 166) !default; // lighten brown
 $content-shadow: rgba($primary-color, 0.6);
 // Link Color
-$link-color: rgb(106, 154, 187) !default; // lighten blue
+// $link-color: rgb(106, 154, 187) !default; // lighten blue
+$link-color: rgb(73, 125, 161) !default; // lighten blue
 // Accent Color
 $accent-color: rgb(244, 186, 103) !default;  // orange
 
@@ -29,6 +30,10 @@ $logo-text-left-color: rgb(65, 71, 77) !default; // #41474D
 $logo-text-right-color: $brands-color; // #575B64
 // Site footer logo
 $footer-logo-color: $brands-color;
+
+// Pre & Code color
+$pre-background-color: scale-color($base-text-color, $lightness: 5%);
+
 
 // social
 $twitter-color: rgb(101, 187, 242) !default;

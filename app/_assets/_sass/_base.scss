@@ -25,7 +25,7 @@ html, body {
 body {
   font-family: $base-font-family;
   font-weight: 300;
-  word-wrap: break-word;
+  // word-wrap: break-word;
   color: $base-text-color;
   @include font-size(16, 1.5);
   text-rendering: optimizeLegibility;
@@ -85,6 +85,9 @@ li {
   > ul, > ol {
     margin-top: 0;
     margin-bottom: 0;
+    li {
+      list-style: circle outside none;
+    }
   }
 }
 
@@ -93,7 +96,7 @@ ol li {
 }
 
 ul li {
-  list-style: circle outside none;
+  list-style: disc outside none;
 }
 
 
@@ -112,34 +115,16 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
-  color: scale-color($link-color, $lightness: -20%);
+  color: $link-color;
   @include transition(all, 300ms, linear);
   &:hover, &:focus, &:active {
     text-decoration: underline;
-    color: scale-color($link-color, $lightness: 0);
+    color: scale-color($link-color, $lightness: 20%);
   }
   &:focus {
     outline: 5px auto $link-color;
   }
 }
-
-
-/**
- * Blockquotes
- */
-
-// blockquote {
-//   font-size: 18px;
-//   font-style: italic;
-//   padding-left: $spacing-unit / 2;
-//   letter-spacing: -1px;
-//   color: $grey-color;
-//   border-left: 4px solid $grey-color-light;
-//   >:last-child {
-//     margin-bottom: 0;
-//   }
-// }
-
 
 /**
  * Code formatting
@@ -150,24 +135,11 @@ pre, code {
   @include font-size(14);
   @include border-radius(3px);
 }
-
-code {
-  padding: .1rem $base-spacing-unit--tiny;
-  background-color: scale-color($primary-color, $lightness: 70%);
-}
-
-p, li {
-  > code {
-    margin: 0 $base-spacing-unit--tiny;
-    // color: scale-color($base-text-color, $lightness: 0);
-  }
-}
-
 pre {
+  white-space: pre;
   overflow-x: scroll;
   padding: .75rem;
-  background-color: scale-color($base-text-color, $lightness: 10%);
-  white-space: pre;
+  background-color: $pre-background-color;
   > code {
     padding-right: 0;
     padding-left: 0;
@@ -175,6 +147,17 @@ pre {
     background-color: transparent;
   }
 }
+code {
+  padding: .1rem $base-spacing-unit--tiny;
+  background-color: scale-color($primary-color, $lightness: 70%);
+}
+
+p, li, dd {
+  > code {
+    margin: 0 $base-spacing-unit--tiny;
+  }
+}
+
 
 
 /**
@@ -208,20 +191,3 @@ pre {
     content: '';
   }
 }
-
-
-/**
- * Icons
- */
-
-// .icon {
-//   > svg {
-//     display: inline-block;
-//     width: 16px;
-//     height: 16px;
-//     vertical-align: middle;
-//     path {
-//       fill: $grey-color;
-//     }
-//   }
-// }
