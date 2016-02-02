@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
 /**
- * Start rsync task
+ * Start gh-pages task
  */
-gulp.task('deploy',/* ['rsync'],*/ ['deploy:gh-pages']);
+gulp.task('deploy', ['deploy:gh-pages']);

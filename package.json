@@ -8,17 +8,13 @@
     "modernizr": "./app/_assets/_bower_components/modernizr/modernizr.js",
     "foundation": "./node_modules/foundation-sites/js/foundation.js",
     "smooth-scroll": "./app/_assets/lib/smooth-scroll.js",
-    "Chart": "./app/_assets/lib/Chart.js",
-    "responsive-nav": "./app/_assets/lib/responsive-nav.js",
-    "fastClick": "./app/_assets/lib/fastclick.js"
+    "Chart": "./app/_assets/lib/Chart.js"
   },
   "browserify-shim": {
     "modernizr": "Modernizr",
     "jquery": "global:$",
     "foundation": "foundation",
     "chart": "Chart",
-    "responsive-nav": "responsiveNav",
-    "fastClick": "fastClick",
     "smooth-scroll": "smoothScroll"
   },
   "browserify": {
@@ -27,10 +23,12 @@
     ]
   },
   "devDependencies": {
+    "aws-sdk": "^2.2.33",
     "browser-sync": "*",
     "browserify": "^13.0.0",
     "browserify-shim": "^3.8.12",
     "del": "^2.2.0",
+    "fastclick": "^1.0.6",
     "gulp": "3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-awspublish": "^3.0.1",
@@ -78,6 +76,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "foundation-sites": "^6.1.1"
+    "foundation-sites": "^6.1.1",
+    "responsive-nav": "^1.0.39",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
   }
 }
