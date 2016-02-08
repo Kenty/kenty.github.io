@@ -1,44 +1,59 @@
 // Adding attributes to Hamburger
 
-$(function() {
-  'use strict';
+// (function() {
+//   'use strict';
 
-  var _gMenu = $('#nav-toggle');
-  var fNote = $('.footnote');
-  var fNote_rev = $('.reversefootnote');
-  // var footnote = $('sup[id*="fnref"] a');
+  var _gMenu = document.getElementById('nav-toggle');
 
-  _gMenu.attr({
-    'role': 'button',
-    'aria-haspopup': 'true',
-    'aria-controls': 'navigation',
-    'aria-expanded': 'false'
-  });
+  // Name Space
+  var Menu = Menu || {};
 
-  fNote.attr({
-    'aria-describedby': 'footnote-label'
-  });
+  // Module
+  Menu = (function() {
+      function init(el) {
+        this.setAttributes(el, {
+          'aria-controls': 'navigation',
+          'aria-haspopup': 'true',
+          'aria-expanded': 'false'
+        });
+        this.toggle(el);
+      }
+      function setAttributes(el, attrs) {
+        for (var key in attrs) {
+          el.setAttribute(key, attrs[key]);
+        }
+      }
+      function open(el) {
+        el.setAttribute('aria-expanded', 'true');
+      }
+      function close(el) {
+        el.setAttribute('aria-expanded', 'false');
+      }
+      function toggle(el) {
+        var self = this;
 
-  fNote_rev.attr({
-    'aria-label': 'Back to Content'
-  });
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          e.preventDefault();
 
-  var openMenu = function() {
-    _gMenu.attr({
-      'aria-expanded': 'true'
-    });
-  };
+          // var state = this.getAttribute('aria-expanded') === 'false' ? true : false;
+          var state = this.getAttribute('aria-expanded') === 'true' ? self.close(this) : self.open(this);
 
-  var closeMenu = function() {
-    _gMenu.attr({
-      'aria-expanded': 'false'
-    });
-  };
+          return state;
+        }, false);
+      }
 
-  _gMenu.on('click', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
+      // Pablic API
+      return {
+        setAttributes: setAttributes,
+        init: init,
+        open: open,
+        close: close,
+        toggle: toggle
+      };
+  })();
 
-    $(this).attr('aria-expanded') === 'true' ? closeMenu() : openMenu();
-  });
-});
+  // module.exports = Menu;
+  Menu.init(_gMenu);
+
+// })();
