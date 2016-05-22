@@ -1,0 +1,31 @@
+---
+layout: default
+title: tags
+permalink: /tags/
+ads: false
+---
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag_words = site_tags | split:',' | sort %}
+
+{% include breadcrumb.html %}
+
+<div id="tags" class="page--tags">
+
+  <section id="main" class="page-main" role="main">
+
+    <div class="page-heading-wrap">
+      <h1 class="page-heading page-heading--headline c-section__title">{{ page.title }}</h1>
+    </div>
+
+    <div id="tag-cloud" class="tag-cloud tag-cloud--centered c-box">
+    {% include list-of-tags.html %}
+    </div>
+
+    <div class="tag-archive c-box">
+      {% include tag-archive.html %}
+    </div>
+
+  </section>
+
+</div>

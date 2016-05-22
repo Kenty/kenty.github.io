@@ -1,0 +1,20 @@
+<ul class="tag-archive__list c-box__list">
+    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ tag_words[item] | strip_newlins }}{% endcapture %}
+    <li class="list__item">
+
+      <i class="fa fa-tag" aria-label="tag"></i>
+      <h2 id="{{ this_word | slugify }}" class="tag-archive__name">{{ this_word }}</h2>
+      <ul>
+      {% for post in site.tags.[this_word] %}{% if post.title != nil %}
+        <li class="p-article p-article--tags">
+          {% include post/date.html %}
+          <h3 class="p-article__title" itemprop="name"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h3>
+
+        </li>
+      {% endif %}{% endfor %}
+      </ul>
+
+    </li>
+    {% endunless %}{% endfor %}
+</ul>

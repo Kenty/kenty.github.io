@@ -1,0 +1,14 @@
+<article class="component u-card">
+  <header class="component__header">
+    <h3 id="guide-{{ entry.title | slugify }}" class="component__heading">{{ entry.title }}</h3>
+  </header>
+
+  <div class="component__content">
+    <div class="content content--output">
+      {{ entry.content }}
+    </div>
+    <div class="content content--code">
+      {% highlight html %} {{ entry.content }} {% endhighlight %}
+    </div>
+  </div>
+</article>

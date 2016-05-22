@@ -1,7 +1,6 @@
 .tag-cloud {
   & {
-    padding-top: 0;
-    padding-bottom: $base-spacing-unit--large;
+    margin: $base-spacing-unit--large 0;
   }
 
   &__list {
@@ -10,8 +9,8 @@
   }
   .list__item {
     padding: $base-spacing-unit--tiny;
-    &:nth-last-of-type(1) {
-      margin-right: 0;
+    &:not(:last-child) {
+      margin-right: 5px;
     }
 
     > a {
@@ -20,8 +19,13 @@
       @extend %u-btn--ghost;
     }
   }
-  &.tag-cloud--centered {
-    @extend %u-align--center;
+  // &.tag-cloud--centered {
+  //   @extend %u-align--center;
+  // }
+  @at-root &#{&} {
+    &--centered {
+      @extend %u-align--center;
+    }
   }
   & &--count {
     margin-left: $base-spacing-unit--tiny;
@@ -35,17 +39,13 @@
 
   }
   &__list {
+    >.list__item {
+      display: block;
+      margin-bottom: $base-spacing-unit--large;
 
-  }
-  .list__item {
-    display: block;
-    margin-bottom: $base-spacing-unit--large;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-    .list__item {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   &__name {

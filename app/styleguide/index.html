@@ -1,0 +1,23 @@
+---
+layout: style-guide
+title: "Style Guide"
+---
+
+{% assign entries = site.colors %}
+{% assign componentsByType = site.components | group_by: "type" %}
+
+<section class="guide guide--colors">
+    <h2 id="guide-colors" class="guide__heading">Colors</h2>
+    {% for entry in entries %}
+    {% include component-color.html %}
+    {% endfor %}
+</section>
+
+<section class="guide guide--patterns">
+{% for type in componentsByType %}
+    <h2 id="guide-{{ type.name }}" class="guide__heading">{{ type.name | capitalize }}</h2>
+    {% for entry in type.items %}
+    {% include components.html %}
+    {% endfor %}
+{% endfor %}
+</section>

@@ -1,0 +1,11 @@
+<nav>
+{% assign collection = false %}
+
+{% for collection_item in site.data.breadcrumb %}
+  {% if collection_item.url contains page.url %}
+    {% assign collection = collection_item %}
+    <a href="{{ collection.url }}">{{ collection.name }}</a>
+  {% endif %}
+{% endfor %}
+{{ post.title }}
+</nav>

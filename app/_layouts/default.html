@@ -3,19 +3,19 @@
 {% include head.html %}
 
 <body>
-  <div id="page" class="page page-wrapp page-{{ page.title }}">
+  <div id="page" class="page page-wrap">
 
     {% include header.html %}
 
-    <div id="contents" class="page-content c-section">
-      <div class="c-section__inner">{{ content }}</div>
+    <div id="contents" class="page-content">
+      <div class="page-content__inner">{{ content }}</div>
     </div>
 
     {% include footer.html %}
 
   </div>
   <script src="{{ "/assets/js/app.js" | prepend: site.baseurl | prepend: site.cdn_url }}" async></script>
-  {% include ga.html %}
+  <script src="//maps.googleapis.com/maps/api/js"></script>
 </body>
 
 </html>

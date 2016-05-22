@@ -1,6 +1,7 @@
 .p-article {
   & {
-  padding: $base-spacing-unit--large 0;
+  padding-top: $base-spacing-unit--huge;
+  padding-bottom: $base-spacing-unit--large;
   border-bottom: $border-line;
   @include clearfix();
   }
@@ -16,28 +17,31 @@
     padding-bottom: 0;
     border-bottom: none;
   }
-  &__header {
-    padding-bottom: $base-spacing-unit--tiny;
-    @include clearfix();
-  }
   &--centered {
     @extend %u-align--center;
   }
 
+  &__header {
+    margin-bottom: $base-spacing-unit--large;
+    @include clearfix();
+  }
   &__title {
     font-weight: 500;
     color: $base-text-color;
-    @include text-shadow(0 1px 1px rgba(62, 52, 26, .2), 0px 0px 2px rgba(20, 20, 20, .3));
-    @include font-size(22, 1.5);
     margin-bottom: $base-spacing-unit--small;
+    letter-spacing: .1rem;
+    @include text-shadow(0 1px 1px rgba(62, 52, 26, .2), 0px 0px 2px rgba(20, 20, 20, .3));
+    @include font-size(26, 1.5);
+
     @include media($tablet) {
-      @include font-size(28, 1.5);
+      @include font-size(36, 1.5);
     }
     @at-root .p-article--post & {
-      margin-bottom: $base-spacing-unit--large;
+      margin-bottom: $base-spacing-unit;
       @include font-size(26, 1.5);
+
       @include media($tablet) {
-        @include font-size(32, 1.5);
+        @include font-size(36, 1.5);
       }
     }
     > a {
@@ -70,6 +74,7 @@
     @include font-size(16, 1.5);
   }
   &__links {
+    text-align: center;
     .more-link {
       font-weight: 600;
       padding: $base-spacing-unit--small $base-spacing-unit--large;
@@ -93,6 +98,46 @@
   & &--tag {
     display: block;
   }
+
+}
+
+.p-article {
+  @at-root &#{&} {
+    &--tags {
+      color: tomato;
+      list-style: none;
+    }
+  }
+  &--tags {
+    @at-root &#{&} {
+      padding: $base-spacing-unit--tiny;
+      border: none;
+    }
+
+    .p-article__title {
+      @include font-size(20, 1.5);
+      font-weight: 400;
+      display: inline-block;
+      margin-bottom: 0;
+      text-shadow: none;
+      >a {
+        color: $link-color;
+      }
+    }
+
+    .p-article__meta {
+
+      @include media($tablet) {
+        float: left;
+        display: inline-block;
+      }
+
+    }
+  }
+
+}
+
+.p-article {
   &__content {
     padding-top: $base-spacing-unit;
     @include clearfix();
@@ -144,8 +189,11 @@
       font-style: italic;
     }
     p {
-      margin-bottom: $base-spacing-unit--large;
+      margin-bottom: 0;
       @include font-size(16, 1.5);
+      &:not(:last-of-type) {
+      margin-bottom: $base-spacing-unit--large;
+      }
     }
     a {
       &:hover {
@@ -167,33 +215,4 @@
       margin-left: $base-spacing-unit;
     }
   }
-}
-
-.p-article {
-  &--tags {
-    @at-root &#{&} {
-      padding: $base-spacing-unit--tiny;
-      border: none;
-    }
-
-    .p-article__title {
-      @include font-size(20, 1.5);
-      font-weight: 400;
-      display: inline-block;
-      margin-bottom: 0;
-      >a {
-        color: $link-color;
-      }
-    }
-
-    .p-article__meta {
-
-      @include media($tablet) {
-        float: right;
-        display: inline-block;
-      }
-
-    }
-  }
-
 }

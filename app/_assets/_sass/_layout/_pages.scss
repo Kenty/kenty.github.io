@@ -1,5 +1,5 @@
 .page {
-  &-wrapp {
+  &-wrap {
     position: relative;
     overflow: hidden;
     background: url(../img/dominomatrix-bg.jpg) repeat;
@@ -14,50 +14,69 @@
     min-height: 80px;
     border-bottom: 1px solid scale-color(rgba($primary-color, .65), $lightness: -40%);
     background-color: scale-color(rgba($primary-color, .25), $lightness: -70%);
+    padding-left: $base-spacing-unit;
+    padding-right: $base-spacing-unit;
     &__inner {
       @include outer-container($content-width);
     }
   }
 
-  &-main {
-    // overflow: hidden;
-    // max-width: 900px;
-    @include outer-container($main-content-width);
+  &-content {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
 
-    &#{&}--styleguide {
+    @include media($tablet) {
+      padding-top: 5rem;
+      padding-bottom: 4.5rem;
+    }
+    &__inner {
+      @include row();
       @include outer-container($content-width);
+      padding-left: $base-spacing-unit;
+      padding-right: $base-spacing-unit;
     }
   }
-  &-sidebar {
-    margin-top: $base-spacing-unit--large;
-    @media #{$large-up} {
-      margin-top: 0;
-      padding-right: 0;
-      padding-left: $base-spacing-unit--large;
+
+  &-main {
+    @include outer-container($main-content-width);
+
+    .page--styleguide & {
+      @include outer-container($content-width);
     }
   }
   &-footer {
     color: scale-color($primary-color, $lightness: -20%);
     border-top: 1px solid scale-color(rgba($primary-color, .65), $lightness: -40%);
     background: url(../img/dm-footer_bg.png) repeat bottom center;
-    &__copy {
-      margin-bottom: 0;
-      padding-top: $base-spacing-unit--large;
-      text-align: center;
-      @include web-font($t-kit, normal, 300);
-      @include font-size(16, false);
-      a {
-        color: $primary-color;
-        @include transition(all, 300ms, ease-out);
-        &:hover {
-          color: $accent-color;
-        }
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    &__inner {
+      @include outer-container($content-width);
+    }
+  }
+  // &-sidebar {
+  //   margin-top: $base-spacing-unit--large;
+  //   @media #{$tablet} {
+  //     margin-top: 0;
+  //     padding-right: 0;
+  //     padding-left: $base-spacing-unit--large;
+  //   }
+  // }
+  &-copyright {
+    margin-bottom: 0;
+    // padding-top: $base-spacing-unit--large;
+    letter-spacing: .06rem;
+    @include web-font($t-kit, normal, 300);
+    @include font-size(16, false);
+    @extend %u-align--center;
+    a {
+      color: $primary-color;
+      @include transition(all, 300ms, ease-out);
+      &:hover {
+        color: $accent-color;
       }
     }
   }
-}
-
-.page-content {
 }
 
 .page-heading {
@@ -75,12 +94,15 @@
       background-color: #c2bba9;
     }
   }
-  &.page-heading--title {
+  &.page-heading--headline {
     @include font-size(20, 1);
-    @extend %u-heading--title;
+    @extend %u-heading--headline;
 
-    @media #{$topbar-media-query} {
-      @include font-size(26, 1);
+    @include media($mobile) {
+        @include font-size(22, 1);
+    }
+    @include media($tablet) {
+      @include font-size(24, 1);
     }
   }
   &.page-heading--label {
@@ -88,8 +110,11 @@
     text-align: left;
     @extend %u-heading--label;
 
-    @media #{$topbar-media-query} {
-      @include font-size(21, 1);
+    @include media($mobile) {
+        @include font-size(22, 1);
+    }
+    @include media($tablet) {
+      @include font-size(24, 1);
     }
   }
   &.page-haeding--errors {
@@ -121,7 +146,7 @@
 }
 
 .page-links {
-
+  margin-bottom: 0;
 
   .more-link {
     font-weight: 600;
@@ -130,7 +155,7 @@
     @extend %u-btn--ghost;
     @include font-size(16, 1.5);
   }
-}
-.page-links--centered {
-  @extend %u-align--center;
+  &--centered {
+    @extend %u-align--center;
+  }
 }

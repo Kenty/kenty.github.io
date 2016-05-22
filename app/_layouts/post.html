@@ -5,35 +5,31 @@ layout: default
 
   <section id="main" class="page-main" role="main">
 
-    <article class="p-article p-article--post" itemscope itemtype="http://schema.org/Article">
+    <article class="p-article p-article--post" itemscope itemtype="http://schema.org/BlogPosting">
 
-      {% if page.image %}
-        <figure class="p-article__thumbs"><img src="{{"/assets/img/" | append: page.image | prepend: site.baseurl | prepend: site.cdn_url }}" alt="{{ page.title }}" /></figure>
-      {% endif %}
+      {% include post/thumbnails.html %}
 
-      <header class="p-article__header p-article__header--centered post-header">
-        <h1 class="p-article__title" itemprop="name">{{ page.title }}</h1>
+      <header class="p-article__header p-article--centered">
+        <h1 class="p-article__title" itemprop="headline">{{ page.title }}</h1>
 
         <div class="p-article__meta c-box">
-          <span class="p-article--date list__item"><time content="{{ page.date | date: "%Y-%m-%d" }}" datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time></span>
-
-          {% if page.tags %}<span class="p-article--tag list__item"><i class="p-article--icon fa fa-tag" aria-label="tag"></i>{% for tag in page.tags %}<a href="{{ "/tags/#" | append: tag | prepend: site.baseurl | prepend: site.url }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %} &bull; {% endunless %}{% endfor %}</span>{% endif %}
+          {% include post/date.html %}
+          {% include post/tags.html %}
         </div>
       </header>
 
-      <section class="p-article__content" itemprop="articleBody">
+      <div class="p-article__content" itemprop="articleBody">
         {{ content }}
-      </section>
+      </div>
 
       <hr class="separator separator-post separator-post--large">
 
       <div class="p-article__meta c-box">
-        <div class="p-article__share list__item">{% include bookmark.html %}</div>
-        <div class="p-media p-media--post list__item" itemscope itemtype="http://schema.org/Person">
-          <img src="{{ "/assets/img/" | append: site.author.image | prepend: site.baseurl | prepend: site.cdn_url }}" class="p-media__image" itemprop="image" alt="{{ site.author.name }}">
-          <p class="p-media__author" itemprop="author">Posted by <span itemprop="name">{{ page.author }}</span></p></div>
+        {% include post/bookmark.html %}
+        {% include post/author.html %}
       </div>
 
+      {% include adsence.html %}
       <div id="post-navigation" class="p-article__navi post-navi" role="navigation">
         {% if page.previous.url %}
             <a href="{{ page.previous.url | append: "/" }}" class="post-navi--prev navi__link" title="{{ page.previous.title }}"><span class="link__arrow link--left">&larr;</span> Previous Post</a>

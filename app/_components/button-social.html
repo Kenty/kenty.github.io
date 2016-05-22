@@ -1,0 +1,18 @@
+---
+title: "Bookmarks Button"
+type: button
+scss: _assets/_sass/_module/_social.scss
+usage:
+---
+
+<div class="p-bookmarks p-bookmarks__list">
+    <div class="list__item">
+      <a href="#" class="list__link icon-twitter js-social-share" title="Share on twitter"><span>Share on Twitter</span></a>
+    </div>
+    <div class="list__item">
+      <a href="#" data-share-url="{{ page.url | prepend: site.url | append: '/' }}" class="list__link icon-facebook js-social-share"><span>Share on Facebook</span></a>
+    </div>
+    <div class="list__item">
+      <a href="#" class="list__link icon-google-plus js-social-share"><span>Share on Google+</span></a>
+    </div>
+</div>

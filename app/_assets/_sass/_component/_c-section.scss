@@ -3,8 +3,7 @@
     padding: $base-spacing-unit--large $base-spacing-unit;
   }
   &__inner {
-    @include row();
-    @include outer-container($content-width);
+
 
   }
   &__title {

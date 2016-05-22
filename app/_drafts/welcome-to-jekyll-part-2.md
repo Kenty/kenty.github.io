@@ -3,8 +3,12 @@ layout: post
 title: Jekyll始めました。2015 秋-Part-2
 author: Kenta Hoshino
 date: 2015-10-12
+modified: 2016-01-14 19:22:29
 categories: []
-tags: ['jekyll', 'github', 'github pages']
+tags:
+- 'jekyll'
+- 'github pages'
+- github
 published: True
 
 ---

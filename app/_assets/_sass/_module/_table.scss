@@ -56,9 +56,9 @@ td {
     tr:last-child th {
       border-bottom-width: 2px;
     }
-    tbody tr th:last-of-type {
-      border-right-width: 2px;
-    }
+  }
+  tbody tr th:last-of-type {
+    border-right-width: 2px;
   }
 }
 

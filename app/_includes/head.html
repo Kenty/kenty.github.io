@@ -1,13 +1,13 @@
 <head>
   {% include assign.html %}
+  <title>{% if page.title %} {{ page.title | capitalize }}{% if url != '/' %} | {% endif %}{{ site.title }} {% else %} {{ site.title }} {% endif %}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="{{ site.author.name }}">
+  <link rel="author" href="/about/">
 
   {% include open-graph.html %}
 
-  <title>{% if page.title %} {{ page.title | capitalize }}{% if url != '/' %} | {% endif %}{{ site.title }} {% else %} {{ site.title }} {% endif %}</title>
 
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 80 }}{% else %}{{ site.description }}{% endif %}">
 
@@ -15,5 +15,9 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="canonical" href="{{ url | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <script>
+    document.documentElement.className += ' js';
+  </script>
   <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  {% include ga.html %}
 </head>

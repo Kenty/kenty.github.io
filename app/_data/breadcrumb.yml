@@ -1,0 +1,7 @@
+
+- name: 'Blog Articles'
+  url: /blog/
+- name: 'Tags Cloud'
+  url: /tags/
+- name: 'About Me?'
+  url: /about/

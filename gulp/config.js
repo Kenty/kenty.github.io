@@ -238,23 +238,23 @@ module.exports = {
    * Rsync
    *
    */
-  rsync : {
-    src: paths.production + '/**',
-    options: {
-      destination: 'kenty/kenty.github.io.git',
-      root: paths.production,
-      hostname: 'github.com',
-      username: 'git',
-      incremental: true,
-      progress: true,
-      relative: true,
-      emptyDirectories: true,
-      recursive: true,
-      clean: true,
-      exclude: ['.DS_Store'],
-      include: []
-    }
-  },
+  // rsync : {
+  //   src: paths.production + '/**',
+  //   options: {
+  //     destination: 'kenty/kenty.github.io.git',
+  //     root: paths.production,
+  //     hostname: 'github.com',
+  //     username: 'git',
+  //     incremental: true,
+  //     progress: true,
+  //     relative: true,
+  //     emptyDirectories: true,
+  //     recursive: true,
+  //     clean: true,
+  //     exclude: ['.DS_Store'],
+  //     include: []
+  //   }
+  // },
 
   /**
    *

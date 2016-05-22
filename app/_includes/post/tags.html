@@ -1,0 +1,3 @@
+{% if page.tags %}
+  <span class="p-article--tag list__item"><i class="p-article--icon fa fa-tag" aria-label="tag"></i>{% for tag in page.tags %}<a href="{{ "/tags/#" | prepend: site.baseurl | prepend: site.url | prepend: url_protocol }}{{ tag | slugify }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %} &bull; {% endunless %}{% endfor %}</span>
+{% endif %}

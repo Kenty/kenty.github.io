@@ -3,7 +3,7 @@
 // ---
 @charset "utf-8";
 
-@import "_settings";
+// @import "_settings";
 
 
 @import "bourbon";
@@ -12,7 +12,7 @@
 ///  Zurb-foundation  ///
 /////////////////////////
 // @import "foundation/components/grid";
-@import "_utils";
+@import "utils";
 @import "_normalize";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
@@ -21,13 +21,14 @@
 // @import "syntax-highlighting";
 
 @import "_utililties/u-button";
-@import "_utililties/u-card.scss";
+@import "_utililties/u-card";
 @import "_utililties/u-divider";
 @import "_utililties/u-heading";
 @import "_utililties/u-align";
 
 @import "_component/c-section";
 @import "_component/c-box";
+@import "_component/c-table";
 @import "_component/c-post-navi";
 
 @import "_layout/pages";
@@ -44,5 +45,7 @@
 @import "_module/highlighter-monokai";
 @import "_module/accessibility";
 @import "_module/tags";
+@import "_module/map";
+@import "_module/quote";
 
 

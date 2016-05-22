@@ -58,7 +58,7 @@ var FastClick = require('fastClick');
     //   // event.stopPropagation();
     // }, false);
   console.log(nav);
-  }
+}
 
 
 })();

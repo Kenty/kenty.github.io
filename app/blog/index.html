@@ -4,26 +4,28 @@ title: blog
 <!-- permalink: /blog/ -->
 ---
 
-<div id="blogs-page" class="blogs-post">
+<div id="blogs" class="page--blog">
 
   <section id="main" class="page-main" role="main">
 
       <div class="page-heading-wrap">
-        <h1 class="page-heading page-heading--title c-section__title">{{ page.title }} Posts</h1>
+        <h1 class="page-heading page-heading--headline c-section__title">{{ page.title }} Posts</h1>
       </div>
 
     {% for post in paginator.posts %}
       <article class="article-post p-article p-article--posts" itemscope itemprop="http://schema.org/BlogPosting">
 
-        <h2 class="p-article__title" itemprop="name"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h2>
+        <header class="p-article__header p-article--centered">
+          <h2 class="p-article__title" itemprop="name"><a class="p-article__link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h2>
 
-        <div class="p-article__meta c-box">
-          <span class="p-article--date list__item"><time content="{{ post.date | date: "%Y-%m-%d" }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span>
-        </div>
+          <div class="p-article__meta c-box">
+            {% include post/date.html %}
+          </div>
+        </header>
 
-        <section class="p-article__content" itemprop="articleBody">
+        <div class="p-article__content" itemprop="articleBody">
           {{ post.excerpt }}
-        </section>
+        </div>
 
         <div class="p-article__links">
           <a class="more-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">More...</a>
@@ -32,7 +34,9 @@ title: blog
       </article>
     {% endfor %}
 
-      {% include pagination.html %}
+    <hr class="separator separator-page separator-page--small">
+
+    {% include pagination.html %}
 
   </section>
 

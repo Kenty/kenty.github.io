@@ -1,0 +1,3 @@
+{% if page.image %}
+  <figure class="p-article__thumbs" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="{{"/assets/img/" | append: page.image | prepend: site.baseurl | prepend: site.cdn_url | prepend: site.url_protocol }}" alt="{{ page.title }}" /></figure>
+{% endif %}

@@ -18,7 +18,7 @@
       display: block;
       width: 40%;
       margin: 0 auto;
-      @media #{$topbar-media-query} {
+      @media #{$tablet} {
         display: inline-block;
         width: 30%;
       }
@@ -40,7 +40,7 @@
       display: block;
       width: 100%;
       margin: 0 auto;
-      @media #{$topbar-media-query} {
+      @media #{$tablet} {
         display: inline-block;
         width: 65%;
         padding-left: 1rem;
@@ -48,7 +48,7 @@
     }
     h1 {
       @include font-size(24, 1);
-      @media #{$topbar-media-query} {
+      @media #{$tablet} {
         @include font-size(40, 1);
       }
     }

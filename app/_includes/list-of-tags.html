@@ -1,0 +1,6 @@
+<ul class="tag-cloud__list c-box__list">
+{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+  {% capture this_word %}{{ tag_words[item] | strip_newlins }}{% endcapture %}
+  <li class="list__item"><a id="{{ this_word | slugify }}-tags" data-scroll href="#{{ this_word | slugify }}">{{ this_word }}<span class="tag-cloud--count">x{{ site.tags.[this_word].size }}</span></a></li>
+{% endunless %}{% endfor %}
+</ul>

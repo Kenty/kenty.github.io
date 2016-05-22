@@ -10,7 +10,7 @@
 
   &--footer {
     @extend %u-align--center;
-    padding: $base-spacing-unit 0 $base-spacing-unit--large;
+    margin-bottom: $base-spacing-unit--large;
 
     .st2 {
       fill: $footer-logo-color;

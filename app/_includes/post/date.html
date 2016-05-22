@@ -1,0 +1,13 @@
+{% if page.date %}
+  <span class="p-article--date list__item"><time content="{{ page.date | date_to_xmlschema }}" datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">Published: {{ page.date | date: "%B %-d, %Y" }}</time></span>
+{% endif %}
+{% if page.modified %}
+  <meta itemprop="dateModified" content="{{ page.modified | date_to_xmlschema }}">
+{% endif %}
+
+{% if post.date %}
+  <span class="p-article--date list__item"><time content="{{ post.date | date_to_xmlschema }}" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">Published: {{ post.date | date: "%B %-d, %Y" }}</time></span>
+{% endif %}
+{% if post.modified %}
+  <meta itemprop="dateModified" content="{{ post.modified | date_to_xmlschema }}">
+{% endif %}
