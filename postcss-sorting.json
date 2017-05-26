@@ -1,0 +1,31 @@
+{
+  "order": [
+    "custom-properties",
+    "dollar-variables",
+    "at-rules",
+    {
+      "type": "at-rule",
+      "name": "include"
+    },
+    {
+      "type": "at-rule",
+      "name": "extend"
+    },
+    "declarations",
+    {
+      "type": "at-rule",
+      "name": "include",
+      "parameter": "breakpoint"
+    },
+    "rules",
+    {
+      "type": "at-rule",
+      "type": "keyframes"
+    }
+  ],
+  "rule-nested-empty-line-before": [true, {
+    "except": [
+      "first-nested"
+    ]
+  }]
+}
