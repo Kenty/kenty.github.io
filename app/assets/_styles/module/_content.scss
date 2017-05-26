@@ -1,0 +1,90 @@
+.p-content {
+  @include _(u-align--left);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: $base-spacing-unit--small;
+    margin-top: $base-spacing-unit;
+    font-weight: 600;
+  }
+
+  h1 {
+    @include font-size(30, 1.5);
+  }
+
+  h2 {
+    @include font-size(26, 1.5);
+    margin-top: $base-spacing-unit;
+    counter-increment: first;
+    counter-reset: second;
+
+    @include breakpoint(mobile) {
+      margin-top: $base-spacing-unit--medium;
+    }
+
+    &::before {
+      margin-right: $base-spacing-unit--tiny;
+      font-size: 120%;
+      content: counter(first) ".";
+    }
+
+    & + h3 {
+      margin-top: $base-spacing-unit;
+    }
+  }
+
+  h3 {
+    @include font-size(24, 1.5);
+
+    @extend %u-divider--bottom;
+    margin-bottom: ($base-spacing-unit +1);
+    margin-top: ($base-spacing-unit--large +1);
+  }
+
+  h4 {
+    @include font-size(20, 1.5);
+  }
+
+  h5 {
+    @include font-size(18, 1.5);
+  }
+
+  h6 {
+    @include font-size(16, 1.5);
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  p {
+    @include font-size(16, 1.5);
+    margin-bottom: 0;
+
+    &:not(:last-of-type) {
+      margin-bottom: $base-spacing-unit;
+    }
+  }
+
+  img {
+    // @extend %photo-shadow;
+    display: block;
+    margin: 0 auto;
+  }
+
+  hr {
+    @extend %u-divider--bottom-rev;
+    @extend %u-divider--top-rev;
+    margin: $base-spacing-unit--large;
+  }
+
+  dd,
+  li {
+    margin-left: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit--small;
+  }
+}

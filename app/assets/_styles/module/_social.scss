@@ -1,0 +1,137 @@
+//social
+.social {
+  &__menu {
+    margin: 0;
+    text-align: center;
+  }
+
+  &__label {
+    @include font-size(20, 1.5);
+    @include _(u-align--center);
+    @extend .u-heading;
+  }
+}
+
+.social__menu {
+  > .menu__item {
+    padding: $base-spacing-unit--tiny;
+
+    & [class^='icon-'] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $base-color-lighten10;
+      border: 3px solid $base-color-lighten10;
+      border-radius: $half-block;
+      height: 3rem;
+      width: 3rem;
+      &::before {
+        @include font-size(30, 1.6);
+        @extend %fontawesome;
+      }
+    }
+    span {
+      display: block;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.social__bookmarks {
+   > .box__item {
+    padding: $base-spacing-unit--tiny;
+
+    & [class*='icon-'] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $base-color-lighten10;
+      border: 3px solid $base-color-lighten10;
+      padding: $base-spacing-unit--tiny;
+      height: 3rem;
+      width: 3rem;
+      text-align: center;
+      &::before {
+        @include font-size(21, 1);
+        @extend %fontawesome;
+      }
+    }
+    span {
+      display: block;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+
+}
+
+// Override components
+.social__menu {
+  &.c-box {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.social__bookmarks {
+  &.c-box {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.bookmarks {
+  &__list {
+    display: table;
+    position: relative;
+    width: 100%;
+  }
+
+  &__label {
+    @include font-size(21, 1.5);
+    @extend .u-heading;
+    font-weight: 300;
+    // @extend .u-heading--labels;
+  }
+}
+
+// maps
+$icons: (
+  twitter: (char: '\f099', color: $twitter-color),
+  github: (char: '\f113', color: $github-color),
+  instagram: (char: '\f16d', color: $instagram-color),
+  pinterest: (char: '\f0d2', color: $pinterest-color),
+  facebook: (char: '\f09a', color: $facebook-color),
+  google-plus: (char: '\f0d5', color: $google-plus-color),
+  send-mail: (char: '\f0e0', color: $send-mail-color),
+  rss: (char: '\f09e', color: $rss-color)
+);
+
+@each $social, $icon in $icons {
+  .social__bookmarks [class*=icon-#{$social}] {
+    &::before {
+      content: map-get($icon, char);
+    }
+    &:hover, &:active, &:focus {
+      color: scale-color($primary-color, $lightness: 50%);
+      background: map-get($icon, color);
+      border-color: map-get($icon, color);
+      text-decoration: none;
+    }
+  }
+  .social__menu [class*=icon-#{$social}] {
+    // background-color: map-get($icon, color);
+    &:before {
+      content: map-get($icon, char);
+    }
+    &:hover, &:active, &:focus {
+      color: map-get($icon, color);
+      background: $base-color-lighten10;
+      border-color: $base-color-lighten10;
+      text-decoration: none;
+    }
+  }
+}

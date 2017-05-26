@@ -1,0 +1,27 @@
+.p-siteHeader {
+  margin: 0 auto;
+  max-width: $layout-width;
+
+  &.c-box {
+    align-items: center;
+  }
+
+  &__logo {
+    flex: 0 1 auto;
+    flex-basis: 50%;
+  }
+
+  &__nav {
+    // flex container
+    // flex item
+    flex: 0 1 auto;
+    flex-basis: 50%;
+  }
+}
+
+.p-siteHeader__nav {
+  &.c-box {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

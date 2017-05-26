@@ -1,0 +1,66 @@
+.p-profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &.p-profile--post {
+    > * {
+      margin-right: $base-spacing-unit--tiny;
+      margin-left: $base-spacing-unit--tiny;
+    }
+  }
+
+  &__image {
+    display: inline-block;
+
+    > img {
+      border-radius: 50%;
+      border: 3px solid $base-color-darken30;
+    }
+
+    @at-root .p-profile--post & {
+      max-width: 3rem;
+    }
+    @at-root .p-profile--page & {
+      display: block;
+      margin: 0 auto;
+      max-width: 240px;
+      @include breakpoint(tablet) {
+        display: inline-block;
+      }
+    }
+  }
+  &__author {
+    @include font-size(14, 1);
+    display: inline-block;
+    vertical-align: middle;
+
+    > [itemprop=name] {
+      @include font-size(16, 1.5);
+      display: block;
+      color: $base-color-darken20;
+      font-family: $base-font-family;
+      font-weight: 600;
+    }
+    @at-root .p-profile--page & {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      @include breakpoint(tablet) {
+        display: inline-block;
+        padding-left: 1rem;
+        width: 65%;
+      }
+    }
+    h1 {
+      @include font-size(24, 1);
+      @include breakpoint(tablet) {
+        @include font-size(40, 1);
+      }
+    }
+  }
+  & #{&}__name {
+    // @include web-font($t-kit, normal, 500);
+    display: inline-block;
+    color: $footer-logo-color;
+  }
+}

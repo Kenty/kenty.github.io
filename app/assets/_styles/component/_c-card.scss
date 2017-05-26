@@ -1,0 +1,47 @@
+.c-card {
+  @include box-shadow($card-shadow);
+  // display: inline-block;
+  background-color: $primary-color-lighten30;
+  position: relative;
+  border: 1px solid $primary-color-darken20;
+  border-radius: 3px;
+  // padding: $base-spacing-unit;
+  overflow: hidden;
+
+  &__media {
+    > img {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-left: $base-spacing-unit--tiny solid $base-color-lighten20;
+    border-right: $base-spacing-unit--tiny solid $base-color-lighten20;
+    border-top: $base-spacing-unit--tiny solid $base-color-lighten20;
+    margin: 0;
+
+    &::before {
+      display: block;
+      padding-bottom: 100%;
+      content: "";
+    }
+  }
+
+  &__body {
+    text-align: left;
+    overflow: hidden;
+  }
+
+  &__title {
+    @include font-size(18, 1.5);
+    font-weight: bold;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+  }
+}

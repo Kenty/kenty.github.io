@@ -1,0 +1,133 @@
+/* ========================================
+=            SITE STYLE GUIDE             =
+======================================== */
+
+.guide {
+  & + & {
+    margin-top: $base-spacing-unit--large;
+  }
+
+  &__heading {
+    @include font-size(32, 1.5);
+    @extend .u-heading;
+    @extend .u-heading--guide;
+  }
+
+  > h2 {
+    margin-bottom: $base-spacing-unit--small;
+  }
+}
+
+.component {
+  & + & {
+    margin-top: $base-spacing-unit;
+  }
+}
+
+.component__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  background-color: $primary-color-lighten50;
+  padding: $base-spacing-unit--small;
+
+  > [class*=component__]:not(:first-child) {
+    margin-top: $base-spacing-unit--tiny;
+
+    @include breakpoint(mobile) {
+      margin-left: $base-spacing-unit--small;
+      margin-top: 0;
+    }
+  }
+}
+
+.component__meta {
+  @include font-size(14, 1);
+  color: $base-color-lighten30;
+}
+
+.content {
+  &--output {
+    padding-bottom: $base-spacing-unit--medium;
+    padding-top: $base-spacing-unit--medium;
+  }
+}
+
+.color {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    justify-content: space-around;
+
+    @include breakpoint(tablet) {
+      flex-direction: row;
+    }
+
+    > .list__item {
+      // flex container
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      // flex item
+      flex: 0 1 auto;
+      flex-basis: percentage(1/5);
+      margin: 0;
+      height: 6.25rem;
+      width: 100%;
+    }
+  }
+  &__name {
+    padding: 0 $base-spacing-unit--tiny;
+  }
+}
+
+
+// Override component
+.component {
+  .c-btn {
+    margin: $base-spacing-unit--tiny;
+  }
+}
+
+.component__heading {
+  &.c-card__title {
+    @include font-size(20, 1.5);
+  }
+}
+
+.component__body {
+  &.c-card__body {
+    padding-right: $base-spacing-unit--small;
+    padding-left: $base-spacing-unit--small;
+    padding-bottom: $base-spacing-unit;
+  }
+}
+
+// color maps
+$colors: (
+  (base, $base-color),
+  (primary, $primary-color),
+  (base-text, $base-text-color),
+  (sub-text, $sub-text-color),
+  (link, $link-color),
+  (accent, $accent-color),
+  (logo-left, $logo-text-left-color),
+  (logo-right, $logo-text-right-color),
+  (twitter, $twitter-color),
+  (github, $github-color),
+  (instagram, $instagram-color),
+  (pinterest, $pinterest-color),
+  (facebook, $facebook-color),
+  (google-plus, $google-plus-color),
+  (rss, $rss-color)
+);
+
+@each $name, $color in $colors {
+  .list__item--#{$name} {
+    background-color: $color;
+    border: 1px solid scale-color($color, $lightness: -20%);
+  }
+}

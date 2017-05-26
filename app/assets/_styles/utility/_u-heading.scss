@@ -1,0 +1,34 @@
+.u-heading,
+%u-heading,
+.u-navs,
+%u-navs {
+  @include web-font($t-kit, normal, 400);
+  @include font-smooting(on);
+  // color: $base-color-lighten20;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.u-heading--headline {
+  font-weight: 200;
+  letter-spacing: .05rem;
+}
+
+.u-heading--label {
+  font-weight: 700;
+}
+
+.u-heading--labels {
+  font-weight: 600;
+}
+.u-navs--labels {
+  @include font-smooting(off);
+
+  font-weight: 500;
+}
+
+.u-heading--guide {
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: -.05rem;
+}

@@ -1,0 +1,48 @@
+.c-section {
+  @include _(u-align--center);
+
+  position: relative;
+  padding: 0 $base-spacing-unit;
+  width: 100%;
+  overflow: hidden;
+
+  &__header {
+  }
+
+  &__inner {
+    margin-right: calc(#{$base-spacing-unit--small} * -1);
+    margin-left: calc(#{$base-spacing-unit--small} * -1);
+    padding-bottom: $base-spacing-unit--medium;
+    padding-top: $base-spacing-unit--medium;
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+  }
+
+  &__body {
+    @include _(u-align--left);
+  }
+
+  &__description {
+    @include font-size(18, 1.5);
+
+    color: $sub-text-color;
+    border-top: 1px dashed $primary-color-lighten70;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+
+.c-section__inner {
+  > [class*="c-section__"]:not(:first-child) {
+    margin-top: $base-spacing-unit--medium;
+  }
+}
+
+[class*="c-section__"] {
+  & + & {
+    margin-top: $base-spacing-unit--medium;
+  }
+}

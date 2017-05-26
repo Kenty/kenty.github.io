@@ -1,0 +1,19 @@
+// ---
+// # Only the main Sass file needs front matter (the dashes are enough)
+// ---
+@charset "utf-8";
+
+// Foundation
+@import "foundation/foundations";
+
+// Layout
+@import "layout/layouts";
+
+// Utililties
+@import "utility/utilities";
+
+// Component
+@import "component/components";
+
+// module
+@import "module/modules";

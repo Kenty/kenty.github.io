@@ -1,0 +1,152 @@
+.page__headline {
+  @include font-size(20, 1.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: $base-spacing-unit;
+  padding-top: $base-spacing-unit;
+  letter-spacing: $base-spacing-unit--small;
+
+  @include breakpoint(mobile) {
+    padding-bottom: $base-spacing-unit--huge;
+    padding-top: $base-spacing-unit--huge;
+  }
+
+
+  // @include breakpoint(mobile) {
+  //   @include font-size(22, 1.5);
+  // }
+
+  @include breakpoint(tablet) {
+    @include font-size(22, 1.5);
+  }
+
+  &::before,
+  &::after {
+    flex: 1 0 $third-block;
+    border-bottom: 1px solid $primary-color-lighten50;
+    border-top: 1px solid $primary-color-lighten40;
+    margin: 0 auto;
+    margin-top: $base-spacing-unit--tiny;
+    width: $third-block;
+    content: "";
+  }
+
+  &--errors {
+    @include font-size(64, 1);
+
+    font-weight: 700;
+
+    @include breakpoint(tablet) {
+      @include font-size(240, 1);
+    }
+
+    + * {
+      @include font-size(70, 1);
+
+      display: block;
+      letter-spacing: -.15rem;
+    }
+  }
+}
+
+.page-post {
+  p {
+    @include font-size(20, 1.5);
+  }
+}
+
+.pageHeader {
+}
+
+.pageHero {
+  margin-right: calc(((100vw - 100%) / 2) * -1);
+  margin-left: calc(((100vw - 100%) / 2) * -1);
+
+  > img {
+    @extend %photo-shadow;
+  }
+
+  &__title {
+    @include font-size(26, 1.5);
+    // margin-bottom: $base-spacing-unit;
+
+    @include breakpoint(tablet) {
+      @include font-size(36, 1.25);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+
+    > * {
+      color: $base-color-lighten50;
+    }
+  }
+}
+
+.page-thumbs {
+  padding: $base-spacing-unit;
+
+  figcaption {
+    padding-top: $base-spacing-unit--small;
+    text-align: center;
+  }
+}
+
+.page__errorText {
+  text-align: center;
+}
+
+// Override the component style
+.page__headline {
+  &.c-heading {
+    color: $base-color-lighten20;
+  }
+}
+
+.page__links {
+  &.c-btn {
+    @include _(u-align--center);
+
+    padding: $base-spacing-unit--small $base-spacing-unit--medium;
+  }
+}
+
+.pageHero {
+  &.c-section__header {
+    margin-top: calc(#{$base-spacing-unit--medium} * -1);
+  }
+}
+
+.pageHero__image {
+  &.c-media__image {
+    padding: 0;
+
+    &::before {
+      display: block;
+      background-color: rgba($base-color-darken60, .85);
+      padding-bottom: percentage(9 / 16);
+      content: "";
+
+      @include breakpoint(mobile) {
+        padding-bottom: percentage(3 / 6.25);
+      }
+    }
+  }
+}
+
+.pageHero__title {
+  &.c-heading {
+    font-weight: 500;
+  }
+}

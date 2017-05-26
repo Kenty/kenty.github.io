@@ -1,0 +1,29 @@
+.c-heading {
+  @include web-font($t-kit, normal, 400);
+  @include font-smooting(on);
+  // color: $base-color-lighten20;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-feature-settings: "kern", "palt";
+}
+
+.c-heading--headline {
+  font-weight: 200;
+  letter-spacing: .05rem;
+}
+
+.c-heading--labels {
+  font-weight: 600;
+  letter-spacing: .15rem;
+}
+
+.c-heading--nav {
+  font-weight: 600;
+  letter-spacing: .2rem;
+}
+
+.c-navs--labels {
+  font-weight: 500;
+
+  @include font-smooting(off);
+}

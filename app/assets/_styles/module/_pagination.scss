@@ -1,0 +1,31 @@
+// Paging-navigation
+.pagination {
+  margin: 0;
+
+  &--centered {
+    @include _(u-align--center);
+  }
+  .box__item {
+    @include font-size(14, 1);
+    margin: $base-spacing-unit--tiny;
+    font-weight: 600;
+
+    &[aria-current=true] > em {
+      display: inline-block;
+      color: $primary-color-lighten30;
+      background-color: $base-color;
+      border: 2px solid $base-color;
+      border-radius: 3px;
+      padding: $base-spacing-unit--small;
+    }
+  }
+  &__link {
+    padding: $base-spacing-unit--small;
+  }
+}
+
+.pagination {
+  > .c-box {
+    justify-content: center;
+  }
+}

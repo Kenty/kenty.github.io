@@ -1,0 +1,85 @@
+/*
+---
+name: Components Media
+category:
+  - components/media
+  - components
+---
+
+The media is a component that uses background images.
+
+```html
+<div class="c-media">
+  <div class="c-media__image" style="background-image: url(http://lorempixel.com/720/540/city/)">
+    <div class="c-media__inner">
+      <div class="c-media__body">
+        <h3 class="c-media__title">Media Title</h3>
+        <div class="c-media__intro">
+          <p>Lorem ipsum Eiusmod elit consequat Duis officia aute reprehenderit dolor ullamco veniam consequat in deserunt eu id quis aliqua reprehenderit eiusmod non commodo enim aliquip culpa in labore Ut culpa enim ex eu velit deserunt voluptate exercitation anim anim occaecat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-media__image" style="background-image: url(http://lorempixel.com/720/540/city/)">
+    <div class="c-media__inner">
+      <div class="c-media__body c-media__body--rev">
+        <h3 class="c-media__title">Media Title</h3>
+        <div class="c-media__intro">
+          <p>Lorem ipsum Eiusmod elit consequat Duis officia aute reprehenderit dolor ullamco veniam consequat in deserunt eu id quis aliqua reprehenderit eiusmod non commodo enim aliquip culpa in labore Ut culpa enim ex eu velit deserunt voluptate exercitation anim anim occaecat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+.c-media {
+  &__inner {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__body {
+    @include _(u-align--left);
+    color: $base-color;
+    background-color: rgba($base-color-darken80, .7);
+    padding: $base-spacing-unit--medium $base-spacing-unit;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      padding: $base-spacing-unit--medium;
+      width: $half-block;
+      max-width: 100%;
+    }
+  }
+
+  &__body--rev {
+    margin-left: auto;
+  }
+
+  &__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: $base-spacing-unit;
+  }
+
+  &__title {
+    border-bottom: 3px double;
+    padding-bottom: $base-spacing-unit--tiny;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+
+  &__intro {
+    margin-top: $base-spacing-unit;
+
+    > p:not(:last-of-type) {
+      margin-bottom: $base-spacing-unit--small;
+    }
+  }
+}
+
+
+

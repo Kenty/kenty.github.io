@@ -1,0 +1,26 @@
+.u-align--center,
+%u-align--center {
+  text-align: center !important;
+}
+
+.u-align--left,
+%u-align--left {
+  text-align: left !important;
+}
+
+.u-align--right,
+%u-align--right {
+  text-align: right !important;
+}
+
+@include placeholders("u-align--center") {
+  text-align: center !important;
+}
+
+@include placeholders("u-align--left") {
+  text-align: left !important;
+}
+
+@include placeholders("u-align--right") {
+  text-align: right !important;
+}

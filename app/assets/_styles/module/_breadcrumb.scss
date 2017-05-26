@@ -1,0 +1,88 @@
+/**
+ * breadcrumb
+ */
+.breadcrumb {
+    position: relative;
+    margin-bottom: 1.625em;
+}
+
+%bg-set {
+    &:before {
+        // border-color: lighten($base-text-color, 3%);
+        border-color: scale-color($base-text-color, $lightness: 10%);
+        border-left-color: transparent;
+    }
+    &:after {
+        border-left-color: scale-color($base-text-color, $lightness: 10%);
+    }
+}
+
+.bread_crumb {
+    @include crumb-container;
+    li {
+        @include crumbs;
+        background-color: scale-color($base-text-color, $lightness: 10%);
+        position: relative;
+        margin-right: 18px;
+        padding: 0 10px 0 5px;
+        height: 40px;
+        line-height: 40px;
+        list-style: none;
+
+        &.current {
+            background-color: scale-color($base-text-color, $lightness: 10%);
+            //color: $primary-color;
+            @include border-radius(0 4px 4px 0);
+            padding: 0 15px 0 5px;
+            &:after {
+                border: none;
+            }
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        &.top {
+            @include border-radius(4px 0 0 4px);
+            padding: 0 15px;
+        }
+        &:first-child {
+            &:before {
+                border: none;
+            }
+        }
+        a {
+            color: $link-color;
+            text-align: center;
+            &:hover {
+                text-decoration: underline;
+                color: scale-color($link-color, $lightness: 10%);
+            }
+        }
+        &:hover {
+            @extend %bg-set;
+            background-color: scale-color($base-text-color, $lightness: 10%);
+
+            color: lighten($sub-color, 5%);
+            text-decoration: none;
+        }
+        &:before,
+        &:after {
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border: 0 solid scale-color($base-text-color, $lightness: 10%);
+            border-width: 20px 7px;
+            content: "";
+        }
+        &:before {
+            left: -25px;
+            border-left-color: transparent;
+        }
+        &:after {
+            left: 100%;
+            border-color: transparent;
+            border-left-color: scale-color($base-text-color, $lightness: 10%);
+        }
+    }
+}

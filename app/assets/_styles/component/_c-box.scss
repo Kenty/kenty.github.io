@@ -1,0 +1,72 @@
+/*
+---
+name: Components Box
+category:
+  - components/box
+  - components
+tag:
+  - latest
+---
+
+```html
+<div>
+  <ul class="c-box-list">
+    <li class="list__item" style="background-color: #ccc;padding: 5rem 2rem;margin: .75rem;flex: 0 1 20% ">Box Row</li>
+    <li class="list__item" style="background-color: #ccc;padding: 5rem 2rem;margin: .75rem;flex: 0 1 20% ">Box Row</li>
+    <li class="list__item" style="background-color: #ccc;padding: 5rem 2rem;margin: .75rem;flex: 0 1 25% ">Box Row</li>
+    <li class="list__item" style="background-color: #ccc;padding: 5rem 2rem;margin: .75rem;flex: 0 1 20% ">Box Row</li>
+    <li class="list__item" style="background-color: #ccc;padding: 5rem 2rem;margin: .75rem;flex: 0 1 20% ">Box Row</li>
+  </ul>
+
+  <ul class="c-box-list c-box-list--row">
+    <li class="list__item" style="background-color: #8C8C8C;padding: 5rem 3rem;margin: .75rem;">Box Row</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 5rem 3rem;margin: .75rem;">Box Row</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 5rem 3rem;margin: .75rem;">Box Row</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 5rem 3rem;margin: .75rem;">Box Row</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 5rem 3rem;margin: .75rem;">Box Row</li>
+  </ul>
+  <ul class="c-box-list c-box-list--column">
+    <li class="list__item" style="background-color: #8C8C8C;padding: 2rem 1rem;margin: .375rem;">Box Column</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 2rem 1rem;margin: .375rem;">Box Column</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 2rem 1rem;margin: .375rem;">Box Column</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 2rem 1rem;margin: .375rem;">Box Column</li>
+    <li class="list__item" style="background-color: #8C8C8C;padding: 2rem 1rem;margin: .375rem;">Box Column</li>
+  </ul>
+</div>
+```
+
+*/
+
+.c-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+
+  > .box__item {
+    @include font-size(16, 1.5);
+
+    list-style: none;
+  }
+
+  // list 横
+  &--row {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .box__item {
+      display: inline-block;
+    }
+  }
+
+  // list 縦
+  &--column {
+    flex-direction: column;
+
+    > .box__item {
+      width: 100%;
+    }
+  }
+}

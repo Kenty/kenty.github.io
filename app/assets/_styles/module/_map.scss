@@ -1,0 +1,14 @@
+.map {
+
+  &__body {
+    margin-bottom: 2rem;
+    height: 300px;
+    min-height: 100%;
+
+    @include breakpoint(mobile) {
+      height: 500px;
+    }
+  }
+}
+
+
